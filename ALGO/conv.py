@@ -1,4 +1,4 @@
-from Strings import RevString # i just imported this file so i can reverse some strigns
+from Strings import RevString # i just imported this file so i can reverse some strings
 
 
 #to conv from decimal to binary :
