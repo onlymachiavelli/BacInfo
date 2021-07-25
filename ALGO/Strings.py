@@ -20,3 +20,10 @@ def FindS(string:str, ele:str):
     return -1 #means Doesnt exist 
 
 print(FindS("hello", "y"))
+
+#Does the string start with ...
+def StartWith(string:str, start:str):
+    for i in range (len(start)):
+        if (string[i] != start[i]):return False
+    return True
+print(StartWith("fuck", "fu"))
