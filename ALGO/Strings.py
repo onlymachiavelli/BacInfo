@@ -27,3 +27,4 @@ def StartWith(string:str, start:str):
         if (string[i] != start[i]):return False
     return True
 print(StartWith("fuck", "fu"))
+
