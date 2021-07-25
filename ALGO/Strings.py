@@ -1,4 +1,5 @@
 #These are some stupid basic algorythms, 
+#Im keeping the syntax simple so ur ass can understand lmao  
 #To reverse a freaking string : 
 def RevString(string:str):
     i = len(string)
@@ -9,3 +10,13 @@ def RevString(string:str):
     return newString
 
 print(RevString("hello world"))
+
+
+
+#search in string
+def FindS(string:str, ele:str):
+    for i in range (len(string)):
+        if(string[i] == ele): return i
+    return -1 #means Doesnt exist 
+
+print(FindS("hello", "y"))
