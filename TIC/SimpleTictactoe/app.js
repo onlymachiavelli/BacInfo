@@ -2,6 +2,11 @@
 const Class = cl => document.getElementsByClassName(cl)[0]
 let User = ""
 
+const Color = (button) => {
+    if (button.innerHTML == "X") button.style.backgroundColor = "#880453"
+    else if (button.innerHTML == "O") button.style.backgroundColor = "#885f04"
+    else button.style.backgroundColor = "#7d0488"
+}
 const Start = () => {
     let r = Math.floor(Math.random() * 2)
     if (r == 0) User = "X"
@@ -16,8 +21,16 @@ const Start = () => {
 Start()
 
 const Winner = (symbol) => {
+    //yeah sorry about that i wanted to keep it simple so u can understand ! 
     if (
-        Class("btn0") == symbol && Class("btn1") == symbol && Class("btn2") == symbol
+        Class("btn0").innerHTML == symbol && Class("btn1").innerHTML == symbol && Class("btn2").innerHTML == symbol ||
+        Class("btn3").innerHTML == symbol && Class("btn4").innerHTML == symbol && Class("btn5").innerHTML == symbol ||
+        Class("btn6").innerHTML == symbol && Class("btn7").innerHTML == symbol && Class("btn8").innerHTML == symbol ||
+        Class("btn0").innerHTML == symbol && Class("btn3").innerHTML == symbol && Class("btn6").innerHTML == symbol ||
+        Class("btn1").innerHTML == symbol && Class("btn4").innerHTML == symbol && Class("btn7").innerHTML == symbol ||
+        Class("btn2").innerHTML == symbol && Class("btn5").innerHTML == symbol && Class("btn8").innerHTML == symbol ||
+        Class("btn0").innerHTML == symbol && Class("btn4").innerHTML == symbol && Class("btn8").innerHTML == symbol ||
+        Class("btn2").innerHTML == symbol && Class("btn4").innerHTML == symbol && Class("btn6").innerHTML == symbol
     ) return true
 }
 
@@ -38,19 +51,23 @@ const Game = (index) => {
     if (!IsEmpty(index)) alert("token place mother fucker")
     else {
         Class(index).innerHTML = User
-
+        Color(Class(index))
         if (End()) {
-            alert("GLUTCH")
+            alert("DRAW")
             Start()
         }
+
+
         if (Winner(User)) {
             alert("Player " + User + " Just Won !")
             Start()
+
+        }
+        else {
+            if (User == "X") User = "O"
+            else User = "X"
         }
 
-
-        if (User == "X") User = "O"
-        else User = "X"
 
     }
 }
