@@ -1,6 +1,6 @@
 
 const Class = cl => document.getElementsByClassName(cl)[0]
-let User = ""
+let Player = ""
 
 const Color = (button) => {
     if (button.innerHTML == "X") button.style.backgroundColor = "#880453"
@@ -9,9 +9,9 @@ const Color = (button) => {
 }
 const Start = () => {
     let r = Math.floor(Math.random() * 2)
-    if (r == 0) User = "X"
-    else User = "O"
-    alert(User + " Start !")
+    if (r == 0) Player = "X"
+    else Player = "O"
+    alert(Player + " Start !")
     Class("container").innerHTML = ``
     for (let i = 0; i < 9; i++) {
         Class("container").innerHTML += `<button class="btn${i}" onclick="Game('btn${i}')">E</button>`
@@ -50,7 +50,7 @@ const IsEmpty = (ind) => {
 const Game = (index) => {
     if (!IsEmpty(index)) alert("token place mother fucker")
     else {
-        Class(index).innerHTML = User
+        Class(index).innerHTML = Player
         Color(Class(index))
         if (End()) {
             alert("DRAW")
@@ -58,14 +58,14 @@ const Game = (index) => {
         }
 
 
-        if (Winner(User)) {
-            alert("Player " + User + " Just Won !")
+        if (Winner(Player)) {
+            alert("Player " + Player + " Just Won !")
             Start()
 
         }
         else {
-            if (User == "X") User = "O"
-            else User = "X"
+            if (Player == "X") Player = "O"
+            else Player = "X"
         }
 
 
