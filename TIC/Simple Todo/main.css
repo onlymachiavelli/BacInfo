@@ -21,10 +21,19 @@ header {
   text-align: center;
   align-items: center;
   justify-content: center;
+  padding: 10px 0px 10px 0px;
 }
 
 .addbtn {
-  width: 300px;
+  width: 200px;
   height: 50px;
   color: #fff;
+}
+
+input {
+  width: 350px;
+  padding: 16px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 3px;
 }
