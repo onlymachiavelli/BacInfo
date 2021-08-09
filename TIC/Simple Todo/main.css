@@ -11,6 +11,7 @@ main {
 * {
   outline: 0;
   text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 header {
@@ -45,5 +46,29 @@ input {
 .container {
   width: 100%;
   height: auto;
-  text-align: center;
+}
+.note {
+  width: 90%;
+  height: auto;
+  background: rgb(126, 182, 14);
+  margin: auto;
+  margin-top: 30px;
+  display: flex;
+  border-radius: 3px;
+  box-shadow: 0px 0px 4px 0px rgba(255, 255, 255, 0.583);
+  padding: 10px;
+  padding-left: 20px !important;
+}
+.delete {
+  width: 100px;
+  height: 40px;
+  color: #fff;
+  background: rgb(225, 31, 31);
+  border: none;
+  border-radius: 3px;
+  margin-top: 5px;
+  margin-left: 20px;
+}
+p {
+  color: #fff;
 }
