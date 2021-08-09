@@ -72,3 +72,6 @@ input {
 p {
   color: #fff;
 }
+button {
+  cursor: pointer;
+}
