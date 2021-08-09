@@ -8,10 +8,5 @@ const Add = (Key, Val) => localStorage.setItem(Key, Val);
 const Clear = () => localStorage.clear();
 const Delete = (Key) => localStorage.removeItem(Key);
 
-/*
-Schema : 
-title: str
-desc : str 
-id : int
-
-*/
+let Container = Class("container", 0);
+Class("addbtn", 0).addEventListener("click", () => {});
