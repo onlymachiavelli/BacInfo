@@ -41,10 +41,9 @@ def Sorting(li: list, mis: list, n: int):
             Sorting(li, mis, n)
 
 
-def showT(mist: list, n: int):
+def showT(li: list, n: int):
     for i in range(n):
-        # print(f"{int(mist[i]['a'])}+{int(mist[i]['b'])}i")
-        return 0
+        print(f"{int(li[i]['a'])}+{int(li[i]['b'])}i")
 
 
 l = []
@@ -59,4 +58,4 @@ print("List ")
 showArr(l, n)
 print("Mist")
 showArr(m, n)
-showT(m, n)
+showT(l, n)
