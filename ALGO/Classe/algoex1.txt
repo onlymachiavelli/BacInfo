@@ -5,7 +5,6 @@ debut
     tant que n pas dans [2..20] faire
         Ecrire ("Enter N again !")
         lire(n)
-    
     retourner n
 fin 
 

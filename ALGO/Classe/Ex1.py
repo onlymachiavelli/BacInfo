@@ -2,7 +2,6 @@ import math
 
 
 def readN():
-
     print("Enter N !")
     n = int(input())
     while(n not in range(2, 21)):
@@ -30,12 +29,12 @@ def showArr(li: list, n: int):
 
 def fillArrM(marr: list, li: list, n: int):
     for i in range(n):
-        marr.append(math.sqrt((li[i]["a"] ** 2) + (li[i]["b"] ** 2)))
+        marr.append(round(math.sqrt((li[i]["a"] ** 2) + (li[i]["b"] ** 2)), 3))
 
 
 def Sorting(li: list, mis: list, n: int):
     for i in range(n-1):
-        if mis[i] < mis[i+1]:
+        if mis[i] > mis[i+1]:
             li[i], li[i+1] = li[i+1], li[i]
             mis[i], mis[i+1] = mis[i+1], mis[i]
             Sorting(li, mis, n)
@@ -49,8 +48,6 @@ def showT(li: list, n: int):
 l = []
 m = []
 n = readN()
-
-
 fillArr(l, n)
 fillArrM(m, l, n)
 Sorting(l, m, n)
