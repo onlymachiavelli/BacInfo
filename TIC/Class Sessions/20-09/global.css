@@ -1,0 +1,18 @@
+@font-face {
+  font-family: "offside";
+  src: url("./assets/fonts/Offside-Regular.ttf");
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  text-decoration: none;
+  outline: 0;
+  font-family: "offside";
+}
+::placeholder {
+  color: #fff;
+}
