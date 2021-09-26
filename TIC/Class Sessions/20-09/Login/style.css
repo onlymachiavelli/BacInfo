@@ -33,41 +33,6 @@
   font-size: 35px;
 }
 
-.txtinp {
-  margin: auto;
-  width: 80%;
-  height: auto;
-  display: flex;
-  align-items: center;
-  padding-left: 20px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  border: 1px solid #fff;
-  border-radius: 3px;
-  margin-top: 20px;
-  background-color: rgba(255, 255, 255, 0.336);
-}
-.txtinp i {
-  color: #fff;
-  font-size: 25px !important;
-}
-.txtinp input {
-  padding: 13px;
-  margin-left: 13px;
-  width: 77%;
-  border: none;
-  background: NONE !important;
-  color: #fff;
-}
-.passtxt input {
-  margin-left: 5px !important;
-}
-
-.eye {
-  background: none !important;
-  border: none;
-  cursor: pointer;
-}
 .login_btn {
   margin: auto !important;
   margin-top: 20px !important;
@@ -100,4 +65,9 @@
   font-size: 30px;
   width: 50%;
   text-align: center;
+}
+#forgot {
+  color: #fff;
+  display: table;
+  margin: auto !important;
 }
