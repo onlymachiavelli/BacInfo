@@ -20,12 +20,11 @@ function findTarget($target){
 
 
 if($connection) {
-    
-    if(findTarget("01447896325")) {
-        print("it's here");
+    if(findTarget($_POST['cin'])) {
+        print("Used CIN !");
     }
     else {
-        print("it does not exist !");
+        $mysql = "INSERT INTO ";
     }
 }
 else {

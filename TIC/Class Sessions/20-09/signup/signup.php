@@ -21,24 +21,24 @@
         <br />
         <section class="form_section"> 
             <br /><br />
-            <form action="" method="POST">
+            <form action="create.php" method="POST">
                 <div class="txtinp">
                     <i class="fa fa-user-circle" aria-hidden="true"></i>
-                    <input type="text" name="" placeholder="Votre Nom" required />
+                    <input type="text" name="lname" placeholder="Votre Nom" required />
                 </div>
                 <div class="txtinp">
                     <i class="fa fa-id-card" aria-hidden="true"></i>
-                    <input type="text" name="" placeholder="VOTRE CIN" required />
+                    <input type="text" name="cin" placeholder="VOTRE CIN" required />
                 </div>
                 <div class="txtinp">
                     <i class="fa fa-calendar" aria-hidden="true"></i>
-                    <input type="date" name="" required />
+                    <input type="date" name="date" required />
                 </div>
 
 
                 <div class="txtinp passtxt">
                     <i class="fa fa-lock" aria-hidden="true"></i>
-                    <input type="password" name="" placeholder="Le Mot De Passe" class="pass" required/>
+                    <input type="password" name="pass" placeholder="Le Mot De Passe" class="pass" required/>
                     <button type="button" class="eye" onclick="setInpType('pass', 'eye')">
                         <i class="fa fa-eye" aria-hidden="true"></i>
                     </button>
@@ -63,14 +63,14 @@
 
                 <div class="txtinp">
                     <i class="fa fa-envelope" aria-hidden="true"></i>
-                    <input type="email" name="" required  placeholder="Email"/>
+                    <input type="email" name="email" required  placeholder="Email"/>
                 </div>
 
                 <div class="txtinp">
                     <i class="fa fa-phone" aria-hidden="true"></i>
-                    <input type="tel" name="" required  placeholder="Phone"/>
+                    <input type="tel" name="phone" required  placeholder="Phone"/>
                 </div>
-                <textarea name="" placeholder="Votre Adresse" class="adress" ></textarea>
+                <textarea name="adress" placeholder="Votre Adresse" class="adress" ></textarea>
                 <p id="tit">Center D'interets</p>
                 <div class="picker_container p">
                     <div class="picker">
