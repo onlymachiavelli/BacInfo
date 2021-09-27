@@ -1,3 +1,4 @@
 <?php
-print("auth area !");
+
+
 ?>
