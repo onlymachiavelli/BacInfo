@@ -13,3 +13,5 @@ const setInpType = (input, button) => {
     ).innerHTML = `<i class="fa fa-eye-slash" aria-hidden="true"></i>`
   }
 }
+
+//initial val simple

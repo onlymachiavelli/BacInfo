@@ -19,7 +19,7 @@
             </a>
         </div>
         <br />
-        <section class="form_section">
+        <section class="form_section"> 
             <br /><br />
             <form action="" method="POST">
                 <div class="txtinp">
@@ -38,9 +38,30 @@
                     <i class="fa fa-id-card" aria-hidden="true"></i>
                     <input type="text" name="" placeholder="VOTRE CIN" required />
                 </div>
-                <div class="txtinp">
-                    <i class="fa fa-id-card" aria-hidden="true"></i>
-                    <input type="text" name="" placeholder="VOTRE CIN" required />
+
+
+
+                <div class="txtinp passtxt">
+                    <i class="fa fa-lock" aria-hidden="true"></i>
+                    <input type="password" name="" placeholder="Le Mot De Passe" class="pass" required/>
+                    <button type="button" class="eye" onclick="setInpType('pass', 'eye')">
+                        <i class="fa fa-eye" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <br/>
+                <div class="picker_container">
+                    <div class="picker">
+                        <i class="fa fa-male" aria-hidden="true"></i>
+                        &nbsp;
+                        <b>Male</b>
+                        <input type="radio" name="gender" value = "male" />
+                    </div>
+                    <div class="picker">
+                        <i class="fa fa-male" aria-hidden="true"></i>
+                        &nbsp;
+                        <b>Male</b>
+                        <input type="radio" name="gender" value = "male" />
+                    </div>
                 </div>
             </form>
         </section>

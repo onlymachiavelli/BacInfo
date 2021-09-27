@@ -21,3 +21,33 @@
 
   margin-top: 20px !important;
 }
+input {
+  width: 89% !important;
+}
+.picker {
+  width: 130px;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.377);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  padding-left: 20px;
+  margin: 20px;
+}
+.picker i {
+  color: #fff;
+  font-size: 30px;
+  margin-right: 10px;
+}
+.picker b {
+  color: #fff;
+}
+.picker_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+}

@@ -52,3 +52,45 @@ body {
   border: none;
   cursor: pointer;
 }
+
+table,
+td,
+th {
+  border: 1px solid #000;
+  border-collapse: collapse;
+  padding: 10px;
+}
+table {
+  margin: auto;
+  width: 600px;
+  height: auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+nav ul {
+  display: flex !important;
+}
+
+nav ul li button {
+  margin: 20px !important;
+}
+
+nav ul li {
+  display: inline;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
