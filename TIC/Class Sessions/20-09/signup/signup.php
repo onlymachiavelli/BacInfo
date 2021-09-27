@@ -94,7 +94,7 @@
                         <i class="fa fa-camera" aria-hidden="true"></i>
                         &nbsp;
                         <b>Phgraph</b>
-                        <input type="checkbox" name="music" value = "photo" />
+                        <input type="checkbox" name="photograph" value = "photo" />
                     </div>
 
                 </div>
