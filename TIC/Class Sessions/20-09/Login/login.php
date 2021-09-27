@@ -21,15 +21,15 @@
 
             <div class="inp_areas">
                 <p id="log_title">Espace Eleve</p>
-                <form method="POST" action=""> 
+                <form method="POST" action="auth.php"> 
                     <div class="txtinp">
                         <i class="fa fa-id-card" aria-hidden="true"></i>
-                        <input type="text" name="" placeholder="VOTRE CIN" required />
+                        <input type="text" name="cin" placeholder="VOTRE CIN" required />
                     </div>
 
                     <div class="txtinp passtxt">
                         <i class="fa fa-lock" aria-hidden="true"></i>
-                        <input type="password" name="" placeholder="Le Mot De Passe" class="pass" required/>
+                        <input type="password" name="pass" placeholder="Le Mot De Passe" class="pass" required/>
                         <button type="button" class="eye" onclick="setInpType('pass', 'eye')">
                             <i class="fa fa-eye" aria-hidden="true"></i>
                         </button>
@@ -51,8 +51,3 @@
 </body>
 </html>
 
-<!--
-
-
-    
--->
