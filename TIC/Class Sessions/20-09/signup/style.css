@@ -51,3 +51,25 @@ input {
   width: 100%;
   height: auto;
 }
+
+.adress {
+  margin: 20px auto !important;
+  display: block;
+  width: 79%;
+  border: 1px solid #fff;
+  background-color: rgba(255, 255, 255, 0.411);
+  padding: 13px;
+  border-radius: 3px;
+  color: #fff;
+  resize: none;
+}
+
+#tit {
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+}
+.p .picker {
+  width: 150px;
+}
