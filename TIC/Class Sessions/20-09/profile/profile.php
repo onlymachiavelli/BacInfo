@@ -7,14 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link  rel="stylesheet" href="style.css" />
+    <link  rel="stylesheet" href="main.css" />
 </head>
 <body>
     <header>
         <nav class="navbar"> 
             <div class="logo">
                 <a href="">
-                    <img src="./school.png" />
+                    <img src="./../assets/school.png" />
                 </a>
             </div>
             <nav class="nav">
@@ -38,6 +38,7 @@
                 <p class="date">Cree Le 21/12/1999</p>
             </div>
             <div class="infos">
+                <br/>
                 <table class="data">
                     <tr>
                         <th>Nom :</th>

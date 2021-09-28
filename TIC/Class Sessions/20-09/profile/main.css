@@ -80,11 +80,14 @@ header {
 
 .data {
   width: 500px;
-  height: auto;
-  margin-top: 20px;
+  margin: unset !important;
 }
 .data th {
   text-align: left;
   color: #fff;
   padding: 10px;
+}
+.data,
+.data th {
+  border: 0px solid transparent !important;
 }
