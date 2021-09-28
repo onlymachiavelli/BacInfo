@@ -1,8 +1,11 @@
 <?php
-$servername = "localhost";
+session_start();
+
+
+$hostname = "localhost";
 $userame = "root";
 $password = "";
-$connection = new mysqli($servername, $userame, $password, "eleve");
+$connection = new mysqli($hostname, $userame, $password, "eleve");
 
 function makeAuth($username, $password){
     global $connection;
@@ -18,7 +21,11 @@ function makeAuth($username, $password){
 
 
 if ($connection) {
-    if(makeAuth($_POST['cin'], $_POST['pass'])) print ("authorized");
+    if(makeAuth($_POST['cin'], $_POST['pass'])){
+        print ("authorized");
+        $_SESSION['user'] = $_POST['cin'];
+        $_SESSION['pass'] = $_POST['pass'];
+    }
     else print("unauthorized");
 }
 else {
