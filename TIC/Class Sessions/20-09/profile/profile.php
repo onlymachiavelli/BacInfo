@@ -1,4 +1,11 @@
-<?php?>
+<?php
+
+session_start();
+if (!isset($_SESSION['user']) && !isset($_SESSION['pass'])) header('Location: ../login/login.php');
+
+
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +31,7 @@
                 <a href="">Parametres</a>
             </nav>
             <div class="logoutbtn">
-                <form action="">
+                <form action="logout.php">
                     <button>LogOut</button>
                 </form>
             </div>
