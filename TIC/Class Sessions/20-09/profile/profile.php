@@ -18,8 +18,11 @@ else {
 }
 
 
-function getTarget($cin){
+function getTarget($cin, $target){
     global $connection;
+    $action = "SELECT".$target." FROM users"; 
+    $res = mysqli_query($connection, $action);
+
 }
 ?>
 
@@ -30,7 +33,10 @@ function getTarget($cin){
 
     <head>
         <link rel="stylesheet" href="" />
-        <?php echo("<title>".getTarget($_SESSION['cin'])."</title>") ?>
+        <?php //echo("<title>".getTarget($_SESSION['cin'])."</title>") ;?>
     </head>
-    <body></body>
+    <body>
+        <header></header>
+
+    </body>
 </html>
