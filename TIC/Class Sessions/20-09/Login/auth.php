@@ -25,6 +25,7 @@ if ($connection) {
         print ("authorized");
         $_SESSION['user'] = $_POST['cin'];
         $_SESSION['pass'] = $_POST['pass'];
+        header("Location: ../profile/profile.php");
     }
     else print("unauthorized");
 }
