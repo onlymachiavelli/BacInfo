@@ -1,1 +1,90 @@
 @import "./../global.css";
+
+header {
+  width: 100%;
+  height: auto;
+}
+.navbar {
+  width: 100%;
+  height: auto;
+  display: flex;
+  background-color: #1c61a0;
+  align-items: center;
+  padding: 8px;
+}
+.logo img {
+  width: 40px;
+  height: 40px;
+}
+
+.nav {
+  margin-left: 20px;
+}
+.nav a {
+  color: #fff;
+  margin: 10px;
+}
+
+.logoutbtn {
+  position: absolute;
+  right: 20px;
+}
+.logoutbtn button {
+  color: #fff;
+  background: #ff4949;
+  border: none;
+  border-radius: 3px;
+  width: 150px;
+  height: 40px;
+  cursor: pointer;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.card_container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+
+  justify-content: center;
+}
+.img img {
+  width: 200px;
+
+  height: 200px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+}
+
+.card {
+  width: 70%;
+  height: auto;
+  background-color: #1c61a0;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.img {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+}
+.date {
+  color: #fff;
+  margin-left: 20px;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.data {
+  width: 500px;
+  height: auto;
+  margin-top: 20px;
+}
+.data th {
+  text-align: left;
+  color: #fff;
+  padding: 10px;
+}

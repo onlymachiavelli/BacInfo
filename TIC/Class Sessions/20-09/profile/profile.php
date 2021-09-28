@@ -1,42 +1,68 @@
-<?php
-session_start();
-if (!isset($_SESSION['user']) && !isset($_SESSION['pass'])) header('Location: ../login/login.php');
-
-
-
-else {
-    $hostname = "localhost";
-    $username = "root";
-    $password = "";
-    $connection = new mysqli($hostname, $username, $password, "eleve");
-
-    if($connection){
-        print("CONNECTED !");
-
-    }
-    else print("ERR CONNECTING TO DB !");
-}
-
-
-function getTarget($cin, $target){
-    global $connection;
-    $action = "SELECT".$target." FROM users"; 
-    $res = mysqli_query($connection, $action);
-
-}
-?>
-
-
+<?php?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link  rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar"> 
+            <div class="logo">
+                <a href="">
+                    <img src="./school.png" />
+                </a>
+            </div>
+            <nav class="nav">
+                <a href="">Acceuil</a>
+                <a href="">Mes Informations</a>
+                <a href="">Ma Classe</a>
+                <a href="">Parametres</a>
+            </nav>
+            <div class="logoutbtn">
+                <form action="">
+                    <button>LogOut</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+    <br/><br/>
+    <main class="card_container">
+        <div class="card">
+            <div class="img">
+                <img src="./IMG_20210919_011817_286.png" alt="profile Picture"  />
+                <p class="date">Cree Le 21/12/1999</p>
+            </div>
+            <div class="infos">
+                <table class="data">
+                    <tr>
+                        <th>Nom :</th>
+                        <th>Barka Alaa</th>
 
-    <head>
-        <link rel="stylesheet" href="" />
-        <?php //echo("<title>".getTarget($_SESSION['cin'])."</title>") ;?>
-    </head>
-    <body>
-        <header></header>
+                    </tr>
+                    <tr>
+                        <th>Date de naissance</th>
+                        <th>04/07/2002</th>
 
-    </body>
-</html>
+                    </tr>
+                    <tr>
+                        <th>Classe</th>
+                        <th>4eme Informatique</th>
+
+                    </tr>
+                    <tr>
+                        <th>CIN Tunis</th>
+                        <th>014896325</th>
+
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+    </main>
+</body>
+</html> 
