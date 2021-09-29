@@ -4,7 +4,13 @@ session_start();
 if (!isset($_SESSION['user']) && !isset($_SESSION['pass'])) header('Location: ../login/login.php');
 
 
-
+$hostname = "localhost";
+$username  ="username";
+$password = "password";
+$connection = new mysqli($hostname, $username, $password, "eleve");
+$isconnected = FALSE;
+if ($connection) $isconnected = TRUE;
+else $isconnected = FALSE; 
 ?>
 
 <!DOCTYPE html>
