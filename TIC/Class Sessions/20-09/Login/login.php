@@ -39,11 +39,11 @@
                         Login
                     </button>
                 </form>
-                <a href="#" class="tocr">
+                <a href="./../signup/signup.php" class="tocr">
                     Create One
                 </a>
                 <br/>
-                <a href="./../signup/signup.html" id="forgot">Oublié votre mot de passe ?</a>
+                <a href="./../signup/signup.php" id="forgot">Oublié votre mot de passe ?</a>
             </div>
         </div>
     </main>
