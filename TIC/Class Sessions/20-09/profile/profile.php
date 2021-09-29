@@ -68,20 +68,12 @@ function getTarget ($target){
                 <table class="data">
                     <tr>
                         <th>Nom :</th>
-                        <th>
-                            <?php
-                                echo getTarget("fullname");
-                            ?>
-                            </th>
+                        <th><?php echo getTarget("fullname");?></th>
 
                     </tr>
                     <tr>
                         <th>Date de naissance</th>
-                        <th>
-                            <?php
-                                echo getTarget("date");
-                            ?>
-                        </th>
+                        <th><?php echo getTarget("date");?></th>
 
                     </tr>
                     <tr>
@@ -89,15 +81,16 @@ function getTarget ($target){
                         <th>
                             <?php
                                 if(getTarget("class") == NULL) echo ("
-                                <form method='POST' action='class.php'>
-                                
-                                    <div class='txtinp'>
-                                    <i class='fa fa-graduation-cap' aria-hidden='true'></i>
-                                    <input type='text' name='cin' placeholder='VOTRE CIN' required />
-                                    </div>
-                                    <button type='submit'>Ajouter</button>
-                            
-                                </form>
+                                <div id='aform'>
+                                    <form method='POST' action='class.php' >
+                                    
+                                        <div class='txtinp'>
+                                        <i class='fa fa-graduation-cap' aria-hidden='true'></i>
+                                        <input type='text' name='cin' placeholder='VOTRE CIN' required />
+                                        </div>
+                                        <button type='submit'>Ajouter</button>
+                                    </form>
+                                </div>
                                 ");
                             ?>
                         </th>
@@ -106,9 +99,7 @@ function getTarget ($target){
                     <tr>
                         <th>CIN Tunis</th>
                         <th>
-                            <?php
-                            echo getTarget("cin");
-                                ?>
+                            <?php echo getTarget("cin");?>
                         </th>
 
                     </tr>
