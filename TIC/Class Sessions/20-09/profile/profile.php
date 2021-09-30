@@ -107,8 +107,10 @@ function getTarget ($target){
                     <tr>
                         <th>Classe</th>
                         <th>
+                            
                             <?php
-                             $classes = "SELECT * FROM classes";
+                            //stupid ! i know !
+                            $classes = "SELECT * FROM classes";
                              $ress = mysqli_query($connection, $classes);
                              $options = array();
                              while($row = $ress -> fetch_assoc()){
