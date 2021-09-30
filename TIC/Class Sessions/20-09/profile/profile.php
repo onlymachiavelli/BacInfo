@@ -91,9 +91,13 @@ function getTarget ($target){
                                     echo ("
                                     <form method='POST' action='class.php' >
                                     
-                                    <select>");
+                                    <select name='userclass'>
+                                        <option value =NULL>Selectionner Votre Classe</option>
+                                    ");
                                     for ($i=0;$i<count($options);$i++){
-                                        echo "<option>".$options[$i]."</option>";
+                                        echo "<option vaue='".
+                                        $options[$i]
+                                        ."'>".$options[$i]."</option>";
                                     }
                                        
                                        echo ("
