@@ -114,3 +114,20 @@ select option {
   cursor: pointer;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+
+#nonefile {
+  width: 0px !important;
+  height: 0px !important;
+  overflow: hidden !important;
+}
+
+.up {
+  margin-left: 20px;
+  color: #fff;
+  width: 120px;
+  height: 40px;
+  background: #ff4949;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}

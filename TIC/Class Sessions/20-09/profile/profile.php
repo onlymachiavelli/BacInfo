@@ -74,6 +74,16 @@ function getTarget ($target){
                     echo "<img src='".$image."' alt='Profile Picture' />"
 
                 ?>
+                
+                <form action="photo.php" method="POST" enctype="multipart/form-data">
+                    <button class="up a" type="button">
+                        Select <i class="fa fa-picture-o" aria-hidden="true"></i>
+                    </button>
+                    <button type="submit" class="up b">
+                        Send <i class="fa fa-upload" aria-hidden="true"></i>
+                    </button>
+                    <input type="file" id="nonefile" class="upload" name="fileToUpload" />
+                </form>
                 <p class="date">
                     
                 <?php
@@ -141,7 +151,12 @@ function getTarget ($target){
                 </table>
 
             </div>
+        
         </div>
+        
+
+
     </main>
+    <script src="app.js"></script>
 </body>
 </html> 
