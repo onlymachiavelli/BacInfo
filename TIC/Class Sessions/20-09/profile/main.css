@@ -79,7 +79,7 @@ header {
 }
 
 .data {
-  width: 600px;
+  width: 800px;
   margin: unset !important;
 }
 .data th {
@@ -90,4 +90,27 @@ header {
 .data,
 .data th {
   border: 0px solid transparent !important;
+}
+
+select {
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.527);
+  color: #fff;
+}
+
+select option {
+  color: #111;
+}
+.sendbtn {
+  color: #fff;
+  background: #ff4949;
+  border: none;
+  border-radius: 3px;
+  width: 130px;
+  height: 40px;
+  cursor: pointer;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }

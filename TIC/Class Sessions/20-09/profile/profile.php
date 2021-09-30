@@ -47,7 +47,7 @@ function getTarget ($target){
             </nav>
             <div class="logoutbtn">
                 <form action="logout.php">
-                    <button>LogOut</button>
+                    <button type="submit">LogOut</button>
                 </form>
             </div>
         </nav>
@@ -102,6 +102,7 @@ function getTarget ($target){
                                        
                                        echo ("
                                     </select>
+                                    <button type='submit' class='sendbtn' >Send</button>
                                         
                                     </form>
                                 ");
