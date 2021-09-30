@@ -39,7 +39,7 @@ if($connection) {
         $mysql = "INSERT INTO users (fullname, cin, date, password, gender, email, phone , adress, hobb, creationdate) values ('".$_POST['lname']."', '".$_POST['cin']."', '".$_POST['date']."','".$_POST['pass']."','".$_POST['gender']."','".$_POST['email']."','".$_POST['phone']."','".$_POST['adress']."','".$gethob."','".date('Y.m.d')."')";
 
         if ($connection -> query($mysql)){
-            print("ADDED TO YOUR DATABASE !");
+            header("Location: ../login/login.php");
         }
         else {
             die(mysqli_error($connection));
