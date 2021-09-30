@@ -56,11 +56,28 @@ function getTarget ($target){
     <main class="card_container">
         <div class="card">
             <div class="img">
-                <img src="./IMG_20210919_011817_286.png" alt="profile Picture"  />
+                <?php
+                    $image = "";
+                    if(getTarget("image") == NULL) {
+                        switch(getTarget("gender")){
+                            case "male":
+                                $image = "./assets/img/male.png";
+                                break ;
+                            case "female" : 
+                                $image = "./assets/img/female.png";
+                        }
+                    }
+                    else {
+                        $image = getTarget("image");
+                    }
+
+                    echo "<img src='".$image."' alt='Profile Picture' />"
+
+                ?>
                 <p class="date">
                     
                 <?php
-                    echo "Cree Le ".getTarget("creationdate");
+                    echo "Créé Le ".getTarget("creationdate");
                 ?>
                 </p>
             </div>
