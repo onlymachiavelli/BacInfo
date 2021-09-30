@@ -91,9 +91,3 @@ header {
 .data th {
   border: 0px solid transparent !important;
 }
-
-#aform {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}

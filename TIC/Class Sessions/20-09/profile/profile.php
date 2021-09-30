@@ -17,6 +17,7 @@ function getTarget ($target){
         return ($row[$target]);
     }
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +26,7 @@ function getTarget ($target){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title><?php echo "Welcome ". getTarget("fullname")  ?></title>
     <link  rel="stylesheet" href="main.css" />
     <link rel="stylesheet" href="./../global.css" />
     <link rel="stylesheet" href="./../assets/font-awesome/css/font-awesome.css" />
@@ -80,18 +81,30 @@ function getTarget ($target){
                         <th>Classe</th>
                         <th>
                             <?php
-                                if(getTarget("class") == NULL) echo ("
-                                <div id='aform'>
+                             $classes = "SELECT * FROM classes";
+                             $ress = mysqli_query($connection, $classes);
+                             $options = array();
+                             while($row = $ress -> fetch_assoc()){
+                                 array_push($options, $row['class']);
+                             }
+                                if(getTarget("class") == NULL) {
+                                    echo ("
                                     <form method='POST' action='class.php' >
                                     
-                                        <div class='txtinp'>
-                                        <i class='fa fa-graduation-cap' aria-hidden='true'></i>
-                                        <input type='text' name='cin' placeholder='VOTRE CIN' required />
-                                        </div>
-                                        <button type='submit'>Ajouter</button>
+                                    <select>");
+                                    for ($i=0;$i<count($options);$i++){
+                                        echo "<option>".$options[$i]."</option>";
+                                    }
+                                       
+                                       echo ("
+                                    </select>
+                                        
                                     </form>
-                                </div>
                                 ");
+                                }
+                                else echo getTarget("class");
+
+                                
                             ?>
                         </th>
 
