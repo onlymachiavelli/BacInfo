@@ -9,11 +9,11 @@ else {
     $connection = new mysqli($hostname, $username, $password, "eleve");
 
     if($connection) {
-        $action = "UPDATE users SET class = ".$_POST['userclass']."WHERE cin = ".$_SESSION['user'];
+        $action = "UPDATE users SET class = '".$_POST['userclass']."' WHERE cin = '".$_SESSION['user']."'";
         if($connection -> query($action)) {
-            print("DONE !");
+            header("Location: profile.php");
         }
-        else die ("NOPE");
+        else die (mysqli_error($connection));
     }
 
     else {
