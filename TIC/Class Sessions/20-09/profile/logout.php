@@ -9,4 +9,4 @@ if (!isset($_SESSION['user']) && !isset($_SESSION['pass'])) header('Location: ..
 session_unset();
 session_destroy();
 header('Location: ../login/login.php');
-?>
+?> 

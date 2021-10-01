@@ -1,0 +1,11 @@
+Systeme technologie et internet 
+
+se fammiliariser avec 
+le language javascrit defiition, syntaxe et emplacement 
+
+les methodes: document.getElementBYId, alert()
+prompt ()  confirm 
+document.write 
+
+
+la propriete innerHTML

@@ -18,6 +18,6 @@ else {
 
     else {
         print("DB ERR");
-    }
+    } 
 }
 ?>

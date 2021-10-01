@@ -1,3 +1,36 @@
+<?php
+
+    $hostname = "localhost";
+    $username = "root";
+    $password = "";
+    $connection = new mysqli($hostname, $username, $password, "eleve");
+
+    if($connection){
+        print("Connected");
+
+    }
+    else {
+        die ("error connecting to daya nase ");
+    }
+
+    $premiere  = 0;
+    $deux = 0;
+    $troi = 0;
+    $bac = 0;
+
+
+    $action = "SELECT * FROM users";
+    $res = $connection -> query($action);
+    while ($row = $res -> fetch_assoc()){
+        switch ($row['class']){
+            case "1ERE":
+                $premiere++;
+                break;
+            case ""
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,5 +62,5 @@
     </table>
     </div>
     <script src="./app.js"></script>
-</body>
+</body> 
 </html>

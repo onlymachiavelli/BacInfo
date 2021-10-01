@@ -41,7 +41,7 @@ if($connection) {
         if ($connection -> query($mysql)){
             header("Location: ../login/login.php");
         }
-        else {
+        else { 
             die(mysqli_error($connection));
         }
     }

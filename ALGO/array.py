@@ -21,7 +21,29 @@ def BubbleSort(array):
                 check = False
 
 
+def SelectionSort(t: list, n: int):
+    for i in range(n-1):
+        getMax = i
+        for j in range(i, n-1):
+            if(t[i] > t[i+1]):
+                getMax = j
+        t[i], t[getMax] = t[getMax], t[i]
+
+
+def ShellSort():
+
+    return 0
+
+
+myarr = [4, 1, 7, 5, 0, 8]
+
+SelectionSort(myarr, len(myarr))
+
+print("This is a selection SORT !")
+print(myarr)
+
 arr1 = np.arange(15, dtype=int)
+
 
 for i in range(15):
     arr1[i] = r.randint(1, 100)

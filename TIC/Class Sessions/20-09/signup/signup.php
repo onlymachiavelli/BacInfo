@@ -69,7 +69,7 @@
                 <div class="txtinp">
                     <i class="fa fa-phone" aria-hidden="true"></i>
                     <input type="tel" name="phone" required  placeholder="Phone"/>
-                </div>
+                </div> 
                 <textarea name="adress" placeholder="Votre Adresse" class="adress" ></textarea>
                 <p id="tit">Center D'interets</p>
                 <div class="picker_container p">
