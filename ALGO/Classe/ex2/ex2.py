@@ -13,19 +13,11 @@ def readchar():
 
 
 def readKey(char: str):
-    # just a controller
-    while (1):
-        i = 0
-        mykey = input("Gimme the key step sis !")
-        for j in range(len(mykey)):
-            if mykey[j].isalnum():
-                i += 1
-        if i == len(mykey):
-            break
+    mykey = input("Gimme the key step sis ! ")
     newkey = ""
     i = 0
-    for i in range(char):
-        newkey += newkey[i]
+    for j in range(len(char)):
+        newkey += mykey[i]
         i += 1
         if (i == len(mykey)):
             i = 0
@@ -35,5 +27,4 @@ def readKey(char: str):
 
 a = readchar()
 
-b = readKey(a)
-print(b)
+print(readKey(a))
