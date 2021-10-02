@@ -25,6 +25,18 @@ def readKey(char: str):
     return newkey
 
 
+def conv(key: str, char: str):
+    crpt = ""
+    for i in range(len(char)):
+        od = ord(char[i]) + int(key[i])
+        if(od > 90):
+            od -= 26
+        crpt += chr(od)
+    return crpt
+
+
 a = readchar()
 
-print(readKey(a))
+mykey = readKey(a)
+res = conv(mykey, a)
+print(res)
