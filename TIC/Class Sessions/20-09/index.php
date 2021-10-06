@@ -10,8 +10,6 @@
 <body>
     <iframe src="./menu.html" width="100%" height="100px"></iframe>
     <iframe  width="100%" height="600px" class="Modified_Page" src="./welc.php" ></iframe>
-
-    
     <script src="./app.js"></script>
 </body>
 
