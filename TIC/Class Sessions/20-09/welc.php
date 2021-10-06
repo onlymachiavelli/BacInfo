@@ -13,26 +13,28 @@
         die ("error connecting to daya nase ");
     }
 
-    $premiere  = 0;
-    $deux = 0;
-    $troi = 0;
-    $bac = 0;
-    function In($arr, $obj){
-        for ($i=0;$i<size($arr);$i++){
-            if ($obj == $arr[i]) return TRUE;
-        }
-        return FALSE;
+
+    function startsWith($string, $ele){
+        for ($i =0;$i<count($ele);$i++) if( $string[$i] != $ele[$i]) return FALSE;
+        return TRUE;
     }
+    $classes = [
+        1 => 0,
+        2=>0,
+        3=>0,
+        4=>0
+    ];
     $action = "SELECT * FROM users";
     $res = $connection -> query($action);
+
     while ($row = $res -> fetch_assoc()){
-        switch ($row['class']){
-            case "1ERE": 
-                $premiere++;
-                break;
-            case ""
-        }
+        if(startsWith(strtolower($row['class']), "1ere")) $classes[1]++;
+        else if(startsWith(strtolower($row['class']), "2eme")) $classes[2]++;
+        else if(startsWith(strtolower($row['class']), "3eme")) $classes[3]++;
+        else $classes[4]++;
+
     }
+    print($classs);
 ?>
 
 <!DOCTYPE html>
