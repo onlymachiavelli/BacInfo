@@ -17,13 +17,17 @@
     $deux = 0;
     $troi = 0;
     $bac = 0;
-
-
+    function In($arr, $obj){
+        for ($i=0;$i<size($arr);$i++){
+            if ($obj == $arr[i]) return TRUE;
+        }
+        return FALSE;
+    }
     $action = "SELECT * FROM users";
     $res = $connection -> query($action);
     while ($row = $res -> fetch_assoc()){
         switch ($row['class']){
-            case "1ERE":
+            case "1ERE": 
                 $premiere++;
                 break;
             case ""

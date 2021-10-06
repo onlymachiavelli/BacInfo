@@ -31,6 +31,4 @@ def Stick(matr: list, a: dict):
 a = readM()
 mat = []
 fillMatr(a, mat)
-
-
 print(Stick(mat, a))
