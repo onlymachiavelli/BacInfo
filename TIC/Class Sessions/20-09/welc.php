@@ -34,7 +34,7 @@
         else $classes[4]++;
 
     }
-    print($classs);
+    print($classes);
 ?>
 
 <!DOCTYPE html>
