@@ -5,6 +5,17 @@ def Size():
             return n
 
 
+def isPol(string: str):
+    rev = ""
+    counter = len(string)-1
+    while(counter != 0):
+        rev = string[counter]
+        counter -= 1
+    if(rev == string):
+        return True
+    return False
+
+
 def fillMath(mat: list, size: int):
     line = []
     for i in range(size):
