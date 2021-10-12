@@ -37,4 +37,7 @@ def FillFilet(t: list, n):
 
 
 n = Size()
+table = []
 fillFile(n)
+fillArr(table, n)
+FillFilet(table, n)
