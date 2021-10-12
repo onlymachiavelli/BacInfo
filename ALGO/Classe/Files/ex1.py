@@ -29,8 +29,11 @@ def fillArr(t: list, n: int):
     myFile.close()
 
 
-def FillFilet(t, n):
+def FillFilet(t: list, n):
     myFile = open("result.txt", "w")
+    for i in range(n):
+        myFile.write(f"Ligne {t[i]['num']} {t[i]['sym']} {t[i]['voy']}")
+    myFile.close()
 
 
 n = Size()
