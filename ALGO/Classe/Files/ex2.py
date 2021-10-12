@@ -4,8 +4,14 @@ def Size():
         if n in range(2, 16):
             return n
 
-def fillMath(mat:list, size:int):
+
+def fillMath(mat: list, size: int):
     line = []
-    for i in range(n):
-        for j in range(n):
-            entry = input("Enteer thee caracter ")
+    for i in range(size):
+        for j in range(size):
+            while(1):
+                entry = input("Enteer thee caracter ")
+                if(len(entry) == 1 and entry.isupper()):
+                    break
+            line.append(entry)
+        mat.append(line)
