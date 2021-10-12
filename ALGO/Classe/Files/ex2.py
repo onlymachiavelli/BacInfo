@@ -26,3 +26,20 @@ def fillMath(mat: list, size: int):
                     break
             line.append(entry)
         mat.append(line)
+
+
+def stickString(t: list):
+    res = ""
+    for i in range(len(t)):
+        res += t[i]
+    return res
+
+
+def fillFile(mat: list, size: int):
+    myFile = open("sym.txt", "w")
+    lines = [[], 0]
+    colms = [[], 0]
+    myString = ""
+    for i in range(size):
+        for j in range(size):
+            myString =
