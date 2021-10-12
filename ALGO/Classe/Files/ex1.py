@@ -8,8 +8,29 @@ def Size():
 def fillFile(n: int):
     myFile = open("data.txt", "w")
     for i in range(n):
-        myFile.write(input("Enter DATA")+"\n")
+        ans = input("Enter Data ")
+        myFile.write(f"{ans}\n")
     myFile.close()
+
+
+def fillArr(t: list, n: int):
+    myFile = open("data.txt", "r")
+    lines = myFile.readlines()
+    counter = 0
+    for line in lines:
+        sym = line[0] == line[len(line)-1]
+        voy = line[0].upper() in "AEIOUY"
+        counter += 1
+        t.append({
+            "num": counter,
+            "sym": sym,
+            "voy": voy
+        })
+    myFile.close()
+
+
+def FillFilet(t, n):
+    myFile = open("result.txt", "w")
 
 
 n = Size()
