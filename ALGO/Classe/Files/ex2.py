@@ -61,3 +61,5 @@ def fillFile(mat: list, size: int):
             lines.append(myString["hor"])
         if isPol(myString["vert"]):
             colms.append(myString["vert"])
+    line = "".join(str(e) for e in lines)
+    col = "".join(str(e) for e in colms)
