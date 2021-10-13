@@ -48,9 +48,16 @@ def fillMath(mat: list, size: int):
 
 def fillFile(mat: list, size: int):
     myFile = open("sym.txt", "w")
-    lines = [[], 0]
-    colms = [[], 0]
-    myString = ""
+    lines = []
+    colms = []
+
     for i in range(size):
+        myString = {"hor": "", "vert": ""}
+
         for j in range(size):
-            myString =
+            myString["hor"] += mat[i][j]
+            myString["vert"] += mat[j][i]
+        if isPol(myString["hor"]):
+            lines.append(myString["hor"])
+        if isPol(myString["vert"]):
+            colms.append(myString["vert"])
