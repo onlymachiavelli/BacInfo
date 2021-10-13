@@ -1,3 +1,21 @@
+
+"""
+AGO !
+fonction Size():enteir
+debut
+    repeter
+        ecrire('Enter the size')
+        lire(n)
+    jusqua 2<=n<=15
+    retourner n
+fin
+TDOL{
+    n:entier
+}
+
+"""
+
+
 def Size():
     while(1):
         n = int(input("Enter the size "))
@@ -26,13 +44,6 @@ def fillMath(mat: list, size: int):
                     break
             line.append(entry)
         mat.append(line)
-
-
-def stickString(t: list):
-    res = ""
-    for i in range(len(t)):
-        res += t[i]
-    return res
 
 
 def fillFile(mat: list, size: int):
