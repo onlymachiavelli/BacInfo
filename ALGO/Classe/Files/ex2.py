@@ -73,6 +73,10 @@ def fillFile(mat: list, size: int):
             col += "*"
         col += i
     myFile.write(line + "\n"+col + "\n")
+
+    myFile.close()
+
+
 n = Size()
 matrice = []
 fillMath(matrice, n)
