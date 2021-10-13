@@ -35,8 +35,9 @@ def isPol(string: str):
 
 
 def fillMath(mat: list, size: int):
-    line = []
+
     for i in range(size):
+        line = []
         for j in range(size):
             while(1):
                 entry = input("Enteer thee caracter ")
@@ -58,7 +59,9 @@ def fillFile(mat: list, size: int):
             myString["hor"] += mat[i][j]
             myString["vert"] += mat[j][i]
         if isPol(myString["hor"]):
+            print(myString["hor"])
             lines.append(myString["hor"])
+            print(myString["vert"])
         if isPol(myString["vert"]):
             colms.append(myString["vert"])
 
@@ -72,6 +75,11 @@ def fillFile(mat: list, size: int):
         if i != 0:
             col += "*"
         col += i
+    print(line)
+    print(col)
+    print(lines)
+    print(colms)
+    print(myString)
     myFile.write(line + "\n"+col + "\n")
 
     myFile.close()
@@ -81,3 +89,5 @@ n = Size()
 matrice = []
 fillMath(matrice, n)
 fillFile(matrice, n)
+
+print(matrice)
