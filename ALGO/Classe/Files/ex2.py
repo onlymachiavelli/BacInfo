@@ -53,17 +53,15 @@ def fillFile(mat: list, size: int):
     colms = []
 
     for i in range(size):
-        myString = {"hor": "", "vert": ""}
-
+        hor = ""
+        ver = ""
         for j in range(size):
-            myString["hor"] += mat[i][j]
-            myString["vert"] += mat[j][i]
-        if isPol(myString["hor"]):
-            print(myString["hor"])
-            lines.append(myString["hor"])
-            print(myString["vert"])
-        if isPol(myString["vert"]):
-            colms.append(myString["vert"])
+            hor += mat[i][j]
+            ver += mat[j][i]
+        if isPol(hor):
+            lines.append(hor)
+        if isPol(ver):
+            colms.append(ver)
 
     line = ""
     col = ""
@@ -75,16 +73,11 @@ def fillFile(mat: list, size: int):
         if i != 0:
             col += "*"
         col += i
-    print(line)
-    print(col)
-    print(lines)
-    print(colms)
-    print(myString)
     myFile.write(line + "\n"+col + "\n")
-
     myFile.close()
 
-
+with open("sym.txt", "w") as myFile :
+    myFile.write("hello world")
 n = Size()
 matrice = []
 fillMath(matrice, n)
