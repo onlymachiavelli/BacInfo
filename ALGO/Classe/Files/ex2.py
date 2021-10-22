@@ -84,7 +84,19 @@ debut
             chl <- chl + ch2
             nbl <- nbl + 1
         fin si
-
-            
+    fin pour 
+    effacer(chl, chl[long(chl)-1])
+    effacer(chc, chc[long(chc)-1])
+    ecrireln(f, chc)
+    ecrireln(f, nbc)
+    ecrireln(f, chl)
+    ecrireln(f, nbl)
 fin
+
+
+TDOL:
+    i,j,nbc,nbl:entier
+    ch1,ch2,chl,chc:chaine
+
+
 """
