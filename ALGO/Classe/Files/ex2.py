@@ -49,6 +49,18 @@ TDOL:
     j : entier
 
 
+fonction isPal(string:chaine):booleen
+debut
+    rev<-""
+    i <- long(string)
+    tant que i != 0 faire
+        i <- i-1
+        rev <- rev + string[i]
+    fin tant que
+    retourner rev = string
+
+fin
+
 
 procedure fillFile(n:entier, m:matrice, @f)
 debut 
@@ -60,7 +72,19 @@ debut
     pour i de 0 a n-1 faire 
         ch1 = ""
         ch2  = ""
-        pour j de 0 a n-1 faire 
+        pour j de 0 a n-1 faire
+            ch1 <- ch1 + m[i,j]
+            ch2 <- ch2 + m[j,i]
+        fin pour
+        si isPal(ch1) alors 
+            chc <- chc + ch1
+            nbc <- nbc + 1
+        fin si
+        si isPal(ch2) alors 
+            chl <- chl + ch2
+            nbl <- nbl + 1
+        fin si
+
             
 fin
 """
