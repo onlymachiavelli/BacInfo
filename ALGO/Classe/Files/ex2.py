@@ -100,3 +100,11 @@ TDOL:
 
 
 """
+
+
+def size():
+    while(1):
+        print("enter n")
+        n = int(input())
+        if n in range(2, 16):
+            return n
