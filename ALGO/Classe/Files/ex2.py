@@ -1,93 +1,31 @@
-
 """
-AGO !
-fonction Size():enteir
+ALGO : pol
 debut
-    repeter
-        ecrire('Enter the size')
-        lire(n)
-    jusqua 2<=n<=15
-    retourner n
+    n <- size()
+    fillMat(n,@mat)
+    fillFile(n,mat,@f)
 fin
-TDOL{
-    n:entier
-}
 
+
+TDO : 
+    n : entier
+    mat : matrice
+    f:texte
+    size : fonction
+    fillMat : procedure
+    fillFile: procedure
+TDNT:
+    matrice : tableau 15*15 caractere
+----------------------
+
+fonction size():entier 
+debut 
+    repeter 
+        ecrire("Enter N")
+        lire (n)
+    jusqua 2 <= n <= 15
+    retourner n
+fin 
+
+tdol
 """
-
-
-def Size():
-    while(1):
-        n = int(input("Enter the size "))
-        if n in range(2, 16):
-            return n
-
-
-def isPol(string: str):
-    rev = ""
-    counter = len(string)-1
-    while(counter != 0):
-        rev = string[counter]
-        counter -= 1
-    if(rev == string):
-        return True
-    return False
-
-
-def fillMath(mat: list, size: int):
-
-    for i in range(size):
-        line = []
-        for j in range(size):
-            while(1):
-                entry = input("Enteer thee caracter ")
-                if(len(entry) == 1 and entry.isupper()):
-                    break
-            line.append(entry)
-        mat.append(line)
-
-
-def fillFile(mat: list, size: int):
-    myFile = open("sym.txt", "w")
-    lines = []
-    colms = []
-
-    for i in range(size):
-        myString = {"hor": "", "vert": ""}
-
-        for j in range(size):
-            myString["hor"] += mat[i][j]
-            myString["vert"] += mat[j][i]
-        if isPol(myString["hor"]):
-            print(myString["hor"])
-            lines.append(myString["hor"])
-            print(myString["vert"])
-        if isPol(myString["vert"]):
-            colms.append(myString["vert"])
-
-    line = ""
-    col = ""
-    for i in lines:
-        if i != 0:
-            line += "*"
-        line += i
-    for i in colms:
-        if i != 0:
-            col += "*"
-        col += i
-    print(line)
-    print(col)
-    print(lines)
-    print(colms)
-    print(myString)
-    myFile.write(line + "\n"+col + "\n")
-
-    myFile.close()
-
-
-n = Size()
-matrice = []
-fillMath(matrice, n)
-fillFile(matrice, n)
-
-print(matrice)
