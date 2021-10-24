@@ -112,18 +112,21 @@ def size():
 
 def fillMat(n: int, mat: list):
     for i in range(n):
+        e = []
         for j in range(n):
             check = False
             while (not check):
                 print(f"enter caracter of {i, j}")
-                mat[i][j] = input()
-                check = "A" <= mat[i][j] <= "Z" and len(mat[i][j]) == 1
+                ans = input()
+                check = "A" <= ans <= "Z" and len(ans) == 1
+            e.append(ans)
+        mat.append(e)
 
 
 def isPal(string):
     i = len(string)
     ch2 = ""
-    while (i >= 0):
+    while (i != 0):
         i -= 1
         ch2 += string[i]
     return ch2 == string
@@ -141,18 +144,22 @@ def fillFile(n: int, m: list):
         for j in range(n):
             ch1 = m[i][j]
             ch2 = m[j][i]
+        print(isPal(ch1))
         if (isPal(ch1)):
             chc += ch1
             nbc += 1
+            print(chc)
+        print(isPal(ch2))
         if isPal(ch2):
             nbl += 1
             chl += ch2
-    chl = chl[:len(chl)-2]
-    chc = chc[:len(chc)-2]
-    myFile.write(chl+"\n" + str(nbl) + "\n" + chc + "\c" + nbc)
+            print(chl)
+    myFile.write(f"{chl} \n  {str(nbl)} \n {chc} \n {str(nbc)}")
+    print(nbc, nbl, chl, chc)
 
 
 n = size()
-mat = [[""*n]*n]
+mat = []
+print(mat)
 fillMat(n, mat)
 fillFile(n, mat)
