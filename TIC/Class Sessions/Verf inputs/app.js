@@ -1,5 +1,7 @@
 //تعرفش حرام عيش ولدي ؟
 
+//سنحاول ان نتكلم العربية
+
 const Class = (cl, ind) => document.getElementsByClassName(cl)[ind]
 
 const Id = (id) => document.getElementById(id)
