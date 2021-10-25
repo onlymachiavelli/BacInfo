@@ -43,7 +43,7 @@ const Verf = () => {
     checkm = false
   } else res += "hello it is checked \n"
   alert(res)
- if 
+
   if (checkm) {
     mr = ""
     if (Name("sex")[0].checked) mr = "Mr"
