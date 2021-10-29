@@ -6,12 +6,10 @@ def remplirfc(n):
     n = 0
     quit = False
         while(not quit):
-            
             name = input("enter name ")
             qte = int(input("Enter qte "))
             price = float(input("Enter price "))
             state = bool(input("Enter 1 : True or 0 : False"))
-            
             dump(
                 {
                     "name":name,
@@ -24,7 +22,12 @@ def remplirfc(n):
             n += 1
             print("Would you like to keep going ? Y if you want to keep or something else if you want to stop ")
             ans = input().upper()
-            if (answer !=  "Y") : quit = True
+            quit = answer ==  "Y"
+        myFile.close()
+def Gen(n:int):
+    data = open("commande.dat", "rb")
+    bill = open("bill.txt", "w")
+    
         
-            
+    
             
