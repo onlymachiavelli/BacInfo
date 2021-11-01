@@ -31,10 +31,27 @@ const Interest = () => {
 
   return "You're intrested in Nothing"
 }
+
+const Phone = (number) => {
+  for (i = 0; i < number.length; i++) {
+    if (isNaN(number[i])) return false
+  }
+  if (Number(number[0]) <= 1) return false
+  if (number.length !== 8) return false
+
+  return true
+}
+
+const Email = (myEmail) => {
+  if (myEmail.indexOf("@") === -1) return false
+  if (!myEmail.endsWith(".com") || !myEmail.endsWith(".fr")) return false
+
+  return true
+}
 const Verf = () => {
-  res = ``
-  Message = ""
-  checkm = true
+  let res = ``
+  let Message = ""
+  let checkm = true
   if (Id("name").value.length > 0 && isAlpha(Id("name").value))
     res += "Good Name \n"
   else {
@@ -64,7 +81,10 @@ const Verf = () => {
     checkm = false
   } else res += "hello it is checked \n"
 
-  res += Interest()
+  res += Interest() + "\n"
+  if (Phone(Id("phonenumber").value)) res += "Good phone Number \n"
+  else res += "Bad phone number \n"
+
   alert(res)
 
   if (checkm) {
