@@ -14,6 +14,23 @@ function isAlpha(str) {
   }
   return true
 }
+
+const Interest = () => {
+  interest = ["Music", "Internet", "Sport"]
+  res = `You are intrested in : `
+  check = false
+
+  for (i = 0; i < 3; i++) {
+    if (Id(`int${i + 1}`).checked) {
+      res += interest[i] + " ,"
+      check = true
+    }
+  }
+
+  if (check) return res
+
+  return "You're intrested in Nothing"
+}
 const Verf = () => {
   res = ``
   Message = ""
@@ -46,6 +63,8 @@ const Verf = () => {
     res += "Choose one ! \n"
     checkm = false
   } else res += "hello it is checked \n"
+
+  res += Interest()
   alert(res)
 
   if (checkm) {
@@ -55,6 +74,7 @@ const Verf = () => {
     Message = `Hello ${mr} ${Id("name").value} ${
       Id("lname").value
     } the owner of ${Id("cin").value}`
-    Id("msg").innerHTML = Message
+
+    Message += Id("msg").innerHTML = Message
   }
 }
