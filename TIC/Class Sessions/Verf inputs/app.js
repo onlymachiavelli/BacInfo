@@ -1,7 +1,3 @@
-//تعرفش حرام عيش ولدي ؟
-
-//سنحاول ان نتكلم العربية
-
 const Class = (cl, ind) => document.getElementsByClassName(cl)[ind]
 
 const Id = (id) => document.getElementById(id)
@@ -33,15 +29,19 @@ const Interest = () => {
 }
 
 const Phone = (number) => {
-  for (i = 0; i < number.length; i++) {
-    if (isNaN(number[i])) return false
-  }
+  if (isNaN(number)) return false
   if (Number(number[0]) <= 1) return false
   if (number.length !== 8) return false
 
   return true
 }
-
+const EndsWith = (myString, supp) => {
+  let len = supp.length
+  while (len--) {
+    if (myString[len] !== supp[len]) return false
+  }
+  return true
+}
 const Email = (myEmail) => {
   if (myEmail.indexOf("@") === -1) return false
   if (!myEmail.endsWith(".com") || !myEmail.endsWith(".fr")) return false
@@ -94,7 +94,6 @@ const Verf = () => {
     Message = `Hello ${mr} ${Id("name").value} ${
       Id("lname").value
     } the owner of ${Id("cin").value}`
-
     Message += Id("msg").innerHTML = Message
   }
 }
