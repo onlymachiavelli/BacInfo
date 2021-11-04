@@ -35,19 +35,22 @@ const Phone = (number) => {
 
   return true
 }
-const EndsWith = (myString, supp) => {
-  let len = supp.length
-  while (len--) {
-    if (myString[len] !== supp[len]) return false
-  }
-  return true
+const Range = (num, min, max) => {
+  if (num >= min && num <= max) return true
+  return false
 }
 const Email = (myEmail) => {
-  let ch1 = "",
-    ch2 = "",
-    ch3 = ""
   const [ch1, ch4] = myEmail.split("@")
   const [ch2, ch3] = ch4.split(".")
+
+  if (
+    !Range(ch1.length, 3, 20) ||
+    !Range(ch2.length, 3, 7) ||
+    !Range(ch3.length, 2, 3)
+  )
+    return false
+
+  return true
 }
 const Verf = () => {
   let res = ``
@@ -85,7 +88,11 @@ const Verf = () => {
   res += Interest() + "\n"
   if (Phone(Id("phonenumber").value)) res += "Good phone Number \n"
   else res += "Bad phone number \n"
+  if (Email(Id("email").value)) res += "Good email adress \n"
+  else res += "Bad email adresss \n"
 
+  if (Id("adress").value.length < 5) res += "Bad adress"
+  else res += "Good Adress"
   alert(res)
 
   if (checkm) {
