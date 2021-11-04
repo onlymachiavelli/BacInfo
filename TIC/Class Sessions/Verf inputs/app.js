@@ -43,9 +43,26 @@ const EndsWith = (myString, supp) => {
   return true
 }
 const Email = (myEmail) => {
-  if (myEmail.indexOf("@") === -1) return false
-  if (!myEmail.endsWith(".com") || !myEmail.endsWith(".fr")) return false
+  if (
+    !EndsWith(myEmail, ".com") ||
+    !EndsWith(myEmail, ".fr") ||
+    myEmail.indexOf("@") === -1
+  )
+    return false
 
+  let ch1 = ""
+  let ch2 = ""
+  let ch3 = ""
+  let prev
+  check = 0
+  for (let i = 0; i < myEmail.indexOf("@"); i++) ch1 += myEmail[i]
+  prev = i + 1
+  for (i = prev; i < myEmail.indexOf("."); i++) ch2 += myEmail[i]
+  prev = i + 1
+  for (i = prev; i < myEmail.length; i++) ch3 += myEmail[i]
+  if (ch1.length < 3 || ch1.length > 20 || !isAlpha(ch1)) return false
+  if (ch2.length < 3 || ch2.length > 7 || isNaN(ch2)) return false
+  if (ch3.length < 2 || ch3 > 3) return false
   return true
 }
 const Verf = () => {
