@@ -46,19 +46,8 @@ const Email = (myEmail) => {
   let ch1 = "",
     ch2 = "",
     ch3 = ""
-  for (let i = 0; i < myEmail.length; i++) {
-    if (myEmail[i] === "@") break
-    else ch1 += myEmail[i]
-  }
-  i += 1
-  for (let j = i; j < myEmail.length; j++) {
-    if (myEmail[j] === ".") break
-    else ch2 += myEmail[j]
-  }
-  j += 1
-  for (let k = j; k < myEmail.length; k++) {
-    ch3 += myEmail[k]
-  }
+  const [ch1, ch4] = myEmail.split("@")
+  const [ch2, ch3] = ch4.split(".")
 }
 const Verf = () => {
   let res = ``
