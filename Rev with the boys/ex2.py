@@ -183,7 +183,7 @@ def verfEq(myString):
     if (myString.find("+") == -1):
         return False
     for i in range(len(myString)):
-        if (not (0 <= int(myString[i]) <= 9) and myString[i] != "+"):
+        if myString[i] != "+" and not 0 <= int(myString[i]) <= 9:
             return False
     if myString[0] == "+" or myString[len(myString) - 1] == "+" or myString.find("++") != -1:
         return False
@@ -212,13 +212,13 @@ def FillEle():
         while not q:
             print("Enter your name")
             nom = input()
-            q = 4 <= len(nom) <= 15
+            q = 3 <= len(nom) <= 15
 
         q = False
         while not q:
             print("op num")
             num = int(input())
-        q = 1 <= num <= 10
+            q = 1 <= num <= 10
         opr = lines[num+1]
         rep = int(input())
 
