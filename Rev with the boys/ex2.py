@@ -202,20 +202,13 @@ def FillHis():
 
 
 def FillEle():
-    return 0
+    fe = open("elev.dat", "wb")
+    quit = False
+    while not quit:
+        fh = open("hizeb.txt", "r")
+        q = False
+        while not q:
+            print("Enter your name")
+            nom = input()
 
-
-test = open("tst.dat", "wb")
-pickle.dump({
-    "name": "majdi",
-    "lname ": "lamjed"
-})
-
-
-pickle.dump({
-    "name": "sidek alaa",
-    "lname": "dima niik f oussema"
-})
-
-
-test.close()
+            q = 4 <= len(nom) <= 15
