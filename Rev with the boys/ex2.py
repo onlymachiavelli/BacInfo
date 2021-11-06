@@ -237,4 +237,28 @@ def FillEle():
     fe.close()
 
 
+def Check(eq: str, res: int):
+    return 0
+
+
+def GenStat(n):
+    fe = open("elev.dat", "rb")
+    fc = open("stat.txt", "w")
+    total = 0
+    datas = []
+    quit = False
+    while not quit:
+        try:
+            o = pickle.loads(fe)
+        except:
+            quit = True
+        datas.append(o)
+
+    for i in range(n):
+        if (Check(datas[i]["opr"], datas[i]["rep"])):
+            fc.write(datas[i]["nom"] + "\n")
+            total += 1
+    fc.write(str(total))
+
+
 n = 0
