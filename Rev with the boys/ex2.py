@@ -53,17 +53,21 @@ TDOL {
 --module verf 
 fonction verfEq(mySTring : chaine) : booleen 
 debut 
-    pour i de 0 a long(myString)-1 faire
         si pos("+" , myString) = -1 alors
             retourner faux
         fin si
+    pour i de 0 a long(myString)-1 faire
+        
         si myString[i] ∉ ["0", "9"] et myString[i] != "+" alors 
             retourner faux 
         fin si 
-        si myString[0] = "+" ou myString[long(myString) - 1] = "+" ou pos("++", myString) != -1 alors 
+    fin pour 
+        
+    si myString[0] = "+" ou myString[long(myString) - 1] = "+" ou pos("++", myString) != -1 alors 
             retourner faux
         fin si
-        retourner vrai
+
+    retourner vrai
 fin 
 
 TDOL{
@@ -172,4 +176,46 @@ TDOL {
 """
 
 
-def FillHis()
+import pickle
+
+
+def verfEq(myString):
+    if (myString.find("+") == -1):
+        return False
+    for i in range(len(myString)):
+        if (not (0 <= int(myString[i]) <= 9) and myString[i] != "+"):
+            return False
+    if myString[0] == "+" or myString[len(myString) - 1] == "+" or myString.find("++") != -1:
+        return False
+    return True
+
+
+def FillHis():
+    fh = open("hizeb.txt", "w")
+    for i in range(10):
+        check = False
+        while not check:
+            print("Enter equation")
+            eq = input()
+            check = verfEq(eq)
+        fh.write(eq+"\n")
+
+
+def FillEle():
+    return 0
+
+
+test = open("tst.dat", "wb")
+pickle.dump({
+    "name": "majdi",
+    "lname ": "lamjed"
+})
+
+
+pickle.dump({
+    "name": "sidek alaa",
+    "lname": "dima niik f oussema"
+})
+
+
+test.close()
