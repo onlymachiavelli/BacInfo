@@ -1,5 +1,0 @@
-souris 168 
-clavier 60 
-printer 120 
-scanner 135 
-483
