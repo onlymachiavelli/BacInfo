@@ -202,13 +202,39 @@ def FillHis():
 
 
 def FillEle():
+    global n
     fe = open("elev.dat", "wb")
+    fh = open("hizeb.txt", "r")
+    lines = fh.readlines()
     quit = False
     while not quit:
-        fh = open("hizeb.txt", "r")
         q = False
         while not q:
             print("Enter your name")
             nom = input()
-
             q = 4 <= len(nom) <= 15
+
+        q = False
+        while not q:
+            print("op num")
+            num = int(input())
+        q = 1 <= num <= 10
+        opr = lines[num+1]
+        rep = int(input())
+
+        pickle.dump({
+            "nom": nom,
+            "num": num,
+            "opr": opr,
+            "rep": rep
+        }, fe)
+
+        print("Do you want to keep going  ? y if yes o anything else if no")
+        ans = input()
+        if ans.upper() == "Y":
+            quit = True
+    fh.close()
+    fe.close()
+
+
+n = 0
