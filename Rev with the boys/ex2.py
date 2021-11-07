@@ -238,15 +238,7 @@ def FillEle():
 
 
 def Check(eq: str, res: int):
-    somme = 0
-    cnum = ""
-    for i in range(len(eq)):
-        if eq[i] != "+":
-            cnum += eq[i]
-        else:
-            somme += int(cnum)
-            cnum = ""
-    return somme == res
+    return sum(int(e) for e in (eq.split("+"))) == res
 
 
 def GenStat(n):
@@ -270,6 +262,7 @@ def GenStat(n):
 
 
 n = 0
+
 
 FillHis()
 FillEle()
