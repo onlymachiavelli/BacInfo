@@ -231,7 +231,7 @@ def FillEle():
 
         print("Do you want to keep going  ? y if yes o anything else if no")
         ans = input()
-        if ans.upper() == "Y":
+        if ans.upper() != "Y":
             quit = True
     fh.close()
     fe.close()
@@ -249,7 +249,7 @@ def GenStat(n):
     quit = False
     while not quit:
         try:
-            o = pickle.loads(fe)
+            o = pickle.load(fe)
         except:
             quit = True
         datas.append(o)
