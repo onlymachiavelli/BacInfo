@@ -1,0 +1,130 @@
+
+On suppose que le ficier compte.txt est deja existe asba 
+
+
+TDNT{
+    zeb = enregistrement 
+        num : chaine
+        date:chaine
+        mont: reel
+        nat_op : char
+    fin 
+    
+    fiche : fichier de type zeb 
+
+    asba = enregistrement 
+        num : chaine 
+        solde : entier 
+    fin 
+
+    tab : tableau de 100 asba 
+}
+
+
+ALGO 
+Algorythm devoir1 
+debut
+    n<-0
+    fillMVT(fs, fe)
+    fillRes(fres, fe, n)
+    fillTab(fres, n, t)
+    show(t, n)
+fin
+
+
+
+TDO {
+    n : entier 
+    fillMVT: procedure
+    fillRes : preco 
+    fillTab : proc
+    show: proc 
+    t : tab 
+    fres : text
+    fe : fiche
+    fs : texte 
+}
+
+
+
+
+module bech taref nombre des lignes f zabour om l fichier mteek 
+fonction Lines (@fs : texte) :booleen
+debut 
+    n <- 0
+    quit <- faux
+    ouvrir("c:\compte.txt", fs, "r")
+    tant que quit = faux faire nayek 
+        lire_ln(fs, zebbi)
+        si (zebbi != "") alors 
+            n <- n+1
+        sinon 
+            quit = vrai 
+        fin si 
+    fin tant que 
+
+    retourner n 
+
+fin     
+
+TDOL {
+    n : entier 
+    zebbi : chaine 
+    quit : booleen 
+
+}
+
+
+procedure Existe (@fs:texte, ele:chaine):booleen
+debut 
+    ouvrir("c:\compte.txt", fs, "r")
+    pour i de 1 a Lines(fs) faire 
+        lire_ln(fs, zeb)
+        si zeb = ele alors 
+            retourner vrai 
+        fin si 
+    fin pour 
+
+    retourner faux 
+
+fin
+
+TDOL{
+    i : entier 
+    zeb : chaine 
+    Lines: fonction 
+}
+
+
+
+
+
+procedure fillMvt(@fv : fiche, @fs, n:entier):
+debut
+    ouvrir("c:\compte.txt", fs, "r")
+    ouvrir("c:\mvt.dat", fv, "wb")
+
+    quit <- faux 
+    tant que quit = faux faire 
+    n <- n+1
+    repeter
+        ecrire("med naye number")
+        lire(dick.num)
+    jusuqua Existe(fs, dick.num)
+
+    ecrire("md nayek l date ")
+    lire(dick.date)
+
+    repeter 
+        ecrire("med nayek l montant w yeddek f zebbi ")
+        lire(dick.mont)
+    justqua dick.mont > 0
+
+    repeter
+        ecrire("med nayek zabour om d wala c ")
+        lire(dick.nat_op)
+    justqua dick.nat 
+
+
+
+fin
