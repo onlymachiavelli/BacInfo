@@ -4,6 +4,11 @@ Algo{
         fillNVT(fv, n, fc)
         fillRes(n, fv, fs)
         fillT(t, fs , n)
+        pour i de 0 a n-1 faire 
+            ecrire(t[i].num)
+            ecrire(t[i].mont)
+        fin pour 
+        
     end
 
 }
@@ -24,6 +29,7 @@ TDONT{
 
     }
     t : tableau de 100 sol 
+    
 
 }
 
@@ -163,10 +169,27 @@ debut
 
 fin
 
-
+procedure Sort(t:t) 
+debut 
+    pour i de 0 a long(t)-2 faire
+        si t[i].mont > t[i+1].mont alors 
+            aux <- t[i]
+            t[i]<- t[i+1]            
+            t[i+1] <- aux 
+            Sort(t)
+fin
+TDOL{
+    i : entier
+    Sort : procedure 
+    aux : sol 
+    
+}
 
 procedure fillRes(n:enteir, @fv:fiche, @fs:text)
 debut 
+    ouvrir("mvt.dat", fv, "rb")
+    ouvrir("result.txt", fs, "w")
+    
     pour i de 1 a n faire 
         lire(fv, bank)
         trans <- 0
@@ -188,4 +211,70 @@ debut
             trans <- trans + bank.mont 
         fin si 
 
+        sol.num = bank.num 
+        sol.mont = trans
+        t[i] = sol
+
+
+
+        
+    fin pour 
+    Sort(t)
+    pour i de 0 a n-1 faire 
+        ecrire_ln(fs, t[i].num + " " + convch(t[i].mont))
+    fin pour 
+
+    fermer(fs)
+    fermer(fv)
+
+
 fin
+
+TDOL{
+    i : entier 
+    t : sol 
+    j : entier
+    Sort  : procedure 
+    trans : reel 
+    sol : sol 
+    bank : mvt 
+    b : mvt 
+
+}
+
+
+procedure filT(t:t, @fs:text, n:entier)
+debut 
+    ouvrir("result.txt", fs , "r")
+
+    pour i de 1 a n faire 
+        lireln(fs, a)
+
+        num = ""
+        mont = ""
+        j <- 0
+        repeter
+            num <- num + a[j]
+        jusqua a[j] = " "
+
+        repeter 
+            mont <- mont + a[j]
+        jusqua j = long(a) -1 
+
+
+        sol.num = num
+        sol.mont = mont 
+        
+        t[i] = sol 
+    fin pour 
+    
+fin 
+
+TDOL{
+    sol : sol 
+    a : chaine 
+    num : chaine 
+    mont : chaine 
+    j , i : entier 
+
+}
