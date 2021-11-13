@@ -112,6 +112,47 @@ debut
 
     tant que quit = faux faire 
         repeter 
-            ecrire("enter ")
-    
+            ecrire("enter Number")
+            lire(bank.num)
+        jusqua Exist(fc, bank.num)
+
+        repeter 
+            ecrire("enter day")
+            lire(day)
+            ecrire("entter month")
+            lire(month)
+            ecrire("enter year")
+            lire(year)
+
+        jusqua isNum(day) et isNum(month) et isNum(year) et long(year) =4 et long(day) = 2 et long(month = 2)
+
+        bank.date = day + "/" + month + "/" + year
+
+        repeter 
+            ecrire("eter mont")
+            lire(bank.mont)
+        jusqua mont > 0
+        repeter
+            ecrire ("nt")
+            lire(bank.nat)
+        jusqua nat = "D" ou nat = "C"
+
+
+        ecrire(fv, bank)
+
+        ecrire("Another one ? y/n")
+        repeter
+            ecrire("enter your answer y/n")
+            lire(ans)
+        jusqua  ans = "y"  ou ans = "n"
+
+        si ans =  "n"   alors
+            quit = vrai
+        fin is 
+
+    fin tant que 
+
+ 
+
+
 fin
