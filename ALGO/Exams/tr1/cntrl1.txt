@@ -1,168 +1,117 @@
+Algo{
+    begin
+        n <- 0
+        fillNVT(fv, n, fc)
+        fillRes(n, fv, fs)
+        fillT(t, fs , n)
+    end
 
-On suppose que le ficier compte.txt est deja existe asba 
-
-
-TDNT{
-    zeb = enregistrement 
-        num : chaine
-        date:chaine
-        mont: reel
-        nat_op : char
-    fin 
-    
-    fiche : fichier de type zeb 
-
-    asba = enregistrement 
-        num : chaine 
-        solde : entier 
-    fin 
-
-    tab : tableau de 100 asba 
 }
+TDONT{
+    mvt = enregistrement{
+        num : chaine
+        date : chaine 
+        mont : reel 
+        nat : char 
 
+    }
 
-ALGO 
-Algorythm devoir1 
-debut
-    n<-0
-    fillMVT(fs, fe)
-    fillRes(fres, fe, n)
-    fillTab(fres, n, t)
-    show(t, n)
-fin
+    fiche : fichier donnees de type mvt 
 
+    sol = ennregitrement { 
+        num : chaine 
+        mont : reel 
+
+    }
+    t : tableau de 100 sol 
+
+}
 
 
 TDO {
-    n : entier 
-    fillMVT: procedure
-    fillRes : preco 
-    fillTab : proc
-    show: proc 
-    t : tab 
-    fres : text
-    fe : fiche
+    n : entier
+    fv : fiche 
     fs : texte 
+    fcc : texte 
+    fillMVT, fillRes , fillT : procedure
 }
 
-
-
-
-module bech taref nombre des lignes f zabour om l fichier mteek 
-fonction Lines (@fs : texte) :booleen
-debut 
-    n <- 0
-    quit <- faux
-    ouvrir("c:\compte.txt", fs, "r")
-    tant que quit = faux faire nayek 
-        lire_ln(fs, zebbi)
-        si (zebbi != "") alors 
-            n <- n+1
+module calc lines 
+Fonction Lines (@fs : text):entier 
+begin
+    ouvrir("compte.txt", fs, "r")
+    n <- 0 
+    quit = faux 
+    tant ques quit = faux faire 
+        lire_ln(fs, ele) 
+        si long(ele) > 0 alors 
+            n <- n+1 
         sinon 
-            quit = vrai 
+            quit <- vrai 
         fin si 
-    fin tant que 
 
+    fin  tant que 
+    fermer(fs)
     retourner n 
+end
 
-fin     
-
-TDOL {
-    n : entier 
-    zebbi : chaine 
+TDOL{
+    n : entier
     quit : booleen 
-
+    ele : chaine 
 }
 
 
-procedure Existe (@fs:texte, ele:chaine):booleen
-debut 
-    ouvrir("c:\compte.txt", fs, "r")
+module exist 
+
+Fonction Exist (@fs , ele: chaine):booleen
+begin   
+    ouvrir("compte.txt", @fs,  "r")
     pour i de 1 a Lines(fs) faire 
-        lire_ln(fs, zeb)
-        si zeb = ele alors 
-            retourner vrai 
+        lire_ln(fs, a)
+        si a = ele alors 
+            retourner vrai
         fin si 
     fin pour 
 
-    retourner faux
-    
     fermer(fs)
+    retourner faux 
+fin     
 
-fin
+TDOL{
+    a : chaine 
+    i : entier
+
+}
+
+
+
+fonction isNum(num : chaine):
+debut
+    pour i de 0 a long(num) -1 faire 
+        si num[i] ∉ ["0", "9"] alors 
+            retourner faux 
+        fin si 
+    fin pour
+
+    retourner vrai 
+fin 
 
 TDOL{
     i : entier 
-    zeb : chaine 
-    Lines: fonction 
+
 }
 
 
 
+procedure fillMVT(@fv:fiche, @n:entier, fc:texte):
+debut 
+    quit <- faux
+    ouvrir("compte.txt", fc, "r")
+    ouvrir("mvt.dat", fv, "wb")
 
-
-procedure fillMvt(@fv : fiche, @fs, n:entier):
-debut
-    ouvrir("c:\compte.txt", fs, "r")
-    ouvrir("c:\mvt.dat", fv, "wb")
-
-    quit <- faux 
     tant que quit = faux faire 
-        n <- n+1
-        repeter
-            ecrire("med naye number")
-            lire(dick.num)
-        jusuqua Existe(fs, dick.num)
-
-        ecrire("md nayek l date ")
-        lire(dick.date)
-
         repeter 
-            ecrire("med nayek l montant w yeddek f zebbi ")
-            lire(dick.mont)
-        justqua dick.mont > 0
-
-        repeter
-            ecrire("med nayek zabour om d wala c ")
-            lire(dick.nat_op)
-        justqua dick.nat = "D" ou dick.nat = "C"
-
-        ecrire(fv, dick)
-
-        ecrire("Teheb tziiiid wehed ekher asba ? y/anythingelse")
-
-
-        lire(ans)
-        if(majus(ans) != "Y") alors
-            quit = vrai
-        fin si
-    fin tant que 
-
-
-
-    fermer(fv)
-    fermer(fs)
-
-fin
-
-
-TDOL {
-    quit : booleen
-    ans : char 
-    dick : zeb 
-}
-
-
-
-procedure fillRes(@fv:fiche, @fres:text, n:entier)
-
-debut
-ouvrir("resultat.txt", fs, "w")
-ouvrir("mvt.dat", fv, "rb")
-
-
-
-
-
-
+            ecrire("enter ")
+    
 fin
