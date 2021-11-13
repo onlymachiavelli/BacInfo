@@ -68,10 +68,13 @@ Fonction Exist (@fs , ele: chaine):booleen
 begin   
     ouvrir("compte.txt", @fs,  "r")
     pour i de 1 a Lines(fs) faire 
-        lire_ln(fs, a)
-        si a = ele alors 
-            retourner vrai
+        si i mod 2 != 0 alors 
+            lire_ln(fs, a)
+            si a = ele alors 
+                retourner vrai
+            fin si 
         fin si 
+
     fin pour 
 
     fermer(fs)
@@ -140,6 +143,7 @@ debut
 
         ecrire(fv, bank)
 
+
         ecrire("Another one ? y/n")
         repeter
             ecrire("enter your answer y/n")
@@ -152,7 +156,36 @@ debut
 
     fin tant que 
 
+
+
  
 
+
+fin
+
+
+
+procedure fillRes(n:enteir, @fv:fiche, @fs:text)
+debut 
+    pour i de 1 a n faire 
+        lire(fv, bank)
+        trans <- 0
+        pour j de 1 a n faire 
+            lire(fv , b)
+            si i != j faire 
+                si bank.num = b.num alors 
+                    si b.num = "D" alors 
+                        trans <- trans - b.mont 
+                    sinon 
+                        trans <- trans + b.mont
+                    sin si 
+                fin si 
+            fin si 
+        fin pour 
+        si bank.nat = "D" alors 
+                trans <- trans - bank.mont 
+        sinon 
+            trans <- trans + bank.mont 
+        fin si 
 
 fin
