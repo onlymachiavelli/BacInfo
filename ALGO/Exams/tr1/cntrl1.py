@@ -42,12 +42,12 @@ def fillMVT():
             nat = input("Enter nat ")
             q = nat == "D" or nat == "C"
 
-        pickle.dump(fv, {
+        pickle.dump({
             "num": num,
             "date": date,
             "mont": mont,
             "nat": nat
-        })
+        }, fv)
 
         print("Do you ant to add anther one ?  y/anything else")
         ans = input()
@@ -62,7 +62,9 @@ def fillRes(n: int):
     quit = False
     while not quit:
         try:
-            o = pickle.load(fv)
+            datas.append(
+                pickle.load(fv)
+            )
 
         except:
             quit = True
