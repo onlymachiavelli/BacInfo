@@ -8,7 +8,7 @@ Algo{
             ecrire(t[i].num)
             ecrire(t[i].mont)
         fin pour 
-        
+
     end
 
 }
@@ -95,7 +95,7 @@ TDOL{
 
 
 
-fonction isNum(num : chaine):
+fonction isNum(num : chaine):booleen
 debut
     pour i de 0 a long(num) -1 faire 
         si num[i] ∉ ["0", "9"] alors 
@@ -135,7 +135,7 @@ debut
 
         jusqua isNum(day) et isNum(month) et isNum(year) et long(year) =4 et long(day) = 2 et long(month = 2)
 
-        bank.date = day + "/" + month + "/" + year
+        bank.date <- day + "/" + month + "/" + year
 
         repeter 
             ecrire("eter mont")
@@ -157,7 +157,7 @@ debut
         jusqua  ans = "y"  ou ans = "n"
 
         si ans =  "n"   alors
-            quit = vrai
+            quit <- vrai
         fin is 
 
     fin tant que 
@@ -211,9 +211,9 @@ debut
             trans <- trans + bank.mont 
         fin si 
 
-        sol.num = bank.num 
-        sol.mont = trans
-        t[i] = sol
+        sol.num <- bank.num 
+        sol.mont <- trans
+        t[i] <- sol
 
 
 
@@ -250,8 +250,8 @@ debut
     pour i de 1 a n faire 
         lireln(fs, a)
 
-        num = ""
-        mont = ""
+        num <- ""
+        mont <- ""
         j <- 0
         repeter
             num <- num + a[j]
@@ -262,10 +262,10 @@ debut
         jusqua j = long(a) -1 
 
 
-        sol.num = num
-        sol.mont = mont 
+        sol.num <- num
+        sol.mont <- mont 
         
-        t[i] = sol 
+        t[i] <- sol 
     fin pour 
     
 fin 
