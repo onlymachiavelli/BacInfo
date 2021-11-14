@@ -52,3 +52,17 @@ def fillMVT():
         print("Do you ant to add anther one ?  y/anything else")
         ans = input()
         quit = ans.upper() == "Y" or "YES"
+
+
+def fillRes(n: int):
+    fs = open("result.txt", "w")
+    fv = open("mvt.dat", "rb")
+
+    datas = []
+    quit = False
+    while not quit:
+        try:
+            o = pickle.load(fv)
+
+        except:
+            quit = True
