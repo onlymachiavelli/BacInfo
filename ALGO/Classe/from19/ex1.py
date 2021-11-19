@@ -14,6 +14,10 @@ Algorythm ex {
 
 """
 
+import random as r
+import numpy as np
+from numpy.lib.index_tricks import mgrid
+
 
 def saisir():
     global n
@@ -33,9 +37,29 @@ def remplirS(n, src):
         f.write(lg+"\n")
 
 
-# PP
+def remplireMat(src, n, m):
+    myFile = open(src, "r")
+    lines = myFile.readlines()
+    for i in range(n):
+        mf = lines[i][0:len(lines[i])-1]
+        print(mf)
+        while len(mf) < n:
+            random = str(r.randint(0, 10))
+            print(random)
+            mf = random + mf
+            print("\n")
+            print(mf)
+        for j in range(n):
+            m[i][j] = mf[j]
+
+        # PP
 n = 0
+
 saisir()
+
+m = np.array([[""]*n]*n, dtype=str)
 src0 = "source0.txt"
 
 remplirS(n, src0)
+
+remplireMat(src0, n, m)
