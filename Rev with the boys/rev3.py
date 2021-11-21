@@ -1,3 +1,51 @@
+import pickle
+
+
+fs = open("dick.dat", "rb")
+
+mohsen = []
+quit = False
+while not quit :
+    try:
+        mohsen.append(pickle.load(fs))
+    except:
+        quit = True
+print(mohsen)
+fs.close()
+
+
+
+
+
+
+
+
+
+
+
+
+"""
+text files
+
+data files
+
+
+"""
+
+
+
+
+
+
+
+
+
+
+
+
+
+"""
+
 import numpy as np
 import random as r
 def sasir():
@@ -63,3 +111,8 @@ remplirM(n,m)
 TriSelection(n,m)
 remplirfe(n, m)
 print(m)
+
+
+
+
+"""
