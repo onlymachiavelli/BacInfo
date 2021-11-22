@@ -1,11 +1,9 @@
 import numpy as np
 import random as r
 import pickle
-import subprocess
 
 
 def size():
-    subprocess.run(['wc'])
     myfile = open("source.txt", "r")
     quit = False
     n = 0
