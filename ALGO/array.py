@@ -21,6 +21,13 @@ def BubbleSort(array):
                 check = False
 
 
+def bubble_recursive(array):
+    for i in range(len(array)-1):
+        if array[i] > array[i+1]:
+            array[i], array[i+1] = array[i+1], array[i]
+            bubble_recursive(array)
+
+
 def SelectionSort(t: list, n: int):
     for i in range(n-1):
         getMax = i
