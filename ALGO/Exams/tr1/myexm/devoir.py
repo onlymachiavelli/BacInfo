@@ -53,9 +53,9 @@ def fillbin(n, m):
 
 
 def mymax(n):
-    mnn = []
+    mnn = np.zeros(n)
     myfile = open("maximum.dat", "rb")
-    datas = []
+    datas = np.arange(n, dtype=dict)
     for i in range(n):
         a = pickle.load(myfile)
         datas.append(a)
