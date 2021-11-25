@@ -8,4 +8,4 @@ def isPrime(n, i=2):
     return isPrime(n, i + 1)
 
 
-print(isPrime(5))
+print(isPrime(4))
