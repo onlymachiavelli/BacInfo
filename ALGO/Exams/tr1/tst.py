@@ -26,25 +26,6 @@ mat = [
 # print(mat)
 
 
-while True:
-
-    code = input()
-
-    quit = False
-    i = len(code)
-    ch = ""
-    while not quit:
-        i -= 1
-        if (code[i].isnumeric()):
-            ch = code[i] + ch
-        else:
-            quit = True
-    if (len(code) >= 6 and code.find("TU") != -1 and len(ch) > 0):
-        break
-ch = str(int(ch) + 1)
-print(code[0:i+1] + ch)
-
-
 """
 Algo 
 debut 
@@ -68,11 +49,30 @@ debut
 
     ch <- convch(valeur(ch)+1)
 
-    ecrire(code[0,i]+ch)
+    ecrire(code[0,i+1]+ch)
 
 
 
 
 
 fin
+
+
+
+while True:
+    code = input()
+    quit = False
+    i = len(code)
+    ch = ""
+    while not quit:
+        i -= 1
+        if (code[i].isnumeric()):
+            ch = code[i] + ch
+        else:
+            quit = True
+    if (len(code) >= 6 and code.find("TU") != -1 and len(ch) > 0):
+        break
+ch = str(int(ch) + 1)
+print(code[0:i+1] + ch)
+
 """
