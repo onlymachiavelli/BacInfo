@@ -21,9 +21,9 @@ mat = [
     [10, 50, 68, 89],
     [8, 0, 30, 80]
 ]
-#n = len(mat)
-#sortmat(mat, n)
-# print(mat)
+n = len(mat)
+sortmat(mat, n)
+print(mat)
 
 
 """
