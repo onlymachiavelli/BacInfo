@@ -221,7 +221,7 @@ debut
     fin pour 
     Sort(t)
     pour i de 0 a n-1 faire 
-        ecrire_ln(fs, t[i].num + " " + convch(t[i].mont))
+        ecrire_nl(fs, t[i].num + " " + convch(t[i].mont))
     fin pour 
 
     fermer(fs)
