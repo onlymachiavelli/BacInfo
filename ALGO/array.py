@@ -27,8 +27,29 @@ def Selection(arr, n):
 
 
 b = [3, 7, 9, 1]
+
+
+def ShellSort(arr, n):
+    pas = 1
+    while 3*pas + 1 < n:
+        pas *= 3+1
+
+    quit = False
+    while not quit:
+        for i in range(pas, n):
+            tmp = arr[i]
+            j = i
+            while j-pas > 0 and arr[j-pas] > tmp:
+                arr[i] = arr[j-pas]
+                j -= pas
+            arr[j] = tmp
+        pas //= 3
+        quit = pas < 1
+        print(quit)
+
+
 # bubRec(b, len(b))
-Selection(b, len(b))
+ShellSort(b, len(b))
 print(b)
 # a = [69, 2, 7, 20, 3]
 # Bubble(a, len(a))
