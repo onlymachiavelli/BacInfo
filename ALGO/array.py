@@ -1,3 +1,16 @@
+def Bubble(arr, n):
+    check = False
+    while not check:
+        check = True
+        for i in range(n-1):
+            if arr[i] > arr[i+1]:
+                arr[i], arr[i+1] = arr[i+1], arr[i]
+                check = False
+
+
+a = [69, 2, 7, 20, 3]
+Bubble(a, len(a))
+print(a)
 """
 import numpy as np
 import random as r
@@ -51,7 +64,7 @@ SelectionSort(myarr, len(myarr))
 print("This is a selection SORT !")
 print(myarr)
 
-#arr1 = np.arange(15, dtype=int)
+# arr1 = np.arange(15, dtype=int)
 
 
 # for i in range(15):
