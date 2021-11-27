@@ -8,9 +8,20 @@ def Bubble(arr, n):
                 check = False
 
 
-a = [69, 2, 7, 20, 3]
-Bubble(a, len(a))
-print(a)
+def bubRec(arr, n):
+    for i in range(n-1):
+        if arr[i] > arr[i+1]:
+            arr[i], arr[i+1] = arr[i+1], arr[i]
+            bubRec(arr, n)
+
+
+b = [3, 7, 9, 1]
+bubRec(b, len(b))
+
+print(b)
+#a = [69, 2, 7, 20, 3]
+#Bubble(a, len(a))
+# print(a)
 """
 import numpy as np
 import random as r
