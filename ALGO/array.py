@@ -1,3 +1,4 @@
+"""
 import numpy as np
 import random as r
 
@@ -28,13 +29,14 @@ def bubble_recursive(array):
             bubble_recursive(array)
 
 
-def SelectionSort(t: list, n: int):
-    for i in range(n-1):
-        getMax = i
-        for j in range(i, n-1):
-            if(t[i] > t[i+1]):
-                getMax = j
-        t[i], t[getMax] = t[getMax], t[i]
+def SelectionSort(t, n: int):
+    for i in range(1, n):
+        tmp = t[i]
+        j = i
+        while j >= 1 and tmp < t[j-1]:
+            t[j] = t[j-1]
+            j = j-1
+        t[j] = tmp
 
 
 def ShellSort():
@@ -49,11 +51,15 @@ SelectionSort(myarr, len(myarr))
 print("This is a selection SORT !")
 print(myarr)
 
-arr1 = np.arange(15, dtype=int)
+#arr1 = np.arange(15, dtype=int)
 
 
-for i in range(15):
-    arr1[i] = r.randint(1, 100)
+# for i in range(15):
+#    arr1[i] = r.randint(1, 100)
 
-BubbleSort(arr1)
-Show(arr1)
+# BubbleSort(arr1)
+
+
+# Show(arr1)
+
+"""
