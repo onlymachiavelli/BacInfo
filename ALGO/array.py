@@ -15,12 +15,23 @@ def bubRec(arr, n):
             bubRec(arr, n)
 
 
-b = [3, 7, 9, 1]
-bubRec(b, len(b))
+def Selection(arr, n):
+    for i in range(1, n):
+        tmp = arr[i]
+        j = i
+        while j >= 1 and tmp < arr[j-1]:
+            arr[j] = arr[j-1]
+            j -= 1
 
+        arr[j] = tmp
+
+
+b = [3, 7, 9, 1]
+# bubRec(b, len(b))
+Selection(b, len(b))
 print(b)
-#a = [69, 2, 7, 20, 3]
-#Bubble(a, len(a))
+# a = [69, 2, 7, 20, 3]
+# Bubble(a, len(a))
 # print(a)
 """
 import numpy as np
