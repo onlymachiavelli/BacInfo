@@ -47,7 +47,7 @@ def fillbin(n, m):
             "max": mii,
             "cord": {
                     "nl": i,
-                    "nc": myj
+                    "nc": myj,
                     }
         }, mybin)
 
