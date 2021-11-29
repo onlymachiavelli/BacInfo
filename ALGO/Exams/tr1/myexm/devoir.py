@@ -77,4 +77,7 @@ n = size()
 m = np.array([[""]*n] * n, dtype=str)
 fillmat(n, m)
 fillbin(n, m)
+
+
 mymax(n)
+print(m)
