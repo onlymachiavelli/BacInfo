@@ -45,7 +45,6 @@ def ShellSort(arr, n):
             arr[j] = tmp
         pas //= 3
         quit = pas < 1
-        print(quit)
 
 
 # bubRec(b, len(b))
