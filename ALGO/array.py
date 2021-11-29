@@ -49,6 +49,7 @@ def ShellSort(arr, n):
 
 
 # bubRec(b, len(b))
+print("This is a shell sort ")
 ShellSort(b, len(b))
 print(b)
 # a = [69, 2, 7, 20, 3]
