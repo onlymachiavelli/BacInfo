@@ -154,17 +154,16 @@ debut
         p <- aux 
     fin si 
     s <- 0
-    pour i de 0 a long(ta)-1 faire 
-        s <- ta[i]
+    pour i de p a t faire 
+        s <- s + ta[i]
     fin pour 
 
     retourner s 
 fin
-t = [2,19,-8,-14,4,5,-4,3,-8,9]
-unckown(t,3,8)
-unckown(t,6,2)
-unckown(t,4,4)
-ecrire(shit(a))
+t = [2,19,-8,-14,4,5,-4,3,-8,9] 
+unckown(t,3,8) = -14
+unckown(t,6,2) = -17
+unckown(t,4,4) = 4
 
 
 
