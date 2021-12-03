@@ -146,24 +146,25 @@ TDONL{
 
 
 
-
-fonction  T(t: tab, n:entier, p: entier):
+fonction  unckown (ta:tab, p:entier, t: entier)
 debut 
-    sum <- 0
-    pour i de 1 a arrondi(p-p/2) faire 
-        sum <- sum + t[i]
-    fin pour
-    retourner i
+    si p > t alors 
+        aux <- t
+        t <- p
+        p <- aux 
+    fin si 
+    s <- 0
+    pour i de 0 a long(ta)-1 faire 
+        s <- ta[i]
+    fin pour 
+
+    retourner s 
 fin
-
-
-a = [1,3,8,7,4,6,9]
-ecrire(T(a, long(a), 4))
-ecrire(T(a, long(a), 9))
-ecrire(T(a, long(a), 14))
-
-
-
+t = [2,19,-8,-14,4,5,-4,3,-8,9]
+unckown(t,3,8)
+unckown(t,6,2)
+unckown(t,4,4)
+ecrire(shit(a))
 
 
 
@@ -190,3 +191,18 @@ Unckown(chara , 2, long(chara) -1) ->
 Unckown(chara, 1, 1)  -> 
 
 """
+
+
+def unckown(ta, p, t):
+    if p > t:
+        p, t = t, p
+    s = 0
+    for i in range(p, t):
+        s += ta[i]
+    return s
+
+
+ta = [2, 19, -8, -14, 4, 5, -4, 3, -8, 9]
+print(unckown(ta, 3, 8))
+print(unckown(ta, 6, 2))
+print(unckown(ta, 4, 4))
