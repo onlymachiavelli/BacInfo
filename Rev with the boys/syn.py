@@ -166,6 +166,22 @@ unckown(t,6,2) = -17
 unckown(t,4,4) = 4
 
 
+procedure TriSelection (@t: tab, n:entier)
+debut
+    pour i de 1 a n-1 faire
+        tmp <- t[i]
+        j <- i 
+        tant que >= 1 et tmp < t[j-1] faire 
+            t[j] <- t[j-1]
+            j <- j-1
+        fin tant que 
+        t[j] <- tmp
+    fin pour 
+
+fin 
+
+fin
+
 
 
 
