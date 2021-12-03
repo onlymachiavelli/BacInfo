@@ -205,8 +205,6 @@ Unckown(chara, -1, -100) ->
 Unckown(chara , 2, long(chara) -1) -> 
 Unckown(chara, 1, 1)  -> 
 
-"""
-
 
 def unckown(ta, p, t):
     if p > t:
@@ -221,3 +219,6 @@ ta = [2, 19, -8, -14, 4, 5, -4, 3, -8, 9]
 print(unckown(ta, 3, 8))
 print(unckown(ta, 6, 2))
 print(unckown(ta, 4, 4))
+
+
+"""
