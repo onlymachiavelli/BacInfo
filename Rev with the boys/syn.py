@@ -128,4 +128,65 @@ debut
     fermer(mybin)   
 fin
 
+
+
+TDONL{
+    a : mymax 
+    mybin : fiche
+    mx : entier
+    myj : entier
+    j : entier
+    i : entier 
+
+}
+
+
+
+
+
+
+
+
+fonction  T(t: tab, n:entier, p: entier):
+debut 
+    sum <- 0
+    pour i de 1 a arrondi(p-p/2) faire 
+        sum <- sum + t[i]
+    fin pour
+    retourner i
+fin
+
+
+a = [1,3,8,7,4,6,9]
+ecrire(T(a, long(a), 4))
+ecrire(T(a, long(a), 9))
+ecrire(T(a, long(a), 14))
+
+
+
+
+
+
+
+
+
+
+
+
+Procedure Unckown(ch: chaine, f:entier,t:entier)
+debut       
+    si f < 0 alors  
+        f <-arrondi( long(ch) /2)
+    fin si 
+    si t <=0 alors 
+        t <- long(ch)-1
+    fin si 
+    effacer(ch, f, t)    
+fin   
+//
+chara <- "Damn It"
+Unckown(chara, -1, -100) -> 
+Unckown(chara , 2, long(chara) -1) -> 
+Unckown(chara, 1, 1)  -> 
+
 """
