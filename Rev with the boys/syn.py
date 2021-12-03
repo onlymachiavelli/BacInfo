@@ -221,13 +221,9 @@ print(unckown(ta, 6, 2))
 print(unckown(ta, 4, 4))
 
 
-"""
-
 
 import random as r
 import numpy as np
-
-
 def fillFile():
     fs = open("file.txt", "w")
     for i in range(4):
@@ -235,8 +231,6 @@ def fillFile():
         for j in range(5):
             a += str(r.randint(0, 9)) + " "
         fs.write(a + "\n")
-
-
 def fillmat(m):
     fs = open("file.txt", "r")
 
@@ -247,10 +241,25 @@ def fillmat(m):
             if (a[j].isnumeric()):
                 b += a[j]
         for j in range(5):
-            m[i][j] = b[j]
-
-
+            m[i][j] = int(b[j])
 fillFile()
 m = np.zeros([4, 5], dtype=int)
 fillmat(m)
 print(m)
+
+"""
+
+
+def selection(t):
+    for i in range(1, len(t)):
+        j = i
+        tmp = t[i]
+        while j >= 1 and tmp < t[j-1]:
+            t[j] = t[j-1]
+            j = j-1
+        t[j] = tmp
+
+
+a = [8, 9, 10, 3, 5]
+selection(a)
+print(a)
