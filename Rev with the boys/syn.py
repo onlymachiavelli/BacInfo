@@ -222,3 +222,35 @@ print(unckown(ta, 4, 4))
 
 
 """
+
+
+import random as r
+import numpy as np
+
+
+def fillFile():
+    fs = open("file.txt", "w")
+    for i in range(4):
+        a = ""
+        for j in range(5):
+            a += str(r.randint(0, 9)) + " "
+        fs.write(a + "\n")
+
+
+def fillmat(m):
+    fs = open("file.txt", "r")
+
+    for i in range(4):
+        b = []
+        a = fs.readline()
+        for j in range(len(a)):
+            if (a[j].isnumeric()):
+                b += a[j]
+        for j in range(5):
+            m[i][j] = b[j]
+
+
+fillFile()
+m = np.zeros([4, 5], dtype=int)
+fillmat(m)
+print(m)
