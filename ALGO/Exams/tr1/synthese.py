@@ -25,6 +25,13 @@ def fillMat(l, c, m):
             m[i][j] = num
 
 
+
+def fillFile(l,c,m):
+    for i in range (l):
+        for j in range (c):
+            return 0
+
+
 m = np.zeros([l, c], dtype=int)
 fillMat(l, c, m)
 print(m)
