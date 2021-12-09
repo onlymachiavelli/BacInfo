@@ -29,7 +29,9 @@ def fillFile(l, c, m):
     for i in range(l):
         s1 = 0
         s2 = 0
-        j = 0
+        j = c
+        while j != 0:
+            j -= 1
 
 
 m = np.zeros([l, c], dtype=int)
