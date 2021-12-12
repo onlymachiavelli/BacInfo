@@ -3,10 +3,6 @@ import random as r
 import numpy as np
 
 
-l = r.randint(2, 10)
-c = r.randint(2, 10)
-
-
 def exist(l, c, m, n):
     for i in range(c):
         if n == m[l][i]:
@@ -30,8 +26,23 @@ def fillFile(l, c, m):
         s1 = 0
         s2 = 0
         su = False
+        j = 0
+        while j != c-1 or not su:
+            s2 = 0
+            j += 1
+            s1 += m[i][j]
+
+            for k in range(j+1, c):
+                s2 += m[i][k]
+            su = s1 == s2
+        print(su)
+
+
+l = r.randint(2, 10)
+c = r.randint(2, 10)
 
 
 m = np.zeros([l, c], dtype=int)
 fillMat(l, c, m)
+fillFile(l, c, m)
 print(m)
