@@ -1,14 +1,21 @@
 import random as r
 
 import numpy as np
+from pickle import *
 
 
 def exist(l, c, m, n):
     for i in range(c):
         if n == m[l][i]:
             return True
-
     return False
+
+
+def SelectionSort(n, t):
+    for i in range(n-1):
+        j = i
+        tmp = t[i]
+        while j >= 1 and tmp.n < t[j]
 
 
 def fillMat(l, c, m):
@@ -22,7 +29,7 @@ def fillMat(l, c, m):
 
 
 def fillFile(l, c, m):
-    myFile = open("res.txt", "w")
+    myFile = open("file.dat", "w")
     for i in range(l):
         s1 = 0
         s2 = 0
@@ -42,7 +49,11 @@ def fillFile(l, c, m):
 l = r.randint(2, 10)
 c = r.randint(2, 10)
 
-
+"""
+filling matrice 
+filling data file
+filling txtfile
+"""
 m = np.zeros([l, c], dtype=int)
 fillMat(l, c, m)
 fillFile(l, c, m)
