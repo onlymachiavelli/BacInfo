@@ -22,6 +22,7 @@ def fillMat(l, c, m):
 
 
 def fillFile(l, c, m):
+    myFile = open("res.txt", "w")
     for i in range(l):
         s1 = 0
         s2 = 0
