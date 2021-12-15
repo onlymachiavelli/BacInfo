@@ -49,11 +49,6 @@ def fillFile(l, c, m):
 l = r.randint(2, 10)
 c = r.randint(2, 10)
 
-"""
-filling matrice 
-filling data file
-filling txtfile
-"""
 m = np.zeros([l, c], dtype=int)
 fillMat(l, c, m)
 fillFile(l, c, m)
