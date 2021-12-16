@@ -24,7 +24,7 @@ def fillMat(m: np.ndarray, l: int, c: int):
                 num = r.randint(-99, 100)
                 if (not exist(m, i, j, num)):
                     break
-                m[i][j] = num
+            m[i][j] = num
 
 
 values = input("Enter the lengths ").split()
@@ -33,6 +33,8 @@ while True:
     if (userCheck(l, c)):
         break
 mat = np.zeros([l, c], dtype=int)
+fillMat(mat, l, c)
+
 print(mat)
 
 print(type(mat))
