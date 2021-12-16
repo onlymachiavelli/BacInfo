@@ -28,16 +28,20 @@ def fillMat(m: np.ndarray, l: int, c: int):
 
 
 def fillDat(m: np.ndarray, l: int, c: int):
+
     for i in range(l):
         k = 1
         s0 = 0
         s1 = 0
-        for j in range(k):
-            s0 += m[i][j]
-        for j in range(k+1, c):
-            s1 += m[i][j]
-        if (s0 == s1):
-            print(s1)
+        while k != c-1:
+            for j in range(k):
+                s0 += m[i][j]
+            for j in range(k+1, c):
+                s1 += m[i][j]
+            if (s0 == s1):
+                print(s1)
+            k += 1
+        print(k)
 
 
 values = input("Enter the lengths ").split()
