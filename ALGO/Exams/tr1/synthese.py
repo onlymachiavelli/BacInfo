@@ -27,6 +27,19 @@ def fillMat(m: np.ndarray, l: int, c: int):
             m[i][j] = num
 
 
+def fillDat(m: np.ndarray, l: int, c: int):
+    for i in range(l):
+        k = 1
+        s0 = 0
+        s1 = 0
+        for j in range(k):
+            s0 += m[i][j]
+        for j in range(k+1, c):
+            s1 += m[i][j]
+        if (s0 == s1):
+            print(s1)
+
+
 values = input("Enter the lengths ").split()
 while True:
     l, c = map(int, values)
@@ -34,7 +47,7 @@ while True:
         break
 mat = np.zeros([l, c], dtype=int)
 fillMat(mat, l, c)
-
+fillDat(mat, l, c)
 print(mat)
 
 print(type(mat))
