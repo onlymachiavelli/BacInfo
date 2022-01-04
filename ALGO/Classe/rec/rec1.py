@@ -13,7 +13,12 @@ def recString(myString:str,l:int, b:int, e:int) :
         else:
             return False
     
-            
+"""
+    b : first indice 
+    e : last indice 
+    l : length of the string 
+    
+"""    
 
 
 a = "liil"
