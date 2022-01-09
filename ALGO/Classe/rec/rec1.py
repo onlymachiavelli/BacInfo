@@ -1,8 +1,6 @@
-def isPrime (n:int, i:int = 1):
-    if n // 2 == i :
-        return True
-    else :
-        return True and n%i != 0 and isPrime(n, i+1) 
-
-
-print(isPrime(4))
+def rev (stri, n):
+    if n >= 0 :
+        return stri[n] + rev(stri, n-1)
+a = ["h","e","l","l","o"]
+l = len(a) -1
+print(rev(a,l))
