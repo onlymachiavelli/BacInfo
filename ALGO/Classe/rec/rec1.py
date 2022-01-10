@@ -1,6 +1,11 @@
-def rev (stri, n):
-    if n >= 0 :
-        return stri[n] + rev(stri, n-1)
-a = ["h","e","l","l","o"]
-l = len(a) -1
-print(rev(a,l))
+def repeat (arr:list, x:int,n:int, i:int=0):
+    if i == n :
+        return 0
+    else : 
+        if arr[i] == x :
+            return 1 + repeat(arr, x, i+1)
+        else :
+            return repeat(arr, x, i+1 )
+arr = [1,1,3,5,6,8,1]
+
+print(repeat(arr, 1,len(arr) ))
