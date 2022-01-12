@@ -18,9 +18,9 @@ def isPrime(n: int, i: int = 2):
 
 def mainFunc(n: int):
     myFile = open("theResult.dat", "wb")
-    for i in range(1, n):
+    for i in range(1, n+1):
         a = i
-        counter = [0, 1]
+        counter = [0, 0]
         while a > 1:
             if isPrime(i):
                 counter[0] += 1
@@ -33,7 +33,7 @@ def mainFunc(n: int):
 
                     }
 
-                print(res)
+                    print(res)
                 a //= 10
             else:
                 break
