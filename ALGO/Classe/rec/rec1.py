@@ -1,5 +1,4 @@
 
-import pickle
 from math import sqrt
 
 
@@ -27,16 +26,17 @@ def mainFunc(n: int):
                 counter[0] += 1
                 if isPrime(a):
                     counter[1] += 1
-                res = {
-                    "Num": a,
-                    "isSuperPrime": counter[0] == counter[1],
+                if a < 10:
+                    res = {
+                        "Num": i,
+                        "isSuperPrime": counter[0] == counter[1],
 
-                }
-                myFile.dump(
-                    res, myFile
-                )
+                    }
+
                 print(res)
                 a //= 10
+            else:
+                break
     myFile.close()
 
 
