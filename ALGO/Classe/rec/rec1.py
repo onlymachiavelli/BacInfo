@@ -40,5 +40,27 @@ def mainFunc(n: int):
     myFile.close()
 
 
+def rec(n: int, i: int = 1):
+    if i <= n:
+        a = i
+        counter = [0, 0]
+        if isPrime(i):
+            counter[0] += 1
+            if a > 1:
+                if isPrime(a):
+                    counter[1] += 1
+                if a < 10:
+                    res = {
+
+                        "Num": i,
+                        "isSuperPrime": counter[0] == counter[1],
+
+
+                    }
+                    print(res)
+                a //= 10
+        rec(n, i + 1)
+
+
 n = size()
-mainFunc(n)
+rec(n)
