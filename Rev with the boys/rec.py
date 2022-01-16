@@ -1,6 +1,10 @@
-import numpy as np
+def size():
+    n = int(input("Give me n "))
+    if 20 < n < 20:
+        return n
+    else:
+        return size()
 
 
-a = np.arange([5, 5], dtype=str)
-
-print(a)
+n = size()
+print(n)
