@@ -1,9 +1,5 @@
 import numpy as np
 import random as r
-
-# Partie Size
-
-
 def size():
     quit = False
     while not quit:
