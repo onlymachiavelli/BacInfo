@@ -37,12 +37,12 @@ def Fact(n: int, arr: list, i: int = 2):
             Fact(n/i, i)
 
 
-def Frequency(ch: list, c: int = 1, n: int = 0):
+def Freq(ch: list, c: int = 1, n: int = 0):
     if len(ch) > 0:
         if ch[n] == ch[n-1]:
-            return Frequency(ch, c+1, n-1)
+            return Freq(ch, c+1, n-1)
         else:
-            return str(c)+ch[n-1] + Frequency(ch, 1, n-1)
+            return str(c)+ch[n-1] + Freq(ch, 1, n-1)
     else:
         return ""
 
@@ -53,7 +53,11 @@ def fillRes(src: str, n: int, i: int = 0):
         myFile = open(src, "w")
 
 
-fa = []
-print(Fact(1912, fa))
+#fa = []
+#print(Fact(1912, fa))
 
-print(fa)
+# print(fa)
+
+
+def Frequency(ch: str, res: str, i: int = 0):
+    return False
