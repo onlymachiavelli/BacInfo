@@ -81,17 +81,3 @@ mat = np.zeros([n, n], dtype=int)
 fillMat(n, mat)
 print(mat)
 genResult(mat, n, "result.txt")
-
-"""
-si tu veux teste le donnee de l'excercice : 
-m = [
-  [2,73,79,5,23],
-  [5,29,37,61,67],
-  [23,17,43,53,59],
-  [29,23,47,7,89],
-  [31,29,23,19,17]
-]
-n = len(m)
-
-    
-"""
