@@ -52,7 +52,7 @@ void saveResult(int n, int i, Numbers number)
     if (i == 1)
     {
         myFile = fopen("result.txt", "w");
-        fclose(myFile)
+        fclose(myFile);
     }
     if (i <= n)
     {
