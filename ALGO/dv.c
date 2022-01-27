@@ -11,7 +11,7 @@ int size()
     int n;
     printf("Enter Number! \n ");
     scanf("%d", &n);
-    if ((40 < n) && (n < 100))
+    if ((40000 < n) && (n < 100000))
     {
         return n;
     }
@@ -38,7 +38,7 @@ bool isPrime(int n, int i)
 }
 bool isSuperPrime(int n)
 {
-    if (n > 1)
+    if (n >= 1)
     {
         if (isPrime(n, 2))
             return isSuperPrime(n / 10);
@@ -61,6 +61,7 @@ void saveResult(int n, int i, Numbers number)
             number.num = i;
             number.isSuperPrime = isSuperPrime(i);
         }
+        printf("%d \n", i);
         myFile = fopen("result.txt", "a");
         fprintf(myFile, "%d %s \n", number.num, boolFuck(number.isSuperPrime));
         fclose(myFile);
@@ -69,7 +70,11 @@ void saveResult(int n, int i, Numbers number)
 }
 int main()
 {
+    printf("%s \n", boolFuck(isPrime(1, 2)));
     int n = size();
+    Numbers num;
+
+    saveResult(n, 1, num);
 
     return 0;
 }
