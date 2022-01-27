@@ -48,6 +48,12 @@ bool isSuperPrime(int n)
 }
 void saveResult(int n, int i, Numbers number)
 {
+    FILE *myFile;
+    if (i == 1)
+    {
+        myFile = fopen("result.txt", "w");
+        fclose(myFile)
+    }
     if (i <= n)
     {
         if (isPrime(i, 2))
@@ -55,11 +61,15 @@ void saveResult(int n, int i, Numbers number)
             number.num = i;
             number.isSuperPrime = isSuperPrime(i);
         }
+        myFile = fopen("result.txt", "a");
+        fprintf(myFile, "%d %s \n", number.num, boolFuck(number.isSuperPrime));
+        fclose(myFile);
+        saveResult(n, i + 1, number);
     }
 }
 int main()
 {
-    printf("%s ", boolFuck(isSuperPrime(59399)));
+    int n = size();
 
     return 0;
 }
