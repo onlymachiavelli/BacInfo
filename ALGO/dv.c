@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdbool.h>
-typedef struct Number
+typedef struct Numbers
 {
     int num;
     bool isSuperPrime;
 
-} Numbers;
+} Number;
 int size()
 {
     int n;
@@ -46,18 +46,20 @@ bool isSuperPrime(int n)
     }
     return true;
 }
-void saveResult(int n, int i, &Numbers Number)
+void saveResult(int n, int i, void *Number)
 {
     if (i <= n)
     {
-        if (isPrime(i))
+        if (isPrime(i, 2))
         {
             Number.num = i;
             Number.isSuperPrime = isSuperPrime(i);
         }
     }
 }
-main()
+int main()
 {
     printf("%s ", boolFuck(isSuperPrime(59399)));
+
+    return 0;
 }
