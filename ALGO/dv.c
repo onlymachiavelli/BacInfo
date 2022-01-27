@@ -5,7 +5,7 @@ typedef struct Numbers
     int num;
     bool isSuperPrime;
 
-} Number;
+} Numbers;
 int size()
 {
     int n;
@@ -46,14 +46,14 @@ bool isSuperPrime(int n)
     }
     return true;
 }
-void saveResult(int n, int i, void *Number)
+void saveResult(int n, int i, Numbers number)
 {
     if (i <= n)
     {
         if (isPrime(i, 2))
         {
-            Number.num = i;
-            Number.isSuperPrime = isSuperPrime(i);
+            number.num = i;
+            number.isSuperPrime = isSuperPrime(i);
         }
     }
 }
