@@ -8,7 +8,7 @@ int main (){
     test = fopen("test.dat", "wb");
     int a = 5;
     int b = 7;
-    fwrite(a, b , a+b , test);
+    fprintf(a, b , a+b , test);
 
     fclose(test);
 
