@@ -1,7 +1,7 @@
 #include <stdio.h>;
 #include <stdbool.h>;
 
-char *boolString(bool var) return var ? "true" : "false";
+char *boolString(bool var){ return (var ? "true" : "false");}
 
 int defN() {
     int n ;
@@ -18,10 +18,19 @@ int defM(int n ) {
     return defM(n);
 }
 
+int isPrime(int n , int i ){
+    if (n > 1 ) {
+        if (i >= n/2 ) return true;
+        if (n%i == 0) return false;
+        return isPrime(n, i+1);
+    }
+    return false ;
 
+}
 int main () {
 
+    printf("%s /n", boolString(isPrime(9, 2)));
     int n = defN(), m = defM(n);
-    printf("hello world");
+
     return 0;
 }
