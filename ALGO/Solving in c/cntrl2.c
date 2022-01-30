@@ -25,7 +25,30 @@ int isPrime(int n , int i ){
         return isPrime(n, i+1);
     }
     return false ;
+}
 
+char *primeStuffs(int n){
+    int res = 1, i=2 ;
+    char*result ;
+    char = 'op';
+    while (res!= n){
+        if isPrime(i, 2){
+
+        }
+
+        if (res+1 == n ){
+            op = '+';
+            res++;
+        }
+        else {
+            op = '-';
+            res -- ;
+        }
+
+
+
+        i++;
+    }
 }
 int main () {
 
