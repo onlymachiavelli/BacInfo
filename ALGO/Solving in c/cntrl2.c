@@ -29,11 +29,13 @@ int isPrime(int n , int i ){
 
 char *primeStuffs(int n){
     int res = 1, i=2 ;
-    char*result ;
+    char*result , fuck;
     char = 'op';
     while (res!= n){
         if isPrime(i, 2){
-
+            res *= i;
+            sprintf(fuck, "%d *", i);
+            result += fuck ;
         }
 
         if (res+1 == n ){
