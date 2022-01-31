@@ -30,20 +30,20 @@ int isPrime(int n , int i ){
 char *primeStuffs(int n){
     int res = 1, i=2 ;
     char*result , fuck;
-    char = 'op';
+    char op[1]= "";
     while (res!= n){
-        if isPrime(i, 2){
+        if (isPrime(i, 2)){
             res *= i;
             sprintf(fuck, "%d *", i);
             result += fuck ;
         }
 
         if (res+1 == n ){
-            op = '+';
+            op[0] = "+";
             res++;
         }
         else {
-            op = '-';
+            op[0]= "-";
             res -- ;
         }
 
@@ -51,11 +51,18 @@ char *primeStuffs(int n){
 
         i++;
     }
+    result = "#" + fuck + op + result ;
+    return result;
 }
 int main () {
 
     printf("%s /n", boolString(isPrime(9, 2)));
     int n = defN(), m = defM(n);
 
+
+    int i ;
+    for (i = m; i<=n;i++){
+        printf("%s \n" ,  primeStuffs(i));
+    }
     return 0;
 }
