@@ -1,0 +1,2 @@
+def saisir():
+    quit = False

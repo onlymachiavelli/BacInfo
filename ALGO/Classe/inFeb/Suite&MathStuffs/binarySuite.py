@@ -1,3 +1,15 @@
+
+
+
+
+
+
+
+
+
+
+
+"""
 from cgitb import reset
 from numpy import binary_repr
 
@@ -15,3 +27,5 @@ def binary(n: int, i: int = 0, suite: str = "0"):
 
 
 print(binary(3))
+
+"""
