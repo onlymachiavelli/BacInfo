@@ -2,6 +2,6 @@
 
 int main()
 {
-    printf("Hello world");
-    return 0;
+    char *shit = "hello world";
+    printf("%s", shit[0]);
 }
