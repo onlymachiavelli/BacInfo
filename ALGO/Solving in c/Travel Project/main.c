@@ -1,5 +1,13 @@
 #include <stdio.h>
 
+typedef struct Traverlers
+{
+    char *ID;
+    char *name;
+    char *adress;
+    char *totalTravels;
+
+} Traverlers;
 int travelers(char *source)
 {
 
@@ -15,5 +23,7 @@ int travelers(char *source)
 
 int main()
 {
+    int answer;
+    char *menu = "The menu : \n 1:Total travelers \n 2:Add traveler \n 3:charge Datas \n ";
     return 0;
 }
