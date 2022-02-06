@@ -1,12 +1,13 @@
 import random as r
 
 
-def check(myString: str, n: int, ele: str):
-    check = True
-    i = 0
-    while check and i < n:
-        check = not myString == ele
-    i += 1
+def Check(myString: str, n: int, ele: str):
+    if n > 0:
+        check = True
+        i = 0
+        while check and i < n:
+            check = not myString == ele
+        i += 1
     return check
 
 
@@ -14,7 +15,7 @@ def word():
     quit = False
     while not quit:
         word = input("Enter the word ")
-        quit = word.isupper()
+        quit = not word.isupper()
     return word
 
 
@@ -25,12 +26,12 @@ def genAlpha():
         quit = False
         while not quit:
             st = alpha[r.randint(0, 25)]
-            quit = check(newAlpha, i, st)
+            quit = Check(newAlpha, i, st)
         newAlpha += st
     return newAlpha
 
 
-def secret():
+def secretHash():
     alpha = "abcdefghijklmnopqrstuvwxyz"
     quit = False
     while not quit:
@@ -60,3 +61,13 @@ def result(word: str, alpha: str, secret: str):
             if word[i] == alpha[j]:
                 cryptedWord += secret[j]
     return cryptedWord
+
+
+word = word()
+print(f"the word is {word}")
+
+alpha = genAlpha()
+print(f"the alpha is {alpha}")
+secret = secretHash()
+print(f"the secret is {secret}")
+print(result(word, alpha, secret))
