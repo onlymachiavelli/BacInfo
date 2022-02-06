@@ -37,6 +37,21 @@ def secret():
     while not quit:
         secret = input("Enter Secret ")
         i = 0
-        while i < len(secret) and not quit:
-            check = check(secret, len(secret), secret[i])
+        test = True
+        while i < len(secret):
+            if not check(secret, len(secret), secret[i]):
+                test = False
             i += 1
+        quit = test
+
+    for i in range(len(secret), 26):
+        quit = False
+        while not quit:
+            st = alpha[r.randint(0, 25)]
+            quit = check(secret, len(secret), st)
+        secret += st
+
+    return secret
+
+
+def result():
