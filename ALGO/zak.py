@@ -1,13 +1,11 @@
 import random as r
 
 
-def Check(myString: str, n: int, ele: str):
-    if n > 0:
-        check = True
-        i = 0
-        while check and i < n:
-            check = not myString == ele
-        i += 1
+def Check(myString: str, ele: str):
+    check = True
+    for i in range(len(myString)):
+        if myString[i] == ele:
+            check = False
     return check
 
 
@@ -20,35 +18,43 @@ def word():
 
 
 def genAlpha():
-    alpha = "abcdefghijjklmnopqrstuvwxyz"
+    alpha = "abcdefghijklmnopqrstuvwxyz"
+    print(len(alpha))
     newAlpha = ""
     for i in range(26):
         quit = False
         while not quit:
             st = alpha[r.randint(0, 25)]
-            quit = Check(newAlpha, i, st)
+            quit = Check(newAlpha, st)
+            print(quit)
         newAlpha += st
     return newAlpha
+
+
+def dubl(myString: str, ele: str):
+    count = 0
+    for i in range(len(myString)):
+        if myString[i] == ele:
+            count += 1
+    if count > 1:
+        return False
+    return True
 
 
 def secretHash():
     alpha = "abcdefghijklmnopqrstuvwxyz"
     quit = False
     while not quit:
+        quit = True
         secret = input("Enter Secret ")
-        i = 0
-        test = True
-        while i < len(secret):
-            if not check(secret, len(secret), secret[i]):
-                test = False
-            i += 1
-        quit = test
-
+        for i in range(len(secret)):
+            if secret[i].isupper() or not dubl(secret, secret[i]):
+                quit = False
     for i in range(len(secret), 26):
         quit = False
         while not quit:
             st = alpha[r.randint(0, 25)]
-            quit = check(secret, len(secret), st)
+            quit = Check(secret, st)
         secret += st
 
     return secret
