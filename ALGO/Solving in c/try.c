@@ -1,9 +1,13 @@
 #include <stdio.h>
-#include <string.h>
-
-char *suite(int n, char *myString, int i)
+#include <stdlib.h>
+typedef struct fuck
 {
-    return "";
+    char *id;
+
+} fuck;
+
+int Voynum(char *src)
+{
 }
 
 int main()
