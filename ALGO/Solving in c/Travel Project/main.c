@@ -1,29 +1,26 @@
 #include <stdio.h>
 
-typedef struct Traverlers
-{
-    char *ID;
-    char *name;
-    char *adress;
-    char *totalTravels;
+typedef struct Traverlers{
+    char* ID;
+    char* name;
+    char* adress;
+    char* totalTravels;
 
 } Traverlers;
-int travelers(char *source)
-{
+int travelers(char* source){
 
-    FILE *shit;
+    FILE* shit;
     int n = 0;
     shit = fopen("data.dat", "rb");
-    if (shit != NULL)
-    {
+    if (shit != NULL){
     }
 
     return n;
 }
 
-int main()
-{
+int main() {
     int answer;
-    char *menu = "The menu : \n 1:Total travelers \n 2:Add traveler \n 3:charge Datas \n ";
+    char* menu = "The menu : \n 1:Total travelers \n 2:Add traveler \n 3:charge Datas \n ";
+    printf(menu);
     return 0;
 }
