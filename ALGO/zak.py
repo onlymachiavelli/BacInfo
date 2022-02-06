@@ -1,5 +1,4 @@
 import random as r
-from tty import setcbreak
 
 
 def check(myString: str, n: int, ele: str):
@@ -54,4 +53,10 @@ def secret():
     return secret
 
 
-def result():
+def result(word: str, alpha: str, secret: str):
+    cryptedWord = ""
+    for i in range(len(word)):
+        for j in range(len(alpha)):
+            if word[i] == alpha[j]:
+                cryptedWord += secret[j]
+    return cryptedWord
