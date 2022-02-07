@@ -56,7 +56,7 @@ int findTraveler(Traverlers* Object, char* ID, int n) {
     return indice;
 }
 int main() {
-    printf("%d \n", age());
+
     Traverlers dataHolder;
     int answer;
     char* source = "data.dat";
