@@ -40,15 +40,18 @@ void saveDatas(char* source, Traverlers* Object, int n){
     int pointer;
     fwrite(myFile, pointer, Object, n);
 
-    close(myFile);
+    fclose(myFile);
 
 }
 
 int findTraveler(Traverlers* Object, char* ID, int n) {
     int indice = -1;
+    FILE myFile = fopen("data.dat", "r");
+
     for (int i = 0;i < n;i++) {
 
     }
+    fclose(myFile);
     return indice;
 }
 int main() {
