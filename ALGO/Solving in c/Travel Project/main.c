@@ -44,6 +44,13 @@ void saveDatas(char* source, Traverlers* Object, int n){
 
 }
 
+int findTraveler(Traverlers* Object, char* ID, int n) {
+    int indice = -1;
+    for (int i = 0;i < n;i++) {
+
+    }
+    return indice;
+}
 int main() {
     int answer;
     char* source = "data.dat";
