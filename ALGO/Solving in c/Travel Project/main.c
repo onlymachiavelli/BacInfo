@@ -37,7 +37,8 @@ void fillTraveller(Traverlers* Object){
 void saveDatas(char* source, Traverlers* Object, int n){
 
     FILE* myFile = fopen(source, "a");
-    fwrite(myFile, Object, 0, 1);
+    int pointer;
+    fwrite(myFile, pointer, Object, n);
 
     close(myFile);
 
