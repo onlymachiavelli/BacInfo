@@ -55,15 +55,22 @@ int findTraveler(Traverlers* Object, char* ID, int n) {
     return indice;
 }
 int main() {
+    Traverlers dataHolder;
     int answer;
     char* source = "data.dat";
+    int n;
     char* menu = "The menu :\n 1:Total travelers \n 2:Add traveler \n 3:charge Datas \n  4:Find Traveller \n 5:add traveller \n 6: Delete Traveller \n 7:Libr \n any alphabet quit ";
     printf("%s", menu);
 
     switch (answer){
     case 1:
+        TotalTravellers(source);
         break;
     case 2:
+        saveDatas(source, &dataHolder, n);
+        break;
+    case 3:
+
         break;
     }
 
