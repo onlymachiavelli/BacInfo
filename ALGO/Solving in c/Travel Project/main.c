@@ -63,15 +63,10 @@ int main() {
     printf("%s", menu);
 
     switch (answer){
-    case 1:
-        TotalTravellers(source);
-        break;
+    case 1:TotalTravellers(source);break;
     case 2:
-        saveDatas(source, &dataHolder, n);
-        break;
-    case 3:
-
-        break;
+        saveDatas(source, &dataHolder, n);break;
+    case 3:break;
     }
 
     return 0;
