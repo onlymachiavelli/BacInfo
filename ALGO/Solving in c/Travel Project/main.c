@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <string.h>
+#include "funcs.h"
 typedef struct Traverlers{
     char* ID;
     char* name;
@@ -55,6 +56,7 @@ int findTraveler(Traverlers* Object, char* ID, int n) {
     return indice;
 }
 int main() {
+    printf("%d \n", age());
     Traverlers dataHolder;
     int answer;
     char* source = "data.dat";
