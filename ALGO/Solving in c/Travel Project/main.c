@@ -13,20 +13,20 @@ Main(){
     char* Menu = "Menu Control\n1:Total Traverlers\n2:Fill Traveler\n3:Charge Data\n4:Find Traveler\n5:Add Traveler\n6:Delete Traveler\n7:Libr\n";
     //show the menu
     printf(Menu);
-    while (true){
+    while (1){
         check = false;
         //verify the answer
         while (!check) {
-            printf("Enter the option");
-            scanf("%d", answer);
-            check = answer >= 1 && answer <= 7;
+            printf("Enter the option : ");
+            scanf("%d", &answer);
+            check = ((answer >= 1) && (answer <= 8)) ? true : check;
         }
-        if (answer < 9) {
+        if (answer < 8) {
 
             switch (answer) {
             case 1:totalTravelers(fileSource); break;
 
-            case 2: break;
+            case 2:printf("hello world"); break;
 
             case 3: break;
 
