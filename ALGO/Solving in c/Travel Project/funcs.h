@@ -19,4 +19,30 @@ int totalTravelers(char* source)  {
     return total;
 
 }
+void fillTraveler(Travelers* traveler) {
+    printf("EEnter ID\n");
+    scanf(&traveler->ID);
+    printf("Enter Name\n");
+    scanf(&traveler->name);
+    printf("Enter Adress\n");
+    scanf(&traveler->adress);
+    printf("Enter total Travels\n");
+    scanf("%d", &traveler->total);
+    if ((strlen(traveler->ID) == 0) && (strlen(traveler->adress) == 0) && (strlen(traveler->name) == 0))  fillTraveler(&traveler);
+}
 
+int* chargeData(char* source, int  n){
+    int* datas;
+    FILE* myFile = fopen(source, "rb");
+    fread(datas, sizeof(datas), n, myFile);
+    fclose(myFile);
+    return datas;
+
+
+}
+
+void sync(char* source, Travelers* travelers, int n) {
+    FILE* myFile = fopen(source, "wb");
+
+    fclose(myFile);
+}
