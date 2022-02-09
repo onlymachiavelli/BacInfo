@@ -3,17 +3,14 @@
 #include <stdbool.h>
 #include "funcs.h"
 
-
-
-int main(){
-    char* fileSoource = "shit.dat";
-    int dataSize = 0;
+#define Main int main
+Main(){
+    char* fileSource = "shit.dat";
+    int dataSizes = 0;
     int answer;
     bool check;
     Travelers array[100];
-
     char* Menu = "Menu Control\n1:Total Traverlers\n2:Fill Traveler\n3:Charge Data\n4:Find Traveler\n5:Add Traveler\n6:Delete Traveler\n7:Libr\n";
-
     //show the menu
     printf(Menu);
     while (true){
@@ -27,7 +24,7 @@ int main(){
         if (answer < 9) {
 
             switch (answer) {
-            case 1: break;
+            case 1:totalTravelers(fileSource); break;
 
             case 2: break;
 
