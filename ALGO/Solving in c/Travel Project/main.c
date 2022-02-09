@@ -8,12 +8,12 @@ Main(){
     char* fileSource = "shit.dat";
     int dataSizes = 0;
     int answer;
-    bool check;
+    bool check, quit = false;
     Travelers array[100];
     char* Menu = "Menu Control\n1:Total Traverlers\n2:Fill Traveler\n3:Charge Data\n4:Find Traveler\n5:Add Traveler\n6:Delete Traveler\n7:Libr\n";
     //show the menu
     printf(Menu);
-    while (1){
+    while (!quit){
         check = false;
         //verify the answer
         while (!check) {
@@ -42,7 +42,7 @@ Main(){
 
             }
         }
-        else printf("Clossing the program\n"); break;
+        else printf("Clossing the program\n"); quit = true;
     }
     return 0;
 
