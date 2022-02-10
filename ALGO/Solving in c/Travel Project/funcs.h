@@ -1,6 +1,7 @@
 
 #include <stdio.h>
 #include<stdbool.h>
+#include <string.h> 
 
 typedef struct  Travelers {
     char* ID;
@@ -32,7 +33,7 @@ void fillTraveler(Travelers* traveler) {
 }
 
 int* chargeData(char* source, int  n){
-    int* datas;
+    Travelers* datas;
     FILE* myFile = fopen(source, "rb");
     fread(datas, sizeof(datas), n, myFile);
     fclose(myFile);
@@ -41,11 +42,21 @@ int* chargeData(char* source, int  n){
 
 }
 
-void sync(char* source, Travelers* travelers, int n) {
+/*
+void syncDatas(char* source, Travelers* travelers, int n) {
     FILE* myFile = fopen(source, "wb");
     int* datas = chargeData(source, n);
-    datas[n + 1] = travelers;
+    n += 1;
+    datas[n] = travelers;
     fwrite(datas, sizeof(datas), n + 1, myFile);
     fclose(myFile);
 }
+*/
+int findTraveler(Travelers* array, char* ID, int n) {
+    int indice = -1;
+    for (int i = 0;i < n;i++) if (ID == array[i].ID) indice = i;
+    return indice;
+}
+void AddData() {
 
+}

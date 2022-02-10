@@ -6,16 +6,13 @@
 #define Main int main
 Main(){
 
-    char* fileSource = "shit.dat";
-    int dataSizes = 0;
-    int answer;
+    char* Id, fileSource = "shit.dat";
+    int answer, dataSizes = 0;
     bool check, quit = false;
-    Travelers array[100];
-    Travelers trData;
+    Travelers array[100], trData;
     char* Menu = "Menu Control\n1:Total Traverlers\n2:Fill Traveler\n3:Charge Data\n4:Find Traveler\n5:Add Traveler\n6:Delete Traveler\n7:Libr\n";
-    //show the menu
     printf(Menu);
-    while (!quit){
+    do{
         check = false;
         //verify the answer
         while (!check) {
@@ -28,8 +25,7 @@ Main(){
             switch (answer) {
             case 1:totalTravelers(fileSource); break;
             case 2:fillTraveler(&trData);break;
-            case 3: break;
-
+            case 3: syncDatas(fileSource, &trData, &dataSizes);break;
             case 4: break;
 
             case 5: break;
@@ -43,7 +39,9 @@ Main(){
             }
         }
         else printf("Closing the program\n"); quit = true;
-    }
+    } while (!quit);
+
+
     return 0;
 
 }
