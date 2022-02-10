@@ -43,6 +43,9 @@ int* chargeData(char* source, int  n){
 
 void sync(char* source, Travelers* travelers, int n) {
     FILE* myFile = fopen(source, "wb");
-
+    int* datas = chargeData(source, n);
+    datas[n + 1] = travelers;
+    fwrite(datas, sizeof(datas), n + 1, myFile);
     fclose(myFile);
 }
+
