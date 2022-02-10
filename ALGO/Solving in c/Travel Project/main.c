@@ -9,7 +9,7 @@ Main(){
     char* Id, fileSource = "shit.dat";
     int answer, dataSizes = 0;
     bool check, quit = false;
-    Travelers array[100], trData;
+    Travelers array[100], * trData;
     char* Menu = "Menu Control\n1:Total Traverlers\n2:Fill Traveler\n3:Charge Data\n4:Find Traveler\n5:Add Traveler\n6:Delete Traveler\n7:Libr\n";
     printf(Menu);
     do{
@@ -25,10 +25,18 @@ Main(){
             switch (answer) {
             case 1:totalTravelers(fileSource); break;
             case 2:fillTraveler(&trData);break;
-            case 3: syncDatas(fileSource, &trData, &dataSizes);break;
-            case 4: break;
-
-            case 5: break;
+            case 3:
+                chargeData(fileSource, dataSizes, array);
+                for (int i = 0; i < dataSizes; i++) printf("Name:%s\nID:%s\nAdress:%s\nTotal%d\n", trData[i].name, trData[i].ID, trData[i].adress, trData[i].total);
+                break;
+            case 4:
+                printf("Enter ID \n");
+                scanf(&Id);
+                printf("%d", findTraveler(array, Id, dataSizes));
+                break;
+            case 5:
+                addData(&trData, )
+                    break;
 
             case 6:
                 break;
