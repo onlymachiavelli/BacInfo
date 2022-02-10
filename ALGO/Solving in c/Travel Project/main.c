@@ -9,7 +9,7 @@ Main(){
     char* Id, fileSource = "shit.dat";
     int answer, dataSizes = 0;
     bool check, quit = false;
-    Travelers array[100], * trData;
+    Travelers array[100], trData;
     char* Menu = "Menu Control\n1:Total Traverlers\n2:Fill Traveler\n3:Charge Data\n4:Find Traveler\n5:Add Traveler\n6:Delete Traveler\n7:Libr\n";
     printf(Menu);
     do{
@@ -35,8 +35,8 @@ Main(){
                 printf("%d", findTraveler(array, Id, dataSizes));
                 break;
             case 5:
-                addData(&trData, )
-                    break;
+                addData(trData, array, dataSizes);
+                break;
 
             case 6:
                 break;

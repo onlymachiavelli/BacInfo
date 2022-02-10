@@ -58,7 +58,7 @@ void syncDatas(char* source, Travelers* travelers, int n) {
     fclose(myFile);
 }
 
-void addData(Travelers travelers, Travelers* array, int n){
+void addData(Travelers travelers, Travelers array[], int n){
     bool exist = false;
 
     for (int i = 0; i < n; i++) {
