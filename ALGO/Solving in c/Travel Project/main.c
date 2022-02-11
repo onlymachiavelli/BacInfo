@@ -27,7 +27,7 @@ Main(){
             case 2:fillTraveler(&trData);break;
             case 3:
                 chargeData(fileSource, dataSizes, array);
-                for (int i = 0; i < dataSizes; i++) printf("Name:%s\nID:%s\nAdress:%s\nTotal%d\n", trData[i].name, trData[i].ID, trData[i].adress, trData[i].total);
+                for (int i = 0; i < dataSizes; i++) printf("Name:%s\nID:%s\nAdress:%s\nTotal%d\n", array[i].name, array[i].ID, array[i].adress, array[i].total);
                 break;
             case 4:
                 printf("Enter ID \n");
@@ -39,9 +39,13 @@ Main(){
                 break;
 
             case 6:
+                printf("Enter traveler ID\n");
+                scanf(&Id);
+                deletetTraveler(&array, Id, &dataSizes);
                 break;
 
             case 7:
+                freeUp(&trData);
                 break;
 
             }

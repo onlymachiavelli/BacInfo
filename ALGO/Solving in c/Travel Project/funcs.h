@@ -67,13 +67,32 @@ void addData(Travelers travelers, Travelers array[], int n){
         exist = true;
         break;
     }
-
     if (!exist) {
         n++;
         array[n - 1] = travelers;
         printf("Added to the list ");
 
     }
-
+}
+void deletetTraveler(Travelers datas[], char* Id, int n) {
+    FILE* myFile = fopen("shit.dat", "rb+");
+    fread(&datas, sizeof(datas), n, myFile);
+    for (int i = 0; i < n - 1; i++){
+        if (datas->ID == Id) {
+            for (int j = i; j < n - 1; i++) datas[j] = datas[j + 1];
+            n = n - 1;
+            printf("Deleted %s \n", datas[i].ID);
+        }
+    }
+    fwrite(&datas, sizeof(datas), n, myFile);
+    fclose(myFile);
+}
+void freeUp(Travelers* traveler) {
+    traveler->ID = "";
+    traveler->name = "";
+    traveler->adress = "";
+    traveler->total = 0;
+    printf("Freed !\n");
 
 }
+
