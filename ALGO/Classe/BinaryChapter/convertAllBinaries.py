@@ -1,12 +1,7 @@
-
-
-import encodings
-
-
-def enCoding(code: int, mode: int):
-    if code >= mode/2:
-        return enCoding(code//mode, mode) + str(code % mode)
+def fromDec(code: int, base: int):
+    if code > 0:
+        return fromDec(code // base, base) + str(code % base)
     return ""
 
 
-print(enCoding(860, 2))
+print(fromDec(740, 2))
