@@ -15,7 +15,12 @@ void randomDecimal(int n) {
     FILE *myFile = fopen("dec.txt", "w") ;
     for (int i=0;i<n;i++)fprintf(myFile, "%d \n" , random(99, 999));
     fclose(myFile); 
-
+}
+int toDecimal(char *code, int base, int i){
+    if (i >= 0) {
+        continue;
+    }
+    return 0; 
 }
 int getNumber(char *code , int base){}
 int main () {
