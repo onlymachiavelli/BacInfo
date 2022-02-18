@@ -1,8 +1,4 @@
-from asyncio.windows_events import NULL
-from contextlib import nullcontext
-from logging import NullHandler
 import random as r
-import readline
 import numpy as np
 
 
@@ -35,7 +31,7 @@ def getS(num: int, base: int):
 
 def fromDec(code: int, base: int):
     if code > 0:
-        return fromDec(code // base, base) + getS(code % base)
+        return fromDec(code // base, base) + getS(code % base, base)
     return ""
 
 
@@ -84,5 +80,5 @@ n = 0
 
 fillTextDec()
 binaryConverter("bin.txt", n)
-octaleConverter("octale,txt", n)
+octaleConverter("octale.txt", n)
 hexaConverter("hexa.txt", n)
