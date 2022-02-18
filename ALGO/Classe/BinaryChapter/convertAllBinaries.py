@@ -1,11 +1,11 @@
 
 
 def getN(char: str):
-    return int(char)
+    return ord(char) + 55
 
 
 def getS(num: int):
-    return str(num)
+    return ord(chr(num) - 55)
 
 
 def fromDec(code: int, base: int):
