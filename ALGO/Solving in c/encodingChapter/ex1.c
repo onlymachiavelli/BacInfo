@@ -22,6 +22,11 @@ int toDecimal(char *code, int base, int i){
     }
     return 0; 
 }
+char *fromDec(int code, int base) {
+    
+    if (code >= 0 ) return fromDec(code / base, base) +  code%base  ;
+    return "";
+}
 int getNumber(char *code , int base){}
 int main () {
     printf("%d", toDecimal("1011100100", 2, 0)) ;
