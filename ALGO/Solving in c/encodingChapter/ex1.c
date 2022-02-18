@@ -17,13 +17,14 @@ void randomDecimal(int n) {
     fclose(myFile); 
 }
 int toDecimal(char *code, int base, int i){
-    if (i >= 0) {
-        continue;
+    if (i < strlen(code)) {
+        return (atoi(code[i]) * pow(base, strlen(code) -i-1)) + toDecimal(code / basde , base , i+1) ;
     }
     return 0; 
 }
 int getNumber(char *code , int base){}
 int main () {
+    printf("%d", toDecimal("1011100100", 2, 0)) ;
     srand(time(0));
     int n =  random(10,30);
     randomDecimal(n);
