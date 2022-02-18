@@ -9,10 +9,17 @@ int random(int lower , int higher){
 }
 char *getString(int code , int base)  {
     
-     
+}
+
+void randomDecimal(int n) {
+    FILE *myFile = fopen("dec.txt", "w") ;
+    for (int i=0;i<n;i++)fprintf(myFile, "%d \n" , random(99, 999));
+    fclose(myFile); 
+
 }
 int getNumber(char *code , int base){}
 int main () {
     srand(time(0));
-    for(int i=0;i<6;i++) printf("%d \n" ,  random(20, 99) );
+    int n =  random(10,30);
+    randomDecimal(n);
 }
