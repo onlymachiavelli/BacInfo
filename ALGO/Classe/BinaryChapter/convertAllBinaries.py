@@ -21,6 +21,3 @@ def toDec(code: str, base: int, i: int, j: int = 0):
     if i >= 0:
         return (getN(code[j])*(base**i)) + toDec(code, base, i-1, j+1)
     return 0
-
-
-print(toDec("1011100100", 2, len("1011100100")-1))
