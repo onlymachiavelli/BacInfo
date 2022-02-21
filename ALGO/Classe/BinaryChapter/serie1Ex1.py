@@ -1,6 +1,6 @@
 def check(myString: str):
     fuck = True
-    for i in range(len(ch)):
+    for i in range(len(myString)):
         if myString[i] != "0" and myString[i] != "1":
             fuck = False
     return fuck

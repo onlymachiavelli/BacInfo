@@ -20,4 +20,4 @@ def toDec(code: str, base: int, i: int, j: int = 0):
     return 0
 
 
-print(fromDec("1011100100", 16))
+print(fromDec(5, 2))
