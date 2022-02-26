@@ -13,3 +13,10 @@ def fromDecimal(code: int, base: int):
     if code >= 0:
         return str(code % base) + fromDecimal(code // base, base)
     return ""
+
+
+def readMessage(n: int, m: int, mat: np.ndarray):
+    myFile = open("message.txt", "r")
+    lines = myFile.readlines()
+
+    myFile.close()
