@@ -15,9 +15,14 @@ def printMat(matrix: any):
         print("")
 
 
-def snailAlgo():
-
-    return 0
+def snailAlgo(matrix: any):
+    limitHor = len(matrix)
+    limVert = len(matrix[0])
+    num = 0
+    i = 0
+    j = 0
+    while limitHor > 0 and limVert > 0:
+        matrix[i][j] = num
 
 
 matrix = []
