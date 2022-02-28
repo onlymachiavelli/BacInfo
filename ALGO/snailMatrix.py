@@ -16,19 +16,37 @@ def printMat(matrix: any):
 
 
 def snailAlgo(matrix: any):
-    limitHor = len(matrix)
-    limVert = len(matrix[0])
-    num = 0
+    n = 1
     i = 0
     j = 0
-    while limitHor > 0 and limVert > 0:
-        matrix[i][j] = num
+    check = True
+    while i < len(matrix) and j < len(matrix):
+        matrix[i][j] = n
+        n += 1
+        j += 1
+        if j == len(matrix):
+            i += 1
+            print(i, j)
+
+            matrix[i][j-1] = n
+            n += 1
+        if i == len(matrix):
+            j -= 1
+            matrix[i][j] = n
+            check = False
+            n += 1
+        if not check and j == 0:
+            i -= 1
+            matrix[i][j] = n
+            n += 1
+            if matrix[i-1][j] > 0:
+                check = True
 
 
 matrix = []
 
-n = 5
+n = 3
 fillMat(matrix, n, n)
-
+snailAlgo(matrix)
 
 printMat(matrix)
