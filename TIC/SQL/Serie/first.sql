@@ -7,3 +7,4 @@ CREATE TABLE CITOYEN (
     ville VARCHAR(20 ) ,
     Tel VARCHAR(81)  
 ); 
+
