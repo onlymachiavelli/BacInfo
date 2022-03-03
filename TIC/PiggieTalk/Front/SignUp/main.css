@@ -49,15 +49,30 @@ body {
 
 .input p {
   color: #fff;
+  font-size: 25px;
 }
 
 .input {
   width: 70%;
   height: 50px;
-  background-color: white;
   margin: auto;
   border-radius: 50px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  border: 2px solid var(--Pink);
+  padding-left: 20px;
+  margin-top: 20px;
+}
+
+.input input {
+  margin-left: 10px;
+  color: #fff;
+  font-weight: bold;
+  width: 87%;
+  background: none;
+  border: none;
+}
+
+::placeholder {
+  color: #fff;
 }
