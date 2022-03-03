@@ -25,34 +25,34 @@
                 <form action="" method="POST">
                     <div class="input">
                         <p><i class="fa fa-user-circle-o" aria-hidden="true"></i> </p>  
-                        <input type="text" placeholder="Enter UserName" name="username" />
+                        <input type="text" placeholder="Enter UserName" name="username" required />
                      </div>
                      <div class="input">
                         <p><i class="fa fa-envelope-o" aria-hidden="true"></i> </p>  
-                        <input type="text" placeholder="Enter Email Adress" name="email" />
+                        <input type="text" placeholder="Enter Email Adress" name="email" required  />
                      </div>
 
                      <div class="input">
                         <p><i class="fa fa-user" aria-hidden="true"></i></p>  
-                        <input type="text" placeholder="Enter First Name" name="fname" />
+                        <input type="text" placeholder="Enter First Name" name="fname" required />
                      </div>
 
                      <div class="input">
                         <p><i class="fa fa-user" aria-hidden="true"></i></p>  
-                        <input type="text" placeholder="Enter Last Name" name="lname" />
+                        <input type="text" placeholder="Enter Last Name" name="lname" required />
                      </div>
                      <div class="input">
                         <p><i class="fa fa-calendar" aria-hidden="true"></i></p>  
-                        <p style="font-size: 13px;font-weight: bold;display: block;margin-left:10px;">BirthDate</p><input type="date" name="date" style="width:auto !important;color:#fff;" />
+                        <p style="font-size: 13px;font-weight: bold;display: block;margin-left:10px;">BirthDate</p><input type="date" name="date" required style="width:auto !important;color:#fff;" />
                      </div>
                      <div class="input">
                         <p><i class="fa fa-unlock-alt" aria-hidden="true"></i></p>  
-                        <input type="password" placeholder="Enter Password" name="password" />
+                        <input type="password" placeholder="Enter Password" name="password" required />
                      </div>
 
                      <div class="selectInput">
                          <div>
-                             <p>Male <input type="radio" name="sex" /></p>
+                             <p>Male <input type="radio" name="sex"  /></p>
                          </div>
                          <div >
                              <p>Female  <input type="radio" name="sex" /> </p>
@@ -66,6 +66,6 @@
         </div>
         
     </main>
-    <script></script>
+    <script src="./../app.js"></script>
 </body>
 </html>
