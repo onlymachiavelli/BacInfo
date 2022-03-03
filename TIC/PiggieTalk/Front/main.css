@@ -36,7 +36,7 @@ body {
 
 .loginSide {
   border-right: 5px solid var(--Pink);
-  width: 40%;
+  width: 46%;
 }
 .loginSide #logo {
   color: #fff;
@@ -99,4 +99,32 @@ body {
   border-radius: 50px;
   margin-top: 20px;
   font-weight: bold;
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+.logBtn:hover {
+  background-color: #f5a9df;
+}
+
+.bSVGside {
+  width: 100%;
+  background: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.acc_Link {
+  color: #fff;
+  background: var(--Pink);
+  padding: 20px 50px 20px 50px;
+  display: block;
+  border-radius: 50px;
+  margin-top: 30px;
+  transition-duration: 0.5s;
+  font-weight: bold;
+}
+.acc_Link:hover {
+  background-color: #f5a9df;
 }
