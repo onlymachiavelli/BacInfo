@@ -12,16 +12,25 @@ def fillMatrix(matrix: np.ndarray, l: int, c: int):
     myFile = open("toCrypt.txt", "r")
     i = 0
     j = 0
-    check = False
+    quit = False
+    while not quit:
+        try:
+            line = myFile.readline()
+            for k in range(len(line)):
+                if line[k] == "\n":
+                    matrix[i, j] = "#"
+                else:
+                    matrix[i, j] = line[k]
+                j += 1
+                if j == len(line):
+                    j = 0
+                    i += 1
+        except:
+            quit = True
     while i < l and j < c:
-        line = myFile.readline()
-        if line != None:
-            check = False
-        for k in range(len(line)):
-            if line[k] == "\n":
-                matrix[i, j] = "#"
-            if j == c - 1:
-                j = 0
-                i += 1
+        matrix[i, j] = "*"
 
     myFile.close()
+
+
+theSize = size(7, 10)
