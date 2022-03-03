@@ -8,3 +8,8 @@ CREATE TABLE CITOYEN (
     Tel VARCHAR(81)  
 ); 
 
+CREATE TABLE vaccin (
+    CodeV VARCHAR(20) PRIMARY KEY ,
+    Nb_Dose INT(2) NOT NULL ,
+    
+)ENGINE = INNODB ;
