@@ -1,3 +1,4 @@
+from itertools import filterfalse
 import numpy as np
 
 
@@ -16,15 +17,17 @@ def fillMatrix(matrix: np.ndarray, l: int, c: int):
     while not quit:
         try:
             line = myFile.readline()
+            print(line)
             for k in range(len(line)):
                 if line[k] == "\n":
                     matrix[i, j] = "#"
                 else:
                     matrix[i, j] = line[k]
                 j += 1
-                if j == len(line):
+                if j == len(line)-1:
                     j = 0
                     i += 1
+            print(i, j)
         except:
             quit = True
     while i < l and j < c:
@@ -34,3 +37,6 @@ def fillMatrix(matrix: np.ndarray, l: int, c: int):
 
 
 theSize = size(7, 10)
+matrix = np.zeros([theSize, theSize], dtype=str)
+fillMatrix(matrix, theSize, theSize)
+print(matrix)
