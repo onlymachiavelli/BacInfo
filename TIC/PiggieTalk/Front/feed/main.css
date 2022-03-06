@@ -1,0 +1,19 @@
+@font-face {
+  font-family: Quicksand;
+  src: url(".././font/quicksand/Quicksand-VariableFont_wght.ttf");
+}
+
+:root {
+  --Dark: #262626;
+  --Pink: #e583c9;
+}
+* {
+  outline: none;
+  text-decoration: none;
+  font-family: Quicksand;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}

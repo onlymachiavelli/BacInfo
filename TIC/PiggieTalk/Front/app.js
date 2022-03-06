@@ -5,5 +5,5 @@ const checkSignUp = () => {
   const arr = Name("sex").value
   console.log(arr)
 }
-
+//gonna do it later !
 const checkLogin = () => {}
