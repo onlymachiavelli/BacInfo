@@ -4,7 +4,7 @@ import numpy as np
 
 def size(minimum: int, maximum: int):
     n = int(input("Enter The Size ! "))
-    if minimum < n < maximum:
+    if minimum <= n <= maximum:
         return n
     return size(minimum, maximum)
 
@@ -17,7 +17,6 @@ def fillMatrix(matrix: np.ndarray, l: int, c: int):
     while not quit:
         try:
             line = myFile.readline()
-            print(line)
             for k in range(len(line)):
                 if line[k] == "\n":
                     matrix[i, j] = "#"
@@ -32,6 +31,11 @@ def fillMatrix(matrix: np.ndarray, l: int, c: int):
             quit = True
     while i < l and j < c:
         matrix[i, j] = "*"
+        if j == c:
+            j = 0
+            i += 1
+        else:
+            j += 1
 
     myFile.close()
 
