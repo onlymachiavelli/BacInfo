@@ -14,10 +14,20 @@ void fillMatrix(char* source, int l, int c, char matrix[l][c]) {
     FILE* myFile = fopen(source, "r");
     char* line;
     int i = 0, j = 0;
+    bool entered = false;
     while (fgets(line, sizeof(line), myFile)){
-        for (int k = 0;k < strlen(line);k++){
-            i += 0;
+        if (!entered) {
+            entered = true;
         }
+        else matrix[i][j] = '#';j += 1;
+        for (int k = 0;k < strlen(line);k++){
+            if (j == c) j = 0;i += 1;
+            matrix[i][j] = line[k];
+            j += 1;
+
+        }
+
+
     }
     fclose(myFile);
 }
