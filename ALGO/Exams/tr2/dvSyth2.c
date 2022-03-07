@@ -11,7 +11,7 @@ int size(int min, int max) {
 
 }
 void fillMatrix(char* source, int l, int c, char matrix[l][c]) {
-    FILE* myFile = open(source, "r");
+    FILE* myFile = fopen(source, "r");
     char* line;
     int i = 0, j = 0;
     while (fgets(line, sizeof(line), myFile)){
@@ -23,19 +23,6 @@ void fillMatrix(char* source, int l, int c, char matrix[l][c]) {
 }
 int main() {
 
-    FILE* file = open("toCrypt.txt", "r");
-    char* line;
-    bool check;
-    while (fgets(line, sizeof(line), file)){
-        if (line[strlen(line)] == "\n"){
-            printf("Yes @ \n");
-        }
-        else {
-            printf("nope");
-        }
-    }
-    fclose(file);
-    //shits
     int l, c;
     while (true) {
         l = size(7, 20);
