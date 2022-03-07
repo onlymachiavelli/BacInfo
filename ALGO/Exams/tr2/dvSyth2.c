@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdbool.h>
+#include <stdlib.h>
 #include <string.h>
 #include <math.h>
 
@@ -46,7 +47,7 @@ char* fromDecimal(int code, int base) {
     }
     return "";
 }
-int toDecimal(char* code, int base, int index) {
+int toDecimal(const char* code, int base, int index) {
     if (strlen(code) > 0) {
         return atoi(code[index]) * pow(base, code[strlen(code) - index - 1]) + toDecimal(code, base, index++);
     }
@@ -57,10 +58,7 @@ void genResult(char* source, int l, int c, char matrix[l][c]) {
     int i = 0, j = 0;
     fprintf(myFile, "%s \n %s \n", fromDecimal(l, 2), fromDecimal(c, 2));
 
-
-
-
-
+    fclose(myFile);
 }
 int main() {
 
@@ -72,6 +70,8 @@ int main() {
     }
 
     char matrix[l][c];
+
+    return 0;
 
 
 }
