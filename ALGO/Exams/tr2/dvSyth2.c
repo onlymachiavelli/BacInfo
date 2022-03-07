@@ -43,12 +43,13 @@ void fillMatrix(char* source, int l, int c, char matrix[l][c]) {
 }
 char* fromDecimal(int code, int base) {
     if (code >= 0) {
-        return snprintf(NULL, 0, "%d", code % base) + fromDecimal(code / base, base);
+        return snprintf(NULL, 0, "%d", code % base > 9 ? char(code % base) + 55) : code % base + fromDecimal(code / base, base);
     }
     return "";
 }
 int toDecimal(const char* code, int base, int index) {
     if (strlen(code) > 0) {
+
         return atoi(code[index]) * pow(base, code[strlen(code) - index - 1]) + toDecimal(code, base, index++);
     }
     return 0;
