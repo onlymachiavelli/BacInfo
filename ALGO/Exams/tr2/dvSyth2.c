@@ -19,17 +19,28 @@ void fillMatrix(char* source, int l, int c, char matrix[l][c]) {
         if (!entered) {
             entered = true;
         }
-        else matrix[i][j] = '#';j += 1;
+        else matrix[i][j] = '#';j++;
         for (int k = 0;k < strlen(line);k++){
-            if (j == c) j = 0;i += 1;
+            if (j == c) j = 0;i++;
             matrix[i][j] = line[k];
-            j += 1;
+            j++;
 
         }
 
 
     }
+    while (i < l && j < c) {
+        matrix[i][j] = "*";
+        j++;
+        if (j == c){
+            i++;
+            j = 0;
+        }
+    }
     fclose(myFile);
+}
+int fromDecimal(int code, int base) {
+
 }
 int main() {
 
