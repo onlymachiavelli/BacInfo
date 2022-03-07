@@ -52,6 +52,16 @@ int toDecimal(char* code, int base, int index) {
     }
     return 0;
 }
+void genResult(char* source, int l, int c, char matrix[l][c]) {
+    FILE* myFile = fopen(source, "w");
+    int i = 0, j = 0;
+    fprintf(myFile, "%s \n %s \n", fromDecimal(l, 2), fromDecimal(c, 2));
+
+
+
+
+
+}
 int main() {
 
     int l, c;
