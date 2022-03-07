@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <string.h>
+#include <math.h>
 
 int size(int min, int max) {
     printf("Entert N \n");
@@ -45,9 +46,9 @@ char* fromDecimal(int code, int base) {
     }
     return "";
 }
-int* toDecimal(char* code, int base, int index) {
+int toDecimal(char* code, int base, int index) {
     if (strlen(code) > 0) {
-        //
+        return atoi(code[index]) * pow(base, code[strlen(code) - index - 1]) + toDecimal(code, base, index++);
     }
     return 0;
 }
