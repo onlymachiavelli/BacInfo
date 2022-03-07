@@ -39,8 +39,17 @@ void fillMatrix(char* source, int l, int c, char matrix[l][c]) {
     }
     fclose(myFile);
 }
-int fromDecimal(int code, int base) {
-
+char* fromDecimal(int code, int base) {
+    if (code >= 0) {
+        return snprintf(NULL, 0, "%d", code % base) + fromDecimal(code / base, base);
+    }
+    return "";
+}
+int* toDecimal(char* code, int base, int index) {
+    if (strlen(code) > 0) {
+        //
+    }
+    return 0;
 }
 int main() {
 
