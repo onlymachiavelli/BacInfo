@@ -1,0 +1,43 @@
+fonction checkTwo (n:entier):booleen 
+debut 
+
+    si convch(n)[long(convch(n))-1] mod 2 = 0 alors :
+        retourner vrai 
+    fin si
+    retourner faux 
+fin 
+
+
+fonction checkThree(n:entier, res:entier, i:entier):booleen 
+debut 
+    si i < long(convch(n)) alors 
+        retourner checkThree(n, res+val(convch(n)[i]), i+1)
+    fin si 
+    retourner res mod 3 = 0
+fin 
+
+
+fonction checkFour(n:entier):booleen 
+debut 
+    si val(convch(n)[long(convch(n))-2]+convch(n)[long(convch(n))-1]) mod 4 = 0 alors
+        retourner vrai 
+    fin si 
+    retourner faux 
+
+fin 
+
+
+fonction checkFive(n:entier):booleen
+
+
+
+..
+
+fonction checkSeven (n:entier) :booleen 
+debut
+    si n > 100 alors
+        retourner checkSeven(val(sous_Chaine(convch(n),0, long(convch(n))-2 )) - val(convch(n)[long(convch(n)) -1])*2) 
+    sinon 
+        retourner n mod 7 =0
+    fin si 
+fin 
