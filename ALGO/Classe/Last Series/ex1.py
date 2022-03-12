@@ -1,4 +1,6 @@
 
+import numpy as np
+
 
 def divTwo(n: int):
     return int(str(n)[len(str(n))-1]) % 2 == 0
@@ -53,16 +55,18 @@ def divStuff(number: str):
     while len(struct) % 4 != 0:
         struct = "0" + struct
     num = ""
-    arr = []
+    arr = np.zeros(len(struct)//4, dtype=int)
+    n = 0
     for i in range(len(struct)):
         num += struct[i]
         if len(num) == 4:
-            arr.append(num)
+            arr[n] = int(num)
+            n += 1
             num = ""
     res = 0
     cof = 1
     for i in range(len(arr)):
-        res += int(arr[i]) * cof
+        res += arr[i] * cof
         cof *= -1
 
     return res % 137 == 0
