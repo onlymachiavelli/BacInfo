@@ -41,3 +41,14 @@ debut
         retourner n mod 7 =0
     fin si 
 fin 
+
+supposon on a un tableau ! 
+
+fonction onethrin(nch:chaine):booleen 
+debut 
+    
+    tant que long (nch) mod 4 != 0 faire 
+        nch = "0" + nch 
+    fin tant que 
+    
+fin 
