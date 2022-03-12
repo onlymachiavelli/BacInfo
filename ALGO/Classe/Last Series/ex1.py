@@ -63,10 +63,8 @@ def divStuff(number: str):
     cof = 1
     for i in range(len(arr)):
         res += int(arr[i]) * cof
-        if cof == 1:
-            cof = -1
-        else:
-            cof = 1
+        cof *= -1
+
     return res % 137 == 0
 
 
