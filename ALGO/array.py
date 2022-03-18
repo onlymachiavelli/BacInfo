@@ -30,21 +30,17 @@ b = [3, 7, 9, 1]
 
 
 def ShellSort(arr, n):
-    pas = 1
-    while 3*pas + 1 < n:
-        pas *= 3+1
-
-    quit = False
-    while not quit:
-        for i in range(pas, n):
-            tmp = arr[i]
+    interv = n // 2
+    while interv > 0:
+        for i in range(interv, n):
+            swap = arr[i]
             j = i
-            while j-pas > 0 and arr[j-pas] > tmp:
-                arr[i] = arr[j-pas]
-                j -= pas
-            arr[j] = tmp
-        pas //= 3
-        quit = pas < 1
+            while j >= interv and arr[j - interv] > swap:
+                arr[j] = arr[j - interv]
+                j -= interv
+
+            arr[j] = swap
+        interv //= 2
 
 
 # bubRec(b, len(b))
