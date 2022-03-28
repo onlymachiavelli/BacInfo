@@ -27,5 +27,5 @@
         return (1);
     }
     echo Power($a,$b);
-    
+     
 ?>
