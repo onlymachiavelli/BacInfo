@@ -15,4 +15,9 @@ def apprx(e: float):
     return sqrt(6*s)
 
 
-print(apprx(ep))
+def surf(a, b, n):
+    s = 0
+    h = (b-a)/n
+    for i in range(n):
+        s += h*(a+i*h+h/2)
+    return s
