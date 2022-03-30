@@ -1,5 +1,5 @@
 create table users(
-    id int(10) primary key autoincrement,
+    id int(10) primary key auto_increment,
     name varchar(20) not null,
     email varchar(30) not null,
     password varchar(30)  not null,

@@ -7,7 +7,5 @@
         }
         return ($newString);
     }
-    echo Caesar("Khoor#Zruog$", 3, false);
-
 
 ?>
