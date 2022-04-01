@@ -44,13 +44,10 @@ const check = () => {
 
 const Click = () => {
   if (check()) {
-    alert("Good")
+    Name("myForm")[0].submit()
   }
 }
 
 Id("btn").addEventListener("click", () => {
   Click()
 })
-
-arr = ["a", "b", "c"]
-console.log(arr.hasOwnProperty("a"))
