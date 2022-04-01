@@ -22,11 +22,11 @@ const check = () => {
     platform = platform.split(".")[0]
     console.log(dom, com, user, platform)
     if (
-      (!(com.toLowerCase() in ["fr", "com"]) && user.length < 4) ||
-      !(
-        platform.toLowerCase() in
-        ["gmail", "outlook", "yahoo", "live", "proton"]
-      )
+      ["fr", "com"].indexOf(com.toLowerCase()) === -1 ||
+      user.length < 4 ||
+      ["gmail", "outlook", "yahoo", "live", "proton"].indexOf(
+        platform.toLowerCase()
+      ) === -1
     ) {
       error += "email is not valid \n"
     }
@@ -51,3 +51,6 @@ const Click = () => {
 Id("btn").addEventListener("click", () => {
   Click()
 })
+
+arr = ["a", "b", "c"]
+console.log(arr.hasOwnProperty("a"))
