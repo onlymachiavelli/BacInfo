@@ -33,4 +33,5 @@ mysql_select_db("formation");
 
 $req = "INSERT INTO CONDIDAT (nom,prenom,genre,email,bac) VALUES ('".$reqDatas['name']."','".$reqDatas['lname']."','".$reqDatas['sex']."','".$reqDatas['email']."','".$reqDatas['bac']."')";
 mysql_query($req);
+header('Location: index.html');
 ?>
