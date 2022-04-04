@@ -18,7 +18,7 @@ for ($i=0;$i<strlen($fullname);$i++){
 
 
 $reqDatas = array(
-    "name" =>$name,
+    "name" =>$name, 
     "lname" =>$lname,
     "sex" =>$_POST['sex'],
     "email" =>$_POST['email'],
@@ -32,6 +32,8 @@ foreach($reqDatas as $key => $value) {
 mysql_select_db("formation");
 
 $req = "INSERT INTO CONDIDAT (nom,prenom,genre,email,bac) VALUES ('".$reqDatas['name']."','".$reqDatas['lname']."','".$reqDatas['sex']."','".$reqDatas['email']."','".$reqDatas['bac']."')";
-mysql_query($req);
-header('Location: index.html');
+
+$res = mysql_query($req);
+
+echo mysql_num_rows($res) ;
 ?>

@@ -16,7 +16,12 @@ const check = () => {
     error += "you have to choose your sex ! \n"
   }
 
-  if (myDatas.email.indexOf("@") !== -1 && myDatas.email.indexOf(".") !== -1) {
+  if (
+    myDatas.email.indexOf("@") !== -1 &&
+    myDatas.email.indexOf(".") !== -1 &&
+    myDatas.email.indexOf(".") > myDatas.email.indexOf("@") &&
+    myDatas.email.length < 50
+  ) {
     let [dom, com] = myDatas.email.split(".")
     let [user, platform] = myDatas.email.split("@")
     platform = platform.split(".")[0]
@@ -26,7 +31,8 @@ const check = () => {
       user.length < 4 ||
       ["gmail", "outlook", "yahoo", "live", "proton"].indexOf(
         platform.toLowerCase()
-      ) === -1
+      ) === -1 ||
+      platform.indexOf(".") !== -1
     ) {
       error += "email is not valid \n"
     }
@@ -41,13 +47,3 @@ const check = () => {
   }
   return error.length > 0 ? false : true
 }
-
-const Click = () => {
-  if (check()) {
-    Name("myForm")[0].submit()
-  }
-}
-
-Id("btn").addEventListener("click", () => {
-  Click()
-})

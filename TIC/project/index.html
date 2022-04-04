@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width= , initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width= , initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <form action="./send.php" method="POST" name="myForm">
-        <h1>Formulaire scolaire</h1>
-        <br/>
-        <label>Nom et prenom </label>
-        <input type="text" name="name" />
-        <br/>
-        <label>Genre</label>
-        <input  type="radio" name="sex" value="M"  /><label>Masculin</label>
-        <input  type="radio" name="sex" value="F" /><label>Feminin</label>
-        <br/>
-        <label>Adresse</label>
-        <input type="email" name="email" />
-        <br/>
-        <select name="nc">
-            <option >Niveau scolaire</option>
-            <option value="4si">4eme science informatique</option>
-            <option value="4math">4eme Math</option>
-            <option value="4tech">4eme Technique</option>
-        </select>
-        <br/>
-        <button id="btn" type="button">Submit</button>
-        <button type="reset">Reset</button>
+  </head>
+  <body>
+    <form action="./send.php" method="POST" name="myForm" onsubmit="return check()">
+      <h1>Formulaire scolaire</h1>
+      <br />
+      <label>Nom et prenom </label>
+      <input type="text" name="name" />
+      <br />
+      <label>Genre</label>
+      <input type="radio" name="sex" value="M" /><label>Masculin</label>
+      <input type="radio" name="sex" value="F" /><label>Feminin</label>
+      <br />
+      <label>Adresse</label>
+      <input type="email" name="email" />
+      <br />
+      <select name="nc">
+        <option>Niveau scolaire</option>
+        <option value="4si">4eme science informatique</option>
+        <option value="4math">4eme Math</option>
+        <option value="4tech">4eme Technique</option>
+      </select>
+      <br />
+      <button id="btn" type="submit" >Submit</button>
+      <button type="reset">Reset</button>
     </form>
     <script src="./app.js"></script>
-</body>
+  </body>
 </html>
