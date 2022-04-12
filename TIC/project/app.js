@@ -56,7 +56,7 @@ const check = () => {
   return error.length > 0 ? false : true
 }
 
-const checkUp = () => {
+const Upcheck = () => {
   let error = ""
   if (Number(Name("id")[0].value) <= 0) {
     error += "invalid ID ! \n"
