@@ -4,8 +4,8 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['nc']) && is
     $localhost = "localhost";
     $username = "root";
     $password = "";
-    mysql_connect($localhost,$username,$password);
-    mysql_select_db("formation") ;
+    mysql_connect($localhost,$username,$password) or die("Error connecting to phpMyadmin");
+    mysql_select_db("formation") or die("Error selecting the database") ;
     $fullname = $_POST['name']; 
 
     $name = substr($fullname, 0 , strpos($fullname, " "));
