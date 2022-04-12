@@ -43,22 +43,3 @@ for i in range(len(arr)):
     if minn["val"] < arr[i]["val"]:
         minn = arr[i]
 print(minn)
-
-"""
-
-n = 10000
-gauche -> 3.0684222885524766
-droite -> 3.0683641047744574
-milieu -> 3.068393181495397
-droite 
-
-
-f(x) = cos(x) + racine(x)
-a = 1 
-b = 4 
-minn = arr[0]
-for i in range(len(arr)):
-    if minn["val"] < arr[i]["val"]:
-        minn = arr[i]
-print(minn)
-"""
