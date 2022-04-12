@@ -5,7 +5,7 @@ const checkEmail = (theEmail) => {
   if (
     theEmail.indexOf("@") !== -1 &&
     theEmail.indexOf(".") !== -1 &&
-    theEmail.indexOf(".") > myDatas.email.indexOf("@") &&
+    theEmail.indexOf(".") > theEmail.indexOf("@") &&
     theEmail.length < 50
   ) {
     let [dom, com] = theEmail.split(".")
