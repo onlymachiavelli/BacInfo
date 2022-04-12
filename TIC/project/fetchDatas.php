@@ -26,8 +26,10 @@
     </head>
     <body>
         <h1>All the datas ! </h1>
+        <a href="./index.html">Do you want to add a data ? </a>
 
-        <br/>
+
+        <br/><br/>
 
         <table>
             <tr>
@@ -48,7 +50,7 @@
                 <td><?php echo $row['email'] ?></td>
                 <td><?php echo $row['bac'] ?></td>
                 <td>
-                    <form method="POST" action="">
+                    <form method="POST" action="./delete.php">
                         <input type="hidden" name="id" value="<?php echo $row['id'] ?>"/>
                         <input type="submit" name="delete" value="Delete"/>
 
