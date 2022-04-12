@@ -9,14 +9,14 @@
 <body>
     <h1>Update email ! </h1>
     <br/>
-    <form action="" >
+    <form action="./updateData.php" method="POST" onsubmit="return Upcheck()" >
         <label>Id</label>
         <input type="text" name="id" />
         <br/>
         <label>Email</label>
         <input type="email" name="email" />
         <br/>
-        <button type="button"  onclick="Upcheck()">Submit</button>
+        <button type="submit"  >Submit</button>
     </form>
     <script src="./app.js"></script>
 </body>
