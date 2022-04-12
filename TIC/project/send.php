@@ -1,39 +1,35 @@
 <?php
-//connect 
-$localhost = "localhost";
-$username = "root";
-$password = "";
-mysql_connect($localhost,$username,$password);
 
-$fullname = $_POST['name'];
-$name = "";
-$lname = "" ;
-for ($i=0;$i<strlen($fullname);$i++){
-    if ($fullname[$i] == " "){
-        $name = substr($fullname,0,$i);
-        $lname = substr($fullname,$i+1,strlen($fullname));
-        break;
+if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['nc']) && isset($_POST['sex'])) {
+    $localhost = "localhost";
+    $username = "root";
+    $password = "";
+    mysql_connect($localhost,$username,$password);
+    mysql_select_db("formation") ;
+    $fullname = $_POST['name']; 
+
+    $name = substr($fullname, 0 , strpos($fullname, " "));
+    $lname = substr($fullname , strpos($fullname, " ") +1 , strlen($fullname)) ;
+    $reqDatas = array(
+        "name" =>$name, 
+        "lname" =>$lname,
+        "sex" =>$_POST['sex'],
+        "email" =>$_POST['email'],
+        "bac" =>$_POST['nc'],
+    );
+    $req = "INSERT INTO CONDIDAT (nom,prenom,genre,email,bac) VALUES ('".$reqDatas['name']."','".$reqDatas['lname']."','".$reqDatas['sex']."','".$reqDatas['email']."','".$reqDatas['bac']."')";
+    $res = mysql_query($req) ;
+    if (mysql_affected_rows() >0 ) {
+        echo "Done saving datas ! "; 
     }
+    else {
+        echo "Error saving datas ! perhpas there's an error !";
+        echo "<br/> " . mysql_error() ;
+    }
+    echo "<br/> <a href='index.html'>Goo back</a>";
+}
+else {
+    echo "Error Getting datas ! You must fill all the fields !";
 }
 
-
-$reqDatas = array(
-    "name" =>$name, 
-    "lname" =>$lname,
-    "sex" =>$_POST['sex'],
-    "email" =>$_POST['email'],
-    "bac" =>$_POST['nc'],
-);
-
-foreach($reqDatas as $key => $value) {
-    echo "$value <br/>" ;
-}
-//select database
-mysql_select_db("formation");
-
-$req = "INSERT INTO CONDIDAT (nom,prenom,genre,email,bac) VALUES ('".$reqDatas['name']."','".$reqDatas['lname']."','".$reqDatas['sex']."','".$reqDatas['email']."','".$reqDatas['bac']."')";
-
-$res = mysql_query($req);
-
-echo mysql_num_rows($res) ;
 ?>
