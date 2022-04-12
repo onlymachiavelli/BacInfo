@@ -1,6 +1,33 @@
 const Id = (id) => document.getElementById(id)
 const Name = (namme) => document.getElementsByName(namme)
 
+const checkEmail = (theEmail) => {
+  if (
+    theEmail.indexOf("@") !== -1 &&
+    theEmail.indexOf(".") !== -1 &&
+    theEmail.indexOf(".") > myDatas.email.indexOf("@") &&
+    theEmail.length < 50
+  ) {
+    let [dom, com] = theEmail.split(".")
+    let [user, platform] = theEmail.split("@")
+    platform = platform.split(".")[0]
+    if (
+      ["fr", "com"].indexOf(com.toLowerCase()) === -1 ||
+      user.length < 4 ||
+      ["gmail", "outlook", "yahoo", "live", "proton"].indexOf(
+        platform.toLowerCase()
+      ) === -1 ||
+      platform.indexOf(".") !== -1
+    ) {
+      return false
+    }
+  } else {
+    return false
+  }
+
+  return true
+}
+
 const check = () => {
   const myDatas = {
     nom: Name("name")[0].value,
@@ -16,34 +43,32 @@ const check = () => {
     error += "you have to choose your sex ! \n"
   }
 
-  if (
-    myDatas.email.indexOf("@") !== -1 &&
-    myDatas.email.indexOf(".") !== -1 &&
-    myDatas.email.indexOf(".") > myDatas.email.indexOf("@") &&
-    myDatas.email.length < 50
-  ) {
-    let [dom, com] = myDatas.email.split(".")
-    let [user, platform] = myDatas.email.split("@")
-    platform = platform.split(".")[0]
-    console.log(dom, com, user, platform)
-    if (
-      ["fr", "com"].indexOf(com.toLowerCase()) === -1 ||
-      user.length < 4 ||
-      ["gmail", "outlook", "yahoo", "live", "proton"].indexOf(
-        platform.toLowerCase()
-      ) === -1 ||
-      platform.indexOf(".") !== -1
-    ) {
-      error += "email is not valid \n"
-    }
-  } else {
-    error += "email is not valid \n"
+  if (!checkEmail(myDatas.email)) {
+    error += "Invalid Email ! \n"
   }
+
   if (myDatas.clas === null) {
     error += "select your class !  \n"
   }
   if (error.length > 0) {
     alert(error)
   }
+  return error.length > 0 ? false : true
+}
+
+const checkUp = () => {
+  let error = ""
+  if (Number(Name("id")[0].value) <= 0) {
+    error += "invalid ID ! \n"
+  }
+
+  if (!checkEmail(Name("email")[0].value)) {
+    error += "Invalid Email ! \n"
+  }
+
+  if (error.length > 0) {
+    alert(error)
+  }
+
   return error.length > 0 ? false : true
 }
