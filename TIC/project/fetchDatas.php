@@ -20,13 +20,15 @@
                 border-collapse: collapse;
             }
             td, th{
-                padding:10px;
+                padding:7px;
             }
         </style>
     </head>
     <body>
         <h1>All the datas ! </h1>
         <a href="./index.html">Do you want to add a data ? </a>
+        <br/>
+        <a href="./update.html">Update email ? </a>
 
 
         <br/><br/>
@@ -39,7 +41,7 @@
                 <th>Genre</th>
                 <th>Email</th>
                 <th>Bac</th>
-                <th></th>
+                <th>Delete</th>
             </tr>
             <?php while ($row = mysql_fetch_array($res)) {?>
             <tr>
@@ -49,11 +51,10 @@
                 <td><?php echo $row['genre'] ?></td>
                 <td><?php echo $row['email'] ?></td>
                 <td><?php echo $row['bac'] ?></td>
-                <td>
+                <td> 
                     <form method="POST" action="./delete.php">
                         <input type="hidden" name="id" value="<?php echo $row['id'] ?>"/>
                         <input type="submit" name="delete" value="Delete"/>
-
                     </form>
                 </td>
             </tr>
