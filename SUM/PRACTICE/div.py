@@ -27,4 +27,15 @@ def divFive(n: int):
     return int(str(n)[len(str(n))-1]) == 0 or int(str(n)[len(str(n))-1]) == 5
 
 
-print
+def divSix(n: int):
+    return divThree(n) and divTwo(n)
+
+
+def divSeven(n: int):
+    number = n
+    while number > 100:
+
+    return number % 7 == 0
+
+
+print(divSix(14))
