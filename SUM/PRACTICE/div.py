@@ -21,3 +21,10 @@ def divThree(n: int):
 
 def divFour(n: int):
     return int(str(n)[len(str(n))-2: len(str(n))]) % 4 == 0
+
+
+def divFive(n: int):
+    return int(str(n)[len(str(n))-1]) == 0 or int(str(n)[len(str(n))-1]) == 5
+
+
+print
