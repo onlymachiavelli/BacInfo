@@ -34,8 +34,10 @@ def divSix(n: int):
 def divSeven(n: int):
     number = n
     while number > 100:
-
+        a = number % 10
+        number = number // 10
+        number = number - (2*a)
     return number % 7 == 0
 
 
-print(divSix(14))
+print(divSeven(1878752))
