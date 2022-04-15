@@ -21,7 +21,7 @@ const checkEmail = (theEmail) => {
     ) {
       return false
     }
-  } else {
+  } else { 
     return false
   }
 

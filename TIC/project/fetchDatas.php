@@ -5,7 +5,7 @@
 
     $req = "SELECT * FROM condidat";
     $res = mysql_query($req) ;
-
+    $r =  mysql_query("SELECT id FROM condidat")
 ?>
 
 <!DOCTYPE html>
@@ -47,7 +47,7 @@
             <tr>
                 <td><?php echo $row['id'] ?></td>
                 <td><?php echo $row['nom'] ?></td>
-                <td><?php echo $row['prenom'] ?></td>
+                <td><?php echo $row['prenom'] ?></td> 
                 <td><?php echo $row['genre'] ?></td>
                 <td><?php echo $row['email'] ?></td>
                 <td><?php echo $row['bac'] ?></td>
@@ -61,5 +61,25 @@
             <?php } ?>
 
         </table>
+        <br/>
+        <form action="del.php" method="POST" >
+            <h1>Or try to delete using this </h1>
+            <br/>
+            <p>Select the id ! </p>
+            <br/>
+            <select name="option">
+                <option value="0">Select  </option>
+                 <?php while($line = mysql_fetch_array($r)) {?>
+                <option value="<?php $line['id'] ?>"> ID  num  <?php
+                        echo $line['id'] ;
+                    ?></option>
+                <?php } ?>  
+            </select>
+            <br/>
+            <br/>
+            <button type="submit">Delete</button>
+        </form>
+
+        
     </body>
 </html>

@@ -21,7 +21,7 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['nc']) && is
     $res = mysql_query($req) ;
     if (mysql_affected_rows() >0 ) {
         echo "Done saving datas ! "; 
-    }
+    } 
     else {
         echo "Error saving datas ! perhpas there's an error !";
         echo "<br/> " . mysql_error() ;

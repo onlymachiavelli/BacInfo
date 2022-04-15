@@ -25,7 +25,7 @@ if(isset($_POST['email'])&& isset($_POST['id'])) {
 }
 
 else {
-    echo "Error getting the datas ! "; 
+    echo "Error getting the datas ! ";  
 }
 
 echo "<br/><a href='./update.html'>Go back</a>";
