@@ -40,7 +40,6 @@ def fillFile(src, n):
 
     for i in range(n):
         quit = False
-        res = True
         while not quit:
             code = input("Enter code " + str(i))
             quit = len(code) <= 6 and code.isupper()
