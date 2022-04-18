@@ -26,7 +26,7 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['nc']) && is
         echo "Error saving datas ! perhpas there's an error !";
         echo "<br/> " . mysql_error() ;
     }
-    echo "<br/> <a href='index.html'>Goo back</a>";
+    echo "<br/> <a href='add.html'>Goo back</a>";
 }
 else {
     echo "Error Getting datas ! You must fill all the fields !";

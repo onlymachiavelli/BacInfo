@@ -26,7 +26,7 @@
     </head>
     <body>
         <h1>All the datas ! </h1>
-        <a href="./index.html">Do you want to add a data ? </a>
+        <a href="./add.html">Do you want to add a data ? </a>
         <br/>
         <a href="./update.html">Update email ? </a>
 
