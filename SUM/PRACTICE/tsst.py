@@ -1,17 +1,34 @@
-from math import *
+"""from math import *
 
 
-def apprx(ep):
-    i = 1
+def f(x):
+    return cos(x) + sqrt(x+1)
+
+
+def trap(n, a, b):
+    h = (b-a)/n
     s = 0
-    s1 = 0
-    quit = False
-    while (not quit):
-        s = s1
-        s1 += 1/i**2
-        i += 1
-        quit = sqrt(s1*6) - sqrt(s*6) > ep
-    return sqrt(s1*6)
+    x = a
+    for i in range(n):
+        s += (f(x) + f(x+h)) * (h/2)
+        x += h
+
+    return s
 
 
-print(apprx(0.0001))
+print(trap(50000, 1, 3))
+
+
+2.74736427
+2.747345383452616
+2.747364273500522"""
+
+
+def powe(a, b):
+    res = 1
+    for i in range(b):
+        res *= a
+    return res
+
+
+print(powe(6, 3))
