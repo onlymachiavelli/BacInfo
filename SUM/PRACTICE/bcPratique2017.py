@@ -27,8 +27,12 @@ def crypt(salt, src):
                 for j in range(len(line) // len(salt)):
                     matrix[i, j] = line[k]
                     k += 1
-            print(matrix)
-
+            newLine = ""
+            for i in range(len(line) // len(salt)):
+                newLine += salt[i]
+                for j in range(len(salt)):
+                    newLine += matrix[i, j]
+            res.write(newLine + "\n")
         except:
             quit = True
     res.close()
