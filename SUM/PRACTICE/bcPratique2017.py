@@ -9,7 +9,7 @@ def getSalt():
         for j in range(len(salt)):
             if salt[i] == salt[j]:
                 count += 1
-            if count > 1 or not salt.isupper() or 5 <= len(salt) <= 10:
+            if count > 0 or not salt.isupper() or 5 <= len(salt) <= 10:
                 return getSalt()
     return salt
 
@@ -23,6 +23,13 @@ def crypt(salt, src):
             line = myFile.readlin()
             while len(line) % len(salt) != 0:
                 line += " "
+            matrix = np.zeros((len(salt), len(line) // len(salt)), dtype=str)
+            k = 0
+            for i in range(len(salt)):
+                for j in range(len(line) // len(salt)):
+                    matrix[i, j] = line[k]
+                    k += 1
+            print(matrix)
 
         except:
             quit = True
@@ -42,4 +49,6 @@ def show(src):
     myFile.close()
 
 
-print(getSalt())
+salt = getSalt()
+crypt(salt, "src.txt")
+show("crypt.txt")
