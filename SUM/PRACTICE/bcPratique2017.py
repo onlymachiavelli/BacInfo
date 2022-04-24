@@ -2,14 +2,12 @@ import numpy as np
 
 
 def getSalt():
-    salt = input("Entrez un salt : ")
+    salt = input("Enter your salt: ")
+    if not salt.isupper() or 5 <= len(salt) <= 10:
+        return getSalt()
     for i in range(len(salt)):
-        count = 0
-
         for j in range(len(salt)):
-            if salt[i] == salt[j]:
-                count += 1
-            if count > 0 or not salt.isupper() or 5 <= len(salt) <= 10:
+            if i != j and salt[i] == salt[j]:
                 return getSalt()
     return salt
 
