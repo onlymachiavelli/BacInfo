@@ -1,3 +1,5 @@
+
+from math import *
 """from math import *
 
 
@@ -24,11 +26,22 @@ print(trap(50000, 1, 3))
 2.747364273500522"""
 
 
-def powe(a, b):
-    res = 1
-    for i in range(b):
-        res *= a
-    return res
+def form(x: int):
+    return((2*x)/(2*x-1))*((2*x)/(2*x+1))
 
 
-print(powe(6, 3))
+def wallis(ep: float):
+    n = 3
+    s = form(1)
+    s1 = s*form(2)
+    while (s1*2-s*2 > ep):
+        s = s1
+        s1 *= form(n)
+        n += 1
+
+    return (s1*2)
+
+
+ep = 0.00000001
+
+print(wallis(ep))
