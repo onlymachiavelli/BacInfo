@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    
+
+   <form action="" method="" onsubmit="return Test1()">
+        <fieldset>
+            <legend>Ajout des mesures</legend>
+            <label>Station</label>
+            <select name="station">
+                <option>Choisir une station</option>
+                <option value="60715" >Carthage</option>
+                <option value="60731" >Enfidha-Aeropot</option>
+                <option value="60780" >El-Borma</option>
+            </select>
+
+
+            <label>Saison</label>
+            <select name="saison">
+                <option>Choisir une saison</option>
+                <option value="Hiver" >Hiver</option>
+                <option value="Printemps" >Printemps</option>
+                <option value="Ele" >Ele</option>
+                <option value="Automne" >Automne</option>
+            </select>
+            <br/>
+            <label>
+                Annee
+            </label>
+            <input type="radio" name="year" value="2018"  /><label>2018</label>
+            <input type="radio" name="year" value="2019"  /><label>2019</label>
+            <br/>
+            <label>Temperature</label>
+            <input type="number"  name="temp" /><label>C°</label>&nbsp;&nbsp; <label>Pluie</label> <input type="number" name="pluie" /><label>(mm)</label>
+            <br/>
+            <button type="reset">Annuler</button>
+            <button type="submit">Ajouter</button>
+        </fieldset>
+    </form>
+    <script src="./app.js"></script>
+</body>
+</html>
