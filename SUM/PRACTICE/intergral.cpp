@@ -16,14 +16,18 @@ float pi(float e) {
     return sqrt(s1*6);
 }
 
+
+float form(int x) {
+    return (2*x/(2*x-1))*(2*x/(2*x+1));
+}
 float wallis(float ep) {
 
     int n = 3;
-    float s = (2/1)*(2/3);
-    float s1 = s+((2*2)/(2*2-1))*((2*2)/(2*2+1));
+    float s = form(1);
+    float s1 = s*form(2);
     do {
         s = s1;
-        s1 += ((2*n)/(2*n-1)) *((2*n)/(2*n)/(2*n+1)) ;
+        s1 *= form(n) ;
         n++;
     }
     while(s1*2-s*2 > ep) ;
@@ -31,7 +35,7 @@ float wallis(float ep) {
 }
 
 Main(){
-    float ep = 0.00000001;
+    float ep = 0.00001;
     cout << wallis(ep);
     return 1 ;
 }
