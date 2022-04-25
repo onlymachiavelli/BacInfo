@@ -8,7 +8,7 @@
 <body>
     
 
-   <form action="" method="" onsubmit="return Test1()">
+   <form action="./mesure.php" method="POST" onsubmit="return Test1()">
         <fieldset>
             <legend>Ajout des mesures</legend>
             <label>Station</label>
@@ -36,7 +36,7 @@
             <input type="radio" name="year" value="2019"  /><label>2019</label>
             <br/>
             <label>Temperature</label>
-            <input type="number"  name="temp" /><label>C°</label>&nbsp;&nbsp; <label>Pluie</label> <input type="number" name="pluie" /><label>(mm)</label>
+            <input type="text"  name="temp" /><label>C°</label>&nbsp;&nbsp; <label>Pluie</label> <input type="text" name="pluie" /><label>(mm)</label>
             <br/>
             <button type="reset">Annuler</button>
             <button type="submit">Ajouter</button>

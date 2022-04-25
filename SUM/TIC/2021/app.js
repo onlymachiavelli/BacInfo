@@ -12,7 +12,7 @@ function Test1() {
   if (Name("station")[0].selectedIndex == 0) {
     err += "selectioner la station \n";
   }
-  if (Name("saison")[0].selectedIndex) {
+  if (Name("saison")[0].selectedIndex == 0) {
     err += "Selectioner saison \n";
   }
   if (!Name("year")[0].checked && !Name("year")[1].checked) {
@@ -21,7 +21,8 @@ function Test1() {
   if (
     Number(Name("temp")[0].value) < -5 ||
     Number(Name("temp")[0].value) > 50 ||
-    Name("temp")[0].value == ""
+    Name("temp")[0].value == "" ||
+    isNaN(Name("temp")[0].value)
   ) {
     err += "temperature invalide \n";
   }
