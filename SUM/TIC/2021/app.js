@@ -36,3 +36,18 @@ function Test1() {
   }
   return true;
 }
+
+function Test2() {
+  var err = "";
+  if (Name("station")[0].selectedIndex == 0) {
+    err += "Selectionner une station \n";
+  }
+  if (!Name("clim")[0].checked && !Name("clim")[0].checked) {
+    err += "Selectionnee unde donne climatique \n";
+  }
+  if (err.length > 0) {
+    alert(err);
+    return false;
+  }
+  return true;
+}
