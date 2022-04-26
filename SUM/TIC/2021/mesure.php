@@ -13,6 +13,9 @@ if (isset($_POST["station"]) && isset($_POST["saison"]) && isset($_POST["year"])
         //send datas
 
         echo "hello ";
+
+
+        
     }
     else {
         echo "Mesures est deja enregistrees";
