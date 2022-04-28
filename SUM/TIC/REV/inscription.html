@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <form action="./inscrption.php" method="POST" onsubmit="return verif1()">
+      <fieldset>
+        <legend>Indscription d'un client</legend>
+
+        <label>Nom : </label> &nbsp; <input type="text" name="name" id="name" />
+        <br />
+        <label>Prenom : </label> &nbsp;
+        <input type="text" name="lname" id="lname" />
+        <br />
+        <label>Tel : </label> &nbsp; <input type="text" name="tel" id="tel" />
+        <br />
+        <label>Adress : </label> &nbsp;
+        <textarea name="adress" id="adress" cols="100" rows="10"> </textarea>
+
+        <hr />
+        <br />
+        <label> Password : </label> &nbsp;
+        <input type="password" name="password" id="password" />
+        <br />
+        <label> Confirmation Password : </label> &nbsp;
+        <input type="password" name="pass2" id="pass2" />
+        <br />
+
+        <button type="reset">Annuler</button>
+        <button type="submit">Valider</button>
+      </fieldset>
+    </form>
+    <script src="./app.js"></script>
+  </body>
+</html>
