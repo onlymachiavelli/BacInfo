@@ -13,16 +13,11 @@ if(mysql_num_rows(mysql_query($check))==0) {
         echo "Done saving datas" ;
     }
     else {
-        echo "Cannot save the datas! perhaps the phone is already exist <br/>".mysql_error() ;
+        echo "Cannot save the datas! perhaps an error ".mysql_error() ;
     }
 }
-
-
-
-
 else{ 
-    echo "you can't save the datas";
-
+    echo "you can't save the datas <br/>";
 }
 
 ?>

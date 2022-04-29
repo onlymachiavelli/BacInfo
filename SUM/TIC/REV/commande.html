@@ -5,5 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
-  <body></body>
+  <body>
+    <form action="./commande.php" method="POST" onsubmit="return verif2()">
+      <fieldset>
+        <legend>cocommande de pizzas</legend>
+        <label>Type de pizza : </label>
+        &nbsp;
+        <select name="mySelect" id="mySelect">
+          <option>Choisir une pizza</option>
+          <option value="fmr">Fruit de mer</option>
+          <option value="mgh">Margherita</option>
+          <option value="nap">Napolitaine</option>
+          <option value="nep">Neptune</option>
+          <option value="roy">Royale</option>
+        </select>
+        <br />
+
+        <label>quantitee : </label>
+        <input type="text" name="qte" id="qte" />
+        <br />
+        <label>Tel : </label>
+        <input type="text" name="tel" id="tel" />
+        <br />
+        <label>Mot de passe : </label>
+        <input type="password" name="pass" id="pass" />
+        <br />
+        <button type="reset">Annuler</button>
+        <button type="submit">Commander</button>
+      </fieldset>
+    </form>
+    <script src="./app.js"></script>
+  </body>
 </html>

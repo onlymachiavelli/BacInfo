@@ -43,3 +43,26 @@ function verif1() {
   }
   return true;
 }
+
+function verif2() {
+  var err = "";
+
+  if (Name("mySelect")[0].selectedIndex == 0) {
+    err += "Select a pizza type ! \n";
+  }
+  if (Number(Id("qte")) < 1 || Number(Id("qte")) > 5) {
+    err += "Invalid error ! \n";
+  }
+  if (Number(Id("tel")[0]) < 2 || Id("tel").length != 8) {
+    err += "Invalid phone number \n";
+  }
+
+  if (Id("pass").indexOf(" ") != -1 || Id("pass").length != 6) {
+    err += "Invalid password";
+  }
+  if (err.length > 0) {
+    alert(err);
+    return false;
+  }
+  return true;
+}
