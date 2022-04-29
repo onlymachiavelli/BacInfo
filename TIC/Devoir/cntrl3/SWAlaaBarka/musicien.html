@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <form action="./inserer.php" method="POST" onsubmit="return verif()">
+      <fieldset>
+        <legend>Ajout d'un musicien</legend>
+
+        <label>Identifiant musicien</label> &nbsp;
+        <input type="text" name="id" id="id" />
+        <br />
+        <label>Nom musicien</label> &nbsp;
+        <input type="text" name="name" id="name" />
+        <br />
+        <label>Prenom musicien</label> &nbsp;
+        <input type="text" name="lname" id="lname" />
+        <br />
+        <label>age</label> &nbsp;
+        <input type="text" name="age" id="age" />
+        <br />
+        <label>Instrument utilisee</label>
+        &nbsp;
+        <select name="instrument" id="instrument">
+          <option>Choisir un instrument</option>
+          <option value="piano">Piano</option>
+          <option value="violon">Violon</option>
+          <option value="accordeon">Accordeon</option>
+        </select>
+        <br />
+        <button type="reset">Annuler</button>
+        <button type="submit">Inserer</button>
+      </fieldset>
+    </form>
+    <script src="./app.js"></script>
+  </body>
+</html>
