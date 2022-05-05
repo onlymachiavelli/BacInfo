@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body onload="cYear()">
+    
+    <form method="POST" onsubmit="return check()" action="./add.php">
+        <fieldset>
+            <legend>
+                Ajout d'un spectacle 
+            </legend>
+            <table>
+                <tr>
+                    <td><label>Piece : </label></td>
+                    <td><label>salle : </label></td>
+                    <td><label>Date du spectacle : </label></td>
+                </tr>
+                <tr>
+                    <th>
+
+                        <select name="peace" id="peace">
+                            <option value="1">Choisir une piece</option>
+                            <option value="2">Le tresor</option>
+                            <option value="3">Le peche du succes</option>
+                            <option value="4">Le Gardien</option>
+                            <option value="5">Les soldats de la lune</option>
+                            <option value="6">L'eternel retour</option>
+                        </select>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                    </th>
+                    <th>
+                        
+                        <select name="salle" id="salle">
+                            <option value="">Choisir une salle</option>
+                            <option value="TM">Theatre Municipal</option>
+                            <option value="QA">Quatrieme Art</option>
+                            <option value="EN">L'etoile du nord</option>
+                            <option value="EA">Espace Artisto</option>
+                            
+                        </select>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                    </th>
+                    <th>
+                        <input type="text" size="2" maxlength="2" id="day" name="day" /> <label>/</label>
+                        <input type="text" size="2" maxlength="2" id="month" name="month" /><label>/</label>
+                        <input type="text" size="4" maxlength="4" id="year" name="year" /><label>(JJ/MM/AAAAA)</label>
+
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <button type="reset" >Annuler</button> &nbsp; &nbsp; &nbsp; &nbsp;
+                        <button type="submit">Ajouter</button>
+                    </th>
+                </tr>
+
+            </table>
+        </fieldset>
+    </form>
+    <script src="./app.js"></script>
+</body>
+</html>
