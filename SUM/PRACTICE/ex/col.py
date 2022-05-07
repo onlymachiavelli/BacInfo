@@ -28,6 +28,19 @@ def fillMin(mat, l, c, m):
                 mat[i, j] = 1
 
 
+def fillMax(mat, l, c, m):
+    for j in range(c):
+        maxi = {"i": 0, "j": j}
+        for i in range(l):
+            if m[i, j] > m[maxi["i"], maxi["j"]]:
+                maxi["i"] = i
+                maxi["j"] = j
+        mat[maxi["i"], maxi["j"]] = 1
+        for i in range(l):
+            if m[i, j] == m[maxi["i"], maxi["j"]]:
+                mat[i, j] = 1
+
+
 l = size(3, 20)
 c = size(3, 20)
 
@@ -37,6 +50,7 @@ maxi = np.array([[int()]*c]*l)
 
 fillMat(mat, l, c)
 fillMin(mini, l, c, mat)
-
+fillMax(maxi, l, c, mat)
+print(maxi)
 print(mat)
 print(mini)
