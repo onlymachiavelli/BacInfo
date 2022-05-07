@@ -1,5 +1,6 @@
 import numpy as np
 import random as r
+import pickle
 
 
 def size(mi, ma):
@@ -41,16 +42,44 @@ def fillMax(mat, l, c, m):
                 mat[i, j] = 1
 
 
+def genFile(mini, maxi, l, c, m):
+    print("hello gen")
+    myFile = open("result.bin", "wb")
+    for i in range(l):
+        for j in range(c):
+            if mini[i, j] == 1 and maxi[i, j] == 1:
+                print("Done")
+                pickle.dump({
+                    "x": i,
+                    "y": j,
+                    "val": m[i, j]
+                }, myFile)
+    myFile.close()
+
+
+def Show(src):
+    myFile = open(src, "rb")
+    print("Hello")
+    quit = False
+    while not quit:
+        try:
+            obj = pickle.load(myFile)
+            print(f"M[{obj['x']},{obj['x']}] = {obj['val']} est le minimum de la ligne {obj['x']} est le maximum de la colonne {obj['y']}.")
+        except:
+            quit = True
+    myFile.close()
+
+
 l = size(3, 20)
 c = size(3, 20)
 
 mat = np.array([[int()]*c]*l)
 mini = np.array([[int()]*c]*l)
 maxi = np.array([[int()]*c]*l)
-
+genFile(mini, maxi, l, c, mat)
+Show("result.bin")
 fillMat(mat, l, c)
 fillMin(mini, l, c, mat)
 fillMax(maxi, l, c, mat)
 print(maxi)
 print(mat)
-print(mini)
