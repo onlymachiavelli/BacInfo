@@ -18,18 +18,9 @@ function isAlpha(myString) {
   return true;
 }
 
-function isNumeric(myString) {
-  for (var i = 0; i < myString.length; i++) {
-    if (myString.charAt(i) < "0" || myString.charAt(i) > "9") {
-      return false;
-    }
-  }
-  return true;
-}
-
 function test1() {
   var err = "";
-  if (Id("ncin").value.length != 8) {
+  if (Id("ncin").value.length != 8 || isNaN(Id("ncin"))) {
     err += "NCIN field is invalid ! \n";
   }
   if (Id("nom").value.length < 3 || !isAlpha(Id("nom").value)) {
@@ -47,7 +38,7 @@ function test1() {
       phone = false;
     }
   }
-  if (!phone || Id("tel").length !== 8 || !isNumeric(Id("tel").value)) {
+  if (!phone || Id("tel").value.length !== 8 || isNaN(Id("tel").value)) {
     err += "Invalid phone ! \n";
   }
 
