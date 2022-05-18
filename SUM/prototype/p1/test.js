@@ -48,3 +48,23 @@ function test1() {
   }
   return true;
 }
+
+function verif2() {
+  var err = "";
+  if (Id("serie").value.length !== 3 || isNaN(Id("serie").value)) {
+    err += "Invalid serie Number ! \n";
+  }
+  if (!isNaN(Id("enr").value)) {
+    if (Number(Id("enr").value) > 9999 || Number(Id("enr").value) < 1) {
+      err += "Invalid ENRG \n";
+    }
+  } else {
+    err += "Invalid enrg \n";
+  }
+
+  if (err.length > 0) {
+    alert(err);
+    return false;
+  }
+  return true;
+}
