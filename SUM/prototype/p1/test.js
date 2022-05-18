@@ -20,10 +20,7 @@ function isAlpha(myString) {
 
 function isNumeric(myString) {
   for (var i = 0; i < myString.length; i++) {
-    if (
-      myString.charAt(i).toLowerCase() < "0" ||
-      myString.charAt(i).toLowerCase() > "9"
-    ) {
+    if (myString.charAt(i) < "0" || myString.charAt(i) > "9") {
       return false;
     }
   }
