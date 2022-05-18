@@ -43,14 +43,14 @@ function test1() {
     err += "invalid last name \n";
   }
 
-  var allowedNumbers = new Array(0, 1, 6);
+  var notallowedNumbers = new Array(0, 1, 6);
   var phone = true;
   for (var i = 0; i < 3; i++) {
-    if (allowedNumbers[i] === Number(Id("tel").value.charAt(0))) {
+    if (notallowedNumbers[i] === Number(Id("tel").value.charAt(0))) {
       phone = false;
     }
   }
-  if (!phone || Id("tel").length === 0) {
+  if (!phone || Id("tel").length !== 8 || !isNumeric(Id("tel").value)) {
     err += "Invalid phone ! \n";
   }
 
