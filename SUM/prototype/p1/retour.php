@@ -1,11 +1,11 @@
 <?php
 
-if (isset($_POST["serie"]) && isset($_POST["enr"])) {
+if (isset($_GET["serie"]) && isset($_GET["enr"])) {
     //connect !  
     mysql_connect("localhost", "root" , "") or die(mysql_error()."<br/>") ;
     mysql_select_db("location") or die(mysql_error()."<br/>") ;
 
-    $fullserie = $_POST["serie"]."TU".$_POST["enr"] ;
+    $fullserie = $_GET["serie"]."TU".$_GET["enr"] ;
     //check car 
     $car = "select * from voiture where Imat='$fullserie'" ;
     $carRes = mysql_query($car) ;
@@ -18,10 +18,18 @@ if (isset($_POST["serie"]) && isset($_POST["enr"])) {
             die ("car is dispo @! ");
         }
         else {
-            $req = "update voiture set Disponible='N' where Imat='$fullserie'" ;
-            $res = mysql_query($res) ;
+            $cdate = date("Y-m-d") ;
+            $req = "update voiture set Disponible='D' where Imat='$fullserie'" ;
+            $res = mysql_query($req) ;
             if ($res) {
-                print("Done saving the datas ! ") ;
+                $res2 = mysql_query("update louer set DateLoc='$cdate' where Imat='$fullserie'");
+                if ($res2) {
+                    print("Finally ! ") ;
+                }
+                else {
+                    die ("whaat ! ") ; 
+                }
+                
             }
             else {
                 die (mysql_error());
