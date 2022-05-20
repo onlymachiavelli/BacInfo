@@ -18,6 +18,15 @@ function isAlpha(myString) {
   return true;
 }
 
+const Number = (myString) => {
+  for (let i = 0; i < myString.length; i++) {
+    if (myyString[i] < "0" || myString[i] > "9" || myString[0] != "-") {
+      return false;
+    }
+  }
+  return true;
+};
+
 function test1() {
   var err = "";
   if (Id("ncin").value.length != 8 || isNaN(Id("ncin"))) {

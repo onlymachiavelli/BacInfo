@@ -1,42 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <div>
-        <form action="./retour.php" method="GET" onsubmit="return verif2()">
+      <form action="./retour.php" method="GET" onsubmit="return verif2()">
+        <fieldset>
+          <legend>Retour d'une voiture</legend>
+          <table>
+            <tr>
+              <td></td>
+              <td>
+                <label>Numero de serie</label>
+              </td>
+              <td>Num d'enregistrement</td>
+            </tr>
+            <tr>
+              <td><label>Numero d'immatriculation </label></td>
 
-            <fieldset>
-                <legend>Retour d'une voiture</legend>
-                <table>
-                    <tr>
-                        <td><label >Numero d'immatriculation </label></td>
+              <td>
+                <input type="text" name="serie" id="serie" />
+                <label> TU </label>
+                <td><input type="text" name="enr" id="enr" /></td>
+              </td>
+            </tr>
 
-                        <td>
-                            <input type="text" name="serie" id="serie" /> <label> TU </label> 
-                            <input type="text" name="enr" id="enr">
-                        </td>
-                        
-                    </tr>
-
-                    <tr>
-                        <td></td>
-                        <td>
-                            <button type="reset">Annuler</button>
-                            &nbsp;&nbsp;
-                            <button type="submit">Valider</button>
-                        </td>
-                    </tr>
-                </table>
-            </fieldset>
-        </form>
+            <tr>
+              <td></td>
+              <td>
+                <button type="reset">Annuler</button>
+                &nbsp;&nbsp;
+                <button type="submit">Valider</button>
+              </td>
+            </tr>
+          </table>
+        </fieldset>
+      </form>
     </div>
-    
+
     <script src="./test.js"></script>
-</body>
+  </body>
 </html>

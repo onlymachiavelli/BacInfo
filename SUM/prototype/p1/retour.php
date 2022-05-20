@@ -18,11 +18,11 @@ if (isset($_GET["serie"]) && isset($_GET["enr"])) {
             die ("car is dispo @! ");
         }
         else {
-            $cdate = date("Y-m-d") ;
+            $cdate = date("y-m-d h-m-s") ;
             $req = "update voiture set Disponible='D' where Imat='$fullserie'" ;
             $res = mysql_query($req) ;
             if ($res) {
-                $res2 = mysql_query("update louer set DateLoc='$cdate' where Imat='$fullserie'");
+                $res2 = mysql_query("update louer set DateRet='$cdate' where Imat='$fullserie'");
                 if ($res2) {
                     print("Finally ! ") ;
                 }
