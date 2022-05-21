@@ -23,7 +23,7 @@
   <body>
     <fieldset>
       <legend>Evaluation d'un hotel !</legend>
-      <form action="" method="">
+      <form action="" method="POST" onsubmit="return verif()">
         <table>
           <tr>
             <td>
@@ -58,11 +58,11 @@
           <tr>
             <td><label>Restauration</label></td>
             <td>
-              <input type="radio" name="res" id="acc" value="3" />
+              <input type="radio" name="res" id="res" value="3" />
               <label>Tres satisfait</label>
-              <input type="radio" name="res" id="acc" value="2" />
+              <input type="radio" name="res" id="res" value="2" />
               <label>Tres satisfait</label>
-              <input type="radio" name="res" id="acc" value="1" />
+              <input type="radio" name="res" id="res" value="1" />
               <label>Tres satisfait</label>
             </td>
           </tr>
