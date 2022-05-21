@@ -7,7 +7,7 @@ function Name(namme) {
 }
 
 function random(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) + min);
+  return Math.floor(Math.random() * (max - min) + min);
 }
 function genCaptcha() {
   var cap = "";
@@ -24,7 +24,13 @@ function genCaptcha() {
 }
 
 function verifyCap(cap, res) {
-  return true;
+  var capitals = 0;
+  for (var i = 0; i < cap.length; i++) {
+    if (cap[i] >= "A" && cap[i] <= "Z") {
+      capitals++;
+    }
+  }
+  return res === capitals;
 }
 
 function setCap() {
