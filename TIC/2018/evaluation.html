@@ -46,11 +46,11 @@
           <tr>
             <td><label>Acceuil</label></td>
             <td>
-              <input type="radio" name="acc" id="acc" value="ts" />
+              <input type="radio" name="acc" id="acc" value="3" />
               <label>Tres satisfait</label>
-              <input type="radio" name="acc" id="acc" value="s" />
+              <input type="radio" name="acc" id="acc" value="2" />
               <label>Tres satisfait</label>
-              <input type="radio" name="acc" id="acc" value="ps" />
+              <input type="radio" name="acc" id="acc" value="1" />
               <label>Tres satisfait</label>
             </td>
           </tr>
@@ -58,11 +58,11 @@
           <tr>
             <td><label>Restauration</label></td>
             <td>
-              <input type="radio" name="res" id="acc" value="ts" />
+              <input type="radio" name="res" id="acc" value="3" />
               <label>Tres satisfait</label>
-              <input type="radio" name="res" id="acc" value="s" />
+              <input type="radio" name="res" id="acc" value="2" />
               <label>Tres satisfait</label>
-              <input type="radio" name="res" id="acc" value="ps" />
+              <input type="radio" name="res" id="acc" value="1" />
               <label>Tres satisfait</label>
             </td>
           </tr>
@@ -71,11 +71,48 @@
               <label> Extra </label>
             </td>
             <td>
-              <input type="checkbox" name="" id="" />
+              <input type="checkbox" name="pc" id="pc" value="4" />
+              <label>Piscine couverte</label><br /><br />
+
+              <input type="checkbox" name="pp" id="pp" value="2" />
+              <label>Plage Privee</label><br /><br />
+
+              <input type="checkbox" name="cw" id="cw" value="1" />
+              <label>Couverture WIFI</label><br />
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <table>
+                <tr>
+                  <td>
+                    <label
+                      ><i
+                        >Combien de lettres majiscule dans la zone Captcha ?
+                      </i></label
+                    >
+                  </td>
+                  <td>
+                    <label>Captcha </label
+                    ><input type="text" name="captcha" id="captcha" />
+                    <br />
+                    <label>Reponse </label
+                    ><input type="text" name="rep" id="rep" />
+                  </td>
+                  <td>
+                    <button type="button" onclick="setCap()">Actualiser</button>
+                  </td>
+                </tr>
+              </table>
             </td>
           </tr>
         </table>
+
+        <button type="reset">Annuler</button>
+
+        <button type="submit">Valider</button>
       </form>
     </fieldset>
+    <script src="./controle.js"></script>
   </body>
 </html>
