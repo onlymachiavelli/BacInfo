@@ -13,7 +13,20 @@ if (mysql_num_rows($result) != 0) {
 else {
     $acc = $_POST['acc'];
     $res = $_POST['res'];
-    $extra = intval($_POST['pc']) + intval($_POST['pp']) + intval($_POST['cw']) ;
+    $pc =0;
+    $cw=0;
+    $pp=0;
+    if (isset($_POST['pc'])) {
+        $pc = intval($_POST['pc']);
+    }
+    if (isseT($_POST['cw'])) {
+        $cw = intval($_POST['cw']);
+    }
+    if(isset($_POST['pp'])) {
+        $pp = intval($_POST['pp']);
+    }
+
+    $extra = $pp + $pc + $cw ;
     $req = "INSERT INTO evaluation values ('$date' , $hotel , $acc , $res , $extra)";
     $res = mysql_query($req);
     if ($res) {
