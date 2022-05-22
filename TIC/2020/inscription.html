@@ -6,5 +6,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <form onsubmit="" action="" method="POST">
+      <fieldset>
+        <legend>Inscription d'un client</legend>
+
+        <table>
+          <tr>
+            <td>
+              <label>Nom : </label>
+            </td>
+            <td>
+              <input type="text" id="nom" name="nom" />
+            </td>
+          </tr>
+          <tr>
+            <td><label>Prenom</label></td>
+            <td><input type="text" name="prenom" id="prenom" /></td>
+          </tr>
+
+          <tr>
+            <td><label>Tel :</label></td>
+            <td><input type="text" name="tel" id="tel" /></td>
+          </tr>
+
+          <tr>
+            <td><label>Adresse : </label></td>
+            <td>
+              <textarea
+                name="adresse"
+                id="adresse"
+                cols="60"
+                rows="7"
+              ></textarea>
+            </td>
+          </tr>
+        </table>
+
+        <hr />
+
+        <table>
+          <tr>
+            <td><label>Mot de passe </label></td>
+            <td>
+              <input type="password" name="pass" id="pass" />
+            </td>
+          </tr>
+          <tr>
+            <td><label>Confirmer le Mot de passe </label></td>
+            <td>
+              <input type="password" name="pass" id="pass" />
+            </td>
+          </tr>
+
+          <tr>
+            <td></td>
+            <td>
+              <button type="reset">Annuler</button>
+              <button type="submit">Valider</button>
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+    </form>
+  </body>
+
+  <script src="./biblio.js"></script>
 </html>
