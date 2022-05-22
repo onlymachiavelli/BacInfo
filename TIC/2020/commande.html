@@ -6,5 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <form action="./commande.php" method="POST" onsubmit="return verif2()">
+      <fieldset>
+        <legend>commande de pizza</legend>
+
+        <table>
+          <tr>
+            <td>Type de pizza</td>
+            <td>
+              <select name="pizza" id="pizza">
+                <option value="">Select a pizza</option>
+                <option value="Fmr">Fruit de me Mer</option>
+                <option value="Mgh">Margherita</option>
+                <option value="Nap">Napolitaine</option>
+                <option value="Nep">Neptune</option>
+                <option value="Roy">Royale</option>
+              </select>
+            </td>
+
+            <td>
+              <label>quantite</label>
+            </td>
+            <td><input type="text" name="qte" id="qte" /></td>
+          </tr>
+
+          <tr>
+            <td>
+              <label>tel</label>
+            </td>
+            <td><input type="text" name="tel" id="tel" /></td>
+
+            <td><label>mot de passe </label></td>
+            <td><input type="text" name="pass" id="pass" /></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+              <button type="reset">Annuler</button>
+              <button type="submit">Commander</button>
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+    </form>
+
+    <script src="./biblio.js"></script>
+  </body>
 </html>

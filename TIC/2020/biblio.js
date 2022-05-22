@@ -55,3 +55,38 @@ function verif1() {
     return false;
   }
 }
+
+function verif2() {
+  var err = "";
+
+  if (Id("pizza").selectedIndex === 0) {
+    err += "selectionner le type de pizza ! \n";
+  }
+
+  if (Id("qte").value.length === 0 || !isNumber(Id("qte").value)) {
+    err += "qte est invalide  \n";
+  } else {
+    if (Number(Id("qte").value) > 5 || Number(Id("qte").value) < 1) {
+      err += "qte est hors intervale ! \n";
+    }
+  }
+
+  if (!isNumber(Id("tel").value) || Id("tel").value.length !== 8) {
+    err += "tel est invalide ! \n";
+  } else {
+    if (Number(ch[0]) <= 1) {
+      err += "tel est invalide !  \n";
+    }
+  }
+
+  if (Id("pass").value.length != 6 || Id("pass").value.indexOf(" ") !== -1) {
+    err += "mot de passe est invalide !  \n";
+  }
+
+  if (err.length > 0) {
+    alert(err);
+
+    return false;
+  }
+  return true;
+}
