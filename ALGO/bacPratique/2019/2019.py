@@ -1,26 +1,17 @@
 
 import numpy as np 
 import pickle as pk 
-
-
-def interval( mi, ma) :
-    n = int(input("Enter n ")) 
+def interval( mi, ma, msg) :
+    n = int(input(msg)) 
     if  mi <= n <= ma :
         return n 
     return interval(mi, ma) 
-
-
-
 def isPrime(n, i=2):
     if n <2 :
         return False
     if i <= n//2 :
         return n % i != 0 and isPrime(n, i+1) 
     return True
-
-
-
-
 def nums(num, res, n):
     a = num 
     prime  = 2 
@@ -33,8 +24,6 @@ def nums(num, res, n):
             res[n] = prime
             a //= prime 
             n +=1 
-
-
 def count(arr, l , index, check, ele ) :
     nums = 0
     for i in range (l) :
@@ -44,10 +33,7 @@ def count(arr, l , index, check, ele ) :
         else :
             if arr[i] == ele :
                 nums +=1 
-                
-
     return nums 
-
 def exist(arr, l , elem ) :
     i =0
     exi = False
@@ -74,57 +60,45 @@ def common (arr1, arr2, l1, l2 ) :
         small = arr1 
     for i in range (b) :
         if not exist(small , s , big[i]) :
-            res *= small[i] 
+            res *= big[i] 
+            print("fucking big of " , big[i])
         else :
-            a = count(big, b,i)
-            b = 0
-            
+            a = count(big, b,i, True , 0)
+            bb = count(small, s , 0, False  , big[i]) 
 
+            if a > bb : 
+                res *= power(big[i], a)
 
-    return 0
-
-print(power(2,5))
-
-def ppcm(p, q, n ) :
+            else :
+                res *= power(big[i], bb) 
+    return res
+def ppcm( n ) :
     myFile = open("result.dat", "wb") 
     for i in range (n):
-        res = 1 
+        p = interval(1, 1000, "enter p ")
+        q = interval(1, 1000 , "enter q ")
         l1 = 0
-        arr = np.array([int] *p)
         l2 = 0
-        arr2 = np.array([int] * q)
+        arr = np.array([int] *(p//2))
+        arr2 = np.array([int] * (q//2))
+
         nums(p, arr, l1) 
         nums(q, arr2, l2) 
-
-
-        pk.dumpy({
+        pk.dump({
             "a" : p, 
             "b":q ,
-            "ppcm" :res 
+            "ppcm" :common(arr, arr2, l1, l2 ) 
         }, myFile)
-
-
-
-
-
-        
-    
-
-
     myFile.close()
-    
-
-
-def Show():
-    myFile=  open("result.dat" , "wb")  
-    quit = False 
-    while not quit : 
-        try :
-            obj = pk.load(myFile) 
-            print("PPCM(", obj["a"] , ",",obj["b"] , ") = " , obj["res"])
-
-        except:
-            quit = True 
-
+def Show(n):
+    myFile=  open("result.dat" , "rb")  
+    for i in range (n):
+        obj = pk.load(myFile)
+        print("PPCM(", obj["a"] , ",",obj["b"] , ") = " , obj["ppcm"])
     myFile.close()
-print(nums(35))
+
+
+n = interval(2 , 100, "enter n ")
+
+ppcm(n )
+Show(n)
