@@ -10,7 +10,7 @@ $nom = $_POST["nom"] ;
 $prenom = $_POST["prenom"] ;
 $pass = $_POST["pass"] ;
 $adr = $_POST["adresse"] ;
-$check = "SELECT * FROM Client WHERE  Tel='$id' and Nom='$nom' and Prenom = '$prenom'" ;
+$check = "SELECT * FROM Client WHERE  Tel='$id' and Nom='$nom' and Prenom = '$prenom'";
 $checkRes =  mysql_query($check) ;
 if (mysql_num_rows($checkRes) > 0 ) {
     die ("Client est deja inscrit ! ") ;
