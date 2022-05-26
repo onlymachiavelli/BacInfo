@@ -1,3 +1,4 @@
+from re import L
 import numpy as np 
 import pickle as pk 
 def size(mi, ma) :
@@ -15,68 +16,65 @@ def isPrime(n, i=2):
         return n % i != 0 and isPrime(n, i+1) 
     return True
 
-def fillPrimeNumbers (primi, l, n) :
+def fillPrimeNumbers (primi, n) :
     prime = 2
-    l = n//2
-    for i in range (l) :
+    for i in range (n) :
         primi[i] = prime 
         prime +=1 
         while not isPrime(prime) :
             prime +=1 
 
-def getPrime(primi,arr1,l1,  n) :
+def getPrime(primi,arr1,n) :
     prime =primi[0]
     number = n
     count = 0
     l = 0
-    while number >= prime :
+    le = 0
+    while n >= prime :
         if number % prime != 0 :
             l+=1 
             prime = primi[l]
-            arr1[l1] = count 
-            l1+= 1 
+            arr1[le] = count 
+            le+= 1 
             count = 0
         
         else :
             count +=1 
             number //= prime
+
 def power(a , b) :
     if b > 1 :
         return a * power(a, b-1) 
     return a
 
+def init(arr, length):
+    for i in range (length):
+        arr[i] = 0 
+
+
 def ppcm(p, q) :
-    thePrimes = np.array([int] * 100)# array of prime numbers 
-    primeLen = 0
-    fillPrimeNumbers(thePrimes,primeLen, (p+q)//2 )
-    arr1 = np.array([int] * 100 ) # array of the numbers of p 
-    arr2 = np.array([int] * 100 )# array of the numbers of q
-    len1= 0
-    len2 = 0
-    getPrime(thePrimes, arr1 , len1, p)
-    getPrime(thePrimes, arr2 , len2, q)
+    n = (p+q) //2
+    print(n)
+    thePrimes = np.array([int] * n)# array of prime numbers 
+    fillPrimeNumbers(thePrimes, n )
+    arr1 = np.array([int] * n ) # array of the numbers of p 
+    arr2 = np.array([int] * n )# array of the numbers of q
+    init(arr1, n )
+    init(arr2, n )
+    getPrime(thePrimes, arr1 , p)
+    getPrime(thePrimes, arr2 , q)
+    print(arr1)
     res =1 
-    big = arr1 
-    small = arr2 
-    b = len1 
-    s = len2
-    if len1 < len2 :
 
-        big = arr2 
-        small = arr1
-        b = len2
-        s = len1
-    print (s< b)
-    while b != s :
-        s+=1 
-        small[s] = 0
 
-    for i in range (b):
-        if big[i] > 0 and small[i] > 0 :
-            if big[i] > small[i] :
-                res *= power(thePrimes[i], big[i])
-        else :
-            res *= power(thePrimes[i], small[i])
+    for i in range (n):
+        if arr1[i] > 0 or arr2[i] > 0 :
+            if arr1[i] > arr2[i] :
+                res *= power(thePrimes[i],arr1[i])
+            else :
+                res *= power(thePrimes[i],arr2[i])
+        
+                
     return res 
 
 def saveFile(n) :
@@ -102,7 +100,10 @@ def Show(n):
     myFile.close()
 
 
+
 print("Enter n ! ")
 n = size(2 , 100)
 saveFile(n)
 Show(n)
+
+
