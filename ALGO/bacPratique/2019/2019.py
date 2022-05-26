@@ -1,95 +1,97 @@
-
+from re import L
 import numpy as np 
 import pickle as pk 
-def interval( mi, ma, msg) :
-    n = int(input(msg)) 
-    if  mi <= n <= ma :
+def size(mi, ma) :
+    n = int(input()) 
+    if mi <= n <= ma :
         return n 
-    return interval(mi, ma) 
+    print("Enter it again ! ")
+    return size(mi, ma )
+
+
 def isPrime(n, i=2):
     if n <2 :
         return False
     if i <= n//2 :
         return n % i != 0 and isPrime(n, i+1) 
     return True
-def nums(num, res, n):
-    a = num 
-    prime  = 2 
-    while prime  <= a :
-        if a % prime != 0 :
+
+def fillPrimeNumbers (primi, n) :
+    prime = 2
+    for i in range (n) :
+        primi[i] = prime 
+        prime +=1 
+        while not isPrime(prime) :
             prime +=1 
-            while not isPrime(prime) :
-                prime +=1 
+
+def getPrime(primi,arr1,n) :
+    prime =primi[0]
+    number = n
+    count = 0
+    l = 0
+    le = 0
+    while n >= prime :
+        if number % prime != 0 :
+            l+=1 
+            prime = primi[l]
+            arr1[le] = count 
+            le+= 1 
+            count = 0
+        
         else :
-            res[n] = prime
-            a //= prime 
-            n +=1 
-def count(arr, l , index, check, ele ) :
-    nums = 0
-    for i in range (l) :
-        if check :
-            if i != index and arr[i]  == arr[index]:
-                nums +=1 
-        else :
-            if arr[i] == ele :
-                nums +=1 
-    return nums 
-def exist(arr, l , elem ) :
-    i =0
-    exi = False
-    while not exi and i <= l :
-        if elem == arr[i] :
-            exi = True
-    return exi 
+            count +=1 
+            number //= prime
 
 def power(a , b) :
     if b > 1 :
         return a * power(a, b-1) 
     return a
-def common (arr1, arr2, l1, l2 ) :
-    #i know it's stupid  ! 
+
+def init(arr, length):
+    for i in range (length):
+        arr[i] = 0 
+
+
+def ppcm(p, q) :
+    n = (p+q) //2
+    print(n)
+    thePrimes = np.array([int] * n)# array of prime numbers 
+    fillPrimeNumbers(thePrimes, n )
+    arr1 = np.array([int] * n ) # array of the numbers of p 
+    arr2 = np.array([int] * n )# array of the numbers of q
+    init(arr1, n )
+    init(arr2, n )
+    getPrime(thePrimes, arr1 , p)
+    getPrime(thePrimes, arr2 , q)
+    print(arr1)
     res =1 
-    big = arr1 
-    small = arr2 
-    b = l1 
-    s = l2 
-    if l2 > l1 :
-        b = l2 
-        s = l1 
-        big = arr2 
-        small = arr1 
-    for i in range (b) :
-        if not exist(small , s , big[i]) :
-            res *= big[i] 
-            print("fucking big of " , big[i])
-        else :
-            a = count(big, b,i, True , 0)
-            bb = count(small, s , 0, False  , big[i]) 
 
-            if a > bb : 
-                res *= power(big[i], a)
 
-            else :
-                res *= power(big[i], bb) 
-    return res
-def ppcm( n ) :
-    myFile = open("result.dat", "wb") 
     for i in range (n):
-        p = interval(1, 1000, "enter p ")
-        q = interval(1, 1000 , "enter q ")
-        l1 = 0
-        l2 = 0
-        arr = np.array([int] *(p//2))
-        arr2 = np.array([int] * (q//2))
+        if arr1[i] > 0 or arr2[i] > 0 :
+            if arr1[i] > arr2[i] :
+                res *= power(thePrimes[i],arr1[i])
+            else :
+                res *= power(thePrimes[i],arr2[i])
+        
+                
+    return res 
 
-        nums(p, arr, l1) 
-        nums(q, arr2, l2) 
+def saveFile(n) :
+    myfile = open("result.dat", "wb")
+    for i in range (n) :
+        print("Give  p ") 
+        p = size(1, 1000)
+        print("Give q ")
+        q = size(1 , 1000)
         pk.dump({
             "a" : p, 
-            "b":q ,
-            "ppcm" :common(arr, arr2, l1, l2 ) 
-        }, myFile)
-    myFile.close()
+            "b" : q ,
+            "ppcm" : ppcm(p,q) 
+        }, myfile)
+
+    myfile.close()
+
 def Show(n):
     myFile=  open("result.dat" , "rb")  
     for i in range (n):
@@ -98,7 +100,10 @@ def Show(n):
     myFile.close()
 
 
-n = interval(2 , 100, "enter n ")
 
-ppcm(n )
+print("Enter n ! ")
+n = size(2 , 100)
+saveFile(n)
 Show(n)
+
+
