@@ -43,36 +43,35 @@ def crypt(source, key) :
         while len(line) % len(key) != 0 :
             line += " " 
         res = "" 
-        l = len(line) // len(key) 
+        l = len(line) 
         c = len(key)
         arr = np.array([[str()] * c ] *l) 
         fillSaces(arr, l, c )
+        print(arr)
         matLine = 1 
         for k in range(len(key)) :
             arr[0,k] = key[k]
         pos = 0 
         
         while pos < len(line) :
-            select = line[pos:pos+4 ] 
+            select = line[pos:pos+len(key)] 
             for k in range (len(select)) :
                 arr[matLine,k] = select[k]
-                print(k)
+                print(f"fuck {matLine} and the shit is {arr}")
             matLine +=1 
 
 
 
             pos += len(key)
-        for j in range (c):
-            for k in range (l):
-                res += arr[j,k]
+        for k in range (c) :
+            bug = "" 
+            for j in range (l//len(key)) :
+                bug += arr[j,k]
+            res += bug
+            
         result.write(res+ "\n")
-
     myFile.close()
     result.close()
-
-
-
-
 key = salt() 
 source = "source.txt" 
 crypt(source, key) 
