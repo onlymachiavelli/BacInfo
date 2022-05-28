@@ -18,14 +18,14 @@ const isNum = (ch) => {
   }
   return true
 }
-const verif = () => {
+const verif1 = () => {
   let err = ""
 
   if (
     Id("permis").value.length !== 8 ||
     !isNum(Id("permis").value.substr(0, 2)) ||
     Id("permis").value[2] != "/" ||
-    !isNum(Id("permis").value.substr(2, 5))
+    !isNum(Id("permis").value.substr(3, 5))
   ) {
     err += "invalid driver license \n"
   }
@@ -45,7 +45,7 @@ const verif = () => {
     err += "Invalid last name  ! \n"
   }
   if (!Name("sex")[0].checked && !Name("sex")[1].checked) {
-    erer += "Select a sex ! \n"
+    err += "Select a sex ! \n"
   }
 
   if (err.length > 0) {
@@ -54,5 +54,3 @@ const verif = () => {
   }
   return true
 }
-
-alert("hello world")
