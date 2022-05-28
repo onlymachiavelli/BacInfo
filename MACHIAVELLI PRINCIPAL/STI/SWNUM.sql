@@ -20,7 +20,7 @@ CREATE TABLE `evaluation` (
   `numPermis` varchar(8) NOT NULL,
   `idModele` int(11) NOT NULL,
   `dateTest` datetime NOT NULL,
-  `seurite` int(11) NOT NULL,
+  `securite` int(11) NOT NULL,
   `conduite` int(11) NOT NULL,
   `confort` int(11) NOT NULL,
   PRIMARY KEY  (`numPermis`,`idModele`)
