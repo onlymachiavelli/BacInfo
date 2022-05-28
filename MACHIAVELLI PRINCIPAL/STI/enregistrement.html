@@ -11,6 +11,40 @@
         <form action="" method="POST" onsubmit="return verif1()">
             <fieldset>
                 <legend>Enregistrement d'un testeur </legend>
+
+                <table>
+                    <tr>
+                        <td><label >N perimis : </label></td>
+                        <td><input type="text" name="permis" id="permis"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Nom : </label></td>
+                        <td><input type="text" name="nom" id="nom"></td>
+                    </tr>
+
+                    
+                    <tr>
+                        <td><label>Prenom : </label></td>
+                        <td><input type="text" name="prenom" id="prenom"></td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label>Genre</label>
+                        </td>
+                        <td>
+                            <input type="radio" name="sex" id="sex" value="F"> <label >Feminin</label>
+                            <input type="radio" name="sex" id="sex" value="M"> <label >Masculin</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <button type="reset">Annuler</button>
+                            <button type="submit">Valider</button>
+                        </td>
+                    </tr>
+                </table>
             </fieldset>
         </form>
     </div>
