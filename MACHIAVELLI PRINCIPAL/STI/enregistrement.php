@@ -27,4 +27,5 @@ else {
     }
 }
 
+mysql_close();
 ?>
